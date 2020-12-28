@@ -2,13 +2,13 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Panel_Unit.Register.Common
+namespace PanelUnit
 {
     public class ResgisterCommon : TableLayoutPanel
     {
         //成员
         private Label ResgisterName = new Label();
-
+        private Label Resgistersign = new Label();
         private Label ResgisterValue = new Label();
         private TextBox ResgisterText = new TextBox();
         private Button ResgisterButton = new Button();
@@ -22,9 +22,10 @@ namespace Panel_Unit.Register.Common
             //
             //Panel初始化
             //
-            this.ColumnCount = 4;  //列数
+            this.ColumnCount = 5;  //列数
             this.RowCount = 1;  //行数
-            this.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
+            this.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130F));
+            this.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 15F));
             this.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
             this.ColumnStyles.Add(new ColumnStyle());
             this.ColumnStyles.Add(new ColumnStyle());
@@ -34,9 +35,10 @@ namespace Panel_Unit.Register.Common
             //添加成员
             //
             this.Controls.Add(this.ResgisterName, 0, 0);
-            this.Controls.Add(this.ResgisterValue, 1, 0);
-            this.Controls.Add(this.ResgisterText, 2, 0);
-            this.Controls.Add(this.ResgisterButton, 3, 0);
+            this.Controls.Add(this.Resgistersign, 1, 0);
+            this.Controls.Add(this.ResgisterValue, 2, 0);
+            this.Controls.Add(this.ResgisterText, 3, 0);
+            this.Controls.Add(this.ResgisterButton, 4, 0);
             //
             // 名称
             //
@@ -45,9 +47,20 @@ namespace Panel_Unit.Register.Common
             this.ResgisterName.TextAlign = ContentAlignment.MiddleRight;
             this.ResgisterName.Name = "ResgisterName";
             this.ResgisterName.TabIndex = 2;
-            this.ResgisterName.Text = "参数名称参数名称:";
-            this.ResgisterName.Font = new Font("宋体", 11F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(134)));
+            this.ResgisterName.Text = "初始代码段";
+            this.ResgisterName.Font = new Font("微软雅黑", 11F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(134)));
             //this.ResgisterName.BackColor = Color.Red;  //背景颜色
+            //
+            // :
+            //
+            this.Resgistersign.AutoSize = true;
+            this.Resgistersign.Dock = DockStyle.Fill;
+            this.Resgistersign.TextAlign = ContentAlignment.MiddleCenter;
+            this.Resgistersign.Name = "Resgistersign";
+            this.Resgistersign.TabIndex = 2;
+            this.Resgistersign.Text = ":";
+            this.Resgistersign.Font = new Font("宋体", 10F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(134)));
+            //this.Resgistersign.BackColor = Color.Red;  //背景颜色
             //
             // 读取值
             //
@@ -56,7 +69,7 @@ namespace Panel_Unit.Register.Common
             this.ResgisterValue.TextAlign = ContentAlignment.MiddleLeft;
             this.ResgisterValue.Name = "ResgisterValue";
             this.ResgisterValue.TabIndex = 2;
-            this.ResgisterValue.Text = "参数数值";
+            this.ResgisterValue.Text = "初始代码段";
             this.ResgisterValue.Font = new Font("宋体", 11F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
             //this.ResgisterValue.BackColor = Color.Cyan;  //背景颜色
             //
@@ -100,6 +113,16 @@ namespace Panel_Unit.Register.Common
         public int GetID()
         {
             return ID;
+        }
+
+        public void SetResgisterName(String name)
+        {
+            this.ResgisterName.Text = name;
+        }
+
+        public String GetResgisterName()
+        {
+            return ResgisterName.Text;
         }
     }
 }

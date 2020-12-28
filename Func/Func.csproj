@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FC6554B0-769B-46DF-AD58-E90574CF0D7D}</ProjectGuid>
+    <ProjectGuid>{79AE251E-E5DE-42C7-9939-EDBE6F67A0A3}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>PanelCollection</RootNamespace>
-    <AssemblyName>PanelCollection</AssemblyName>
+    <RootNamespace>Func</RootNamespace>
+    <AssemblyName>Func</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,20 +39,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ResgiterCollection.cs">
-      <SubType>Component</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Func">
-      <HintPath>..\Func\bin\Debug\Func.dll</HintPath>
-    </Reference>
-    <Reference Include="PanelUnit">
-      <HintPath>..\PanelUnit\bin\Debug\PanelUnit.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
+    <Compile Include="IniFunc.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
