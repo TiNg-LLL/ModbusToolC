@@ -39,7 +39,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ResgiterCommon.cs">
+    <Compile Include="RegisterCommonPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RegisterNameAdjustPanel.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

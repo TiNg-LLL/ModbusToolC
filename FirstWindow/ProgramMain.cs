@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace FirstWindow
 {
-    static class Program
+    static class ProgramMain
     {
         /// <summary>
         /// 应用程序的主入口点。
@@ -16,7 +16,7 @@ namespace FirstWindow
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FirstWindow());
         }
     }
 }

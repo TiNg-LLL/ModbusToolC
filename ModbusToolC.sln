@@ -15,7 +15,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Func", "Func\Func.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstWindow", "FirstWindow\FirstWindow.csproj", "{82B63E30-D04B-4A3F-95CF-E9F43EC7E5BC}"
 	ProjectSection(ProjectDependencies) = postProject
+		{2B7A146C-6323-4044-9FE9-86B785F757C7} = {2B7A146C-6323-4044-9FE9-86B785F757C7}
 		{FC6554B0-769B-46DF-AD58-E90574CF0D7D} = {FC6554B0-769B-46DF-AD58-E90574CF0D7D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowUnit", "WindowUnit\WindowUnit.csproj", "{2B7A146C-6323-4044-9FE9-86B785F757C7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{79AE251E-E5DE-42C7-9939-EDBE6F67A0A3} = {79AE251E-E5DE-42C7-9939-EDBE6F67A0A3}
+		{FC6554B0-769B-46DF-AD58-E90574CF0D7D} = {FC6554B0-769B-46DF-AD58-E90574CF0D7D}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{9A5E7F44-4F28-4A1E-8A75-30ABACCC8A0C}"
+	ProjectSection(SolutionItems) = preProject
+		Resgiter.ini = Resgiter.ini
 	EndProjectSection
 EndProject
 Global
@@ -40,6 +52,10 @@ Global
 		{82B63E30-D04B-4A3F-95CF-E9F43EC7E5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82B63E30-D04B-4A3F-95CF-E9F43EC7E5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82B63E30-D04B-4A3F-95CF-E9F43EC7E5BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B7A146C-6323-4044-9FE9-86B785F757C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7A146C-6323-4044-9FE9-86B785F757C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7A146C-6323-4044-9FE9-86B785F757C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7A146C-6323-4044-9FE9-86B785F757C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
