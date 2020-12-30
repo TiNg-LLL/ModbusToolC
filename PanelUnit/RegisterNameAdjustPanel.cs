@@ -24,11 +24,10 @@ namespace PanelUnit
             this.ColumnStyles.Add(new ColumnStyle());
             this.ColumnStyles.Add(new ColumnStyle());
             this.ColumnStyles.Add(new ColumnStyle());
-            this.AutoSize = true;
-            this.Dock = DockStyle.Fill;  //铺满
-            //this.Size = new Size(390, 35);
+            //this.AutoSize = true;
+            //this.Dock = DockStyle.Fill;  //铺满
+            this.Size = new Size(260, 30);
             //this.BackColor = Color.DarkGray;  //背景颜色
-
             //
             //添加成员
             //

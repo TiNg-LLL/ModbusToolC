@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Func, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Func\bin\Debug\Func.dll</HintPath>
+    </Reference>
     <Reference Include="PanelCollection">
       <HintPath>..\PanelCollection\bin\Debug\PanelCollection.dll</HintPath>
     </Reference>

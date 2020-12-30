@@ -1,7 +1,7 @@
 ﻿
 namespace WindowUnit
 {
-    partial class WindowRegisterAdjust
+    partial class RegisterAdjustWindow
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -41,10 +41,10 @@ namespace WindowUnit
             // 
             this.panel1.AutoSize = true;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(5, 25);
+            this.panel1.Location = new System.Drawing.Point(5, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 186);
+            this.panel1.Size = new System.Drawing.Size(274, 181);
             this.panel1.TabIndex = 0;
             // 
             // RegisterNamelabel
@@ -52,11 +52,11 @@ namespace WindowUnit
             this.RegisterNamelabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterNamelabel.AutoSize = true;
-            this.RegisterNamelabel.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.RegisterNamelabel.Location = new System.Drawing.Point(32, 4);
+            this.RegisterNamelabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.RegisterNamelabel.Location = new System.Drawing.Point(25, 5);
             this.RegisterNamelabel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.RegisterNamelabel.Name = "RegisterNamelabel";
-            this.RegisterNamelabel.Size = new System.Drawing.Size(69, 19);
+            this.RegisterNamelabel.Size = new System.Drawing.Size(74, 22);
             this.RegisterNamelabel.TabIndex = 1;
             this.RegisterNamelabel.Text = "参数名称";
             this.RegisterNamelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,11 +66,11 @@ namespace WindowUnit
             this.RegisterWritelabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterWritelabel.AutoSize = true;
-            this.RegisterWritelabel.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.RegisterWritelabel.Location = new System.Drawing.Point(120, 4);
+            this.RegisterWritelabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.RegisterWritelabel.Location = new System.Drawing.Point(118, 5);
             this.RegisterWritelabel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.RegisterWritelabel.Name = "RegisterWritelabel";
-            this.RegisterWritelabel.Size = new System.Drawing.Size(69, 19);
+            this.RegisterWritelabel.Size = new System.Drawing.Size(74, 22);
             this.RegisterWritelabel.TabIndex = 2;
             this.RegisterWritelabel.Text = "写入地址";
             this.RegisterWritelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,11 +80,11 @@ namespace WindowUnit
             this.RegisterReadlabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterReadlabel.AutoSize = true;
-            this.RegisterReadlabel.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.RegisterReadlabel.Location = new System.Drawing.Point(199, 4);
+            this.RegisterReadlabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.RegisterReadlabel.Location = new System.Drawing.Point(197, 5);
             this.RegisterReadlabel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.RegisterReadlabel.Name = "RegisterReadlabel";
-            this.RegisterReadlabel.Size = new System.Drawing.Size(69, 19);
+            this.RegisterReadlabel.Size = new System.Drawing.Size(74, 22);
             this.RegisterReadlabel.TabIndex = 3;
             this.RegisterReadlabel.Text = "读取地址";
             this.RegisterReadlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,7 +95,7 @@ namespace WindowUnit
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(36, 218);
+            this.button1.Location = new System.Drawing.Point(36, 220);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 32);
             this.button1.TabIndex = 4;
@@ -108,14 +108,15 @@ namespace WindowUnit
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(158, 218);
+            this.button2.Location = new System.Drawing.Point(158, 220);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 32);
             this.button2.TabIndex = 5;
             this.button2.Text = "取消";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // WindowCommon
+            // RegisterAdjustWindow
             // 
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(284, 261);
@@ -128,8 +129,8 @@ namespace WindowUnit
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "WindowCommon";
-            this.Padding = new System.Windows.Forms.Padding(5, 25, 5, 50);
+            this.Name = "RegisterAdjustWindow";
+            this.Padding = new System.Windows.Forms.Padding(5, 30, 5, 50);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.ResumeLayout(false);

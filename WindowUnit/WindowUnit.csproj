@@ -56,13 +56,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WindowRegisterAdjust.cs">
+    <Compile Include="RegisterAdjustWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowRegisterAdjust.Designer.cs">
-      <DependentUpon>WindowRegisterAdjust.cs</DependentUpon>
+    <Compile Include="RegisterAdjustWindow.Designer.cs">
+      <DependentUpon>RegisterAdjustWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SizeAdjustWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SizeAdjustWindow.Designer.cs">
+      <DependentUpon>SizeAdjustWindow.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,8 +78,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WindowRegisterAdjust.resx">
-      <DependentUpon>WindowRegisterAdjust.cs</DependentUpon>
+    <EmbeddedResource Include="RegisterAdjustWindow.resx">
+      <DependentUpon>RegisterAdjustWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SizeAdjustWindow.resx">
+      <DependentUpon>SizeAdjustWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

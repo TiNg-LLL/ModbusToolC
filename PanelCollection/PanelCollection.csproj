@@ -42,7 +42,7 @@
     <Compile Include="RegisterCollection.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RegisterNameAdjustCollection.cs">
+    <Compile Include="RegisterAdjustCollection.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
