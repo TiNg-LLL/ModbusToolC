@@ -21,7 +21,7 @@ namespace WindowUnit
         {
             IniFunc.writeString("FirstWindowSize", "width", this.textBox1.Text, filename);
             IniFunc.writeString("FirstWindowSize", "Height", this.textBox2.Text, filename);
-            if (MessageBox.Show("需要重启软件，是否现在重启", "修改成功", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("需要重启软件，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Application.Restart();
             }
