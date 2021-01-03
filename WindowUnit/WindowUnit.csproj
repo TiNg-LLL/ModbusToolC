@@ -40,11 +40,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Func\bin\Debug\Func.dll</HintPath>
     </Reference>
+    <Reference Include="HZH_Controls">
+      <HintPath>..\..\NetWinformControl\HZH_Controls\HZH_Controls\bin\Debug\HZH_Controls.dll</HintPath>
+    </Reference>
     <Reference Include="PanelCollection">
       <HintPath>..\PanelCollection\bin\Debug\PanelCollection.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComDateSetWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComDateSetWindow.Designer.cs">
+      <DependentUpon>ComDateSetWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterAdjustWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +79,9 @@
     <Compile Include="SizeAdjustWindow.Designer.cs">
       <DependentUpon>SizeAdjustWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ComDateSetWindow.resx">
+      <DependentUpon>ComDateSetWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -1,9 +1,9 @@
-﻿using PanelCollection;
+﻿using Func;
+using PanelCollection;
+using System;
 using System.IO;
 using System.Windows.Forms;
 using WindowUnit;
-using Func;
-using System;
 
 namespace FirstWindow
 {
@@ -18,23 +18,31 @@ namespace FirstWindow
         //窗口大小调整副窗口
         private SizeAdjustWindow sizeAdjustWindow = new SizeAdjustWindow();
 
+        //Com参数设置副窗口
+        private ComDateSetWindow comDateSetWindow = new ComDateSetWindow();
+
         //初始化INI文件地址
         private static string filename = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
+
         private static string filenameSystemDate = Directory.GetCurrentDirectory() + @"\SystemDate.ini";
 
-
         //获取窗口大小参数
-        public static int width = int.Parse(IniFunc.getString("FirstWindowSize", "width", "800", filenameSystemDate));
+        public static int width = int.Parse(IniFunc.getString("FirstWindowSize", "Width", "800", filenameSystemDate));
+
         public static int height = int.Parse(IniFunc.getString("FirstWindowSize", "Height", "400", filenameSystemDate));
+
+        //COM端口功能
+        COMFunc comFunc = new COMFunc();
 
         public FirstWindow()
         {
             InitializeComponent();
             //添加resgisterCollection
-            this.ClientSize = new System.Drawing.Size(width,height);
+            this.ClientSize = new System.Drawing.Size(width, height);
             this.groupBox1.Controls.Add(resgisterCollection = new RegisterCollection());
         }
-        //参数信息修改显示窗口按钮
+
+        //参数信息修改显示副窗口按钮
         private void 参数信息修改ToolStripMenuItem_Click_1(object sender, System.EventArgs e)
         {
             //参数信息列表刷新
@@ -43,6 +51,7 @@ namespace FirstWindow
             //窗口显示
             registerAdjustWindow.ShowDialog();
         }
+
         //参数数量修改textbox
         private void toolStripTextBox1_KeyUp(object sender, KeyEventArgs e)
         {
@@ -53,16 +62,32 @@ namespace FirstWindow
                 Console.WriteLine("参数数量成功修改为" + 参数数量TextBox.Text);
             }
         }
+
         //参数数量修改鼠标放置动作
         private void 参数数量修改ToolStripMenuItem_DropDownOpening(object sender, System.EventArgs e)
         {
             //给toolStripTextBox1赋值
             this.参数数量TextBox.Text = RegisterCollection.registerAmount.ToString();
         }
-
+        //窗口大小设置副窗口按钮
         private void 窗口大小设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             sizeAdjustWindow.ShowDialog();
+        }
+        //端口设置副窗口按钮
+        private void 端口参数设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            comDateSetWindow.ShowDialog();
+        }
+        //端口连接按钮
+        private void 端口连接ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            comFunc.COMConnect();
+        }
+        //端口断开按钮
+        private void 端口断开ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            comFunc.COMClose();
         }
     }
 }
