@@ -30,6 +30,7 @@ namespace WindowUnit
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.readTimeoutLabel = new System.Windows.Forms.Label();
             this.parityComboBox = new System.Windows.Forms.ComboBox();
             this.comLabel = new System.Windows.Forms.Label();
             this.baudrateLabel = new System.Windows.Forms.Label();
@@ -41,11 +42,10 @@ namespace WindowUnit
             this.baudRateBox = new System.Windows.Forms.ComboBox();
             this.startDateTextBox = new System.Windows.Forms.TextBox();
             this.slaveIDTextBox = new System.Windows.Forms.TextBox();
-            this.ucBtnExt1 = new HZH_Controls.Controls.UCBtnExt();
-            this.ucBtnExt2 = new HZH_Controls.Controls.UCBtnExt();
-            this.readTimeoutLabel = new System.Windows.Forms.Label();
             this.readTimeoutTextBox = new System.Windows.Forms.TextBox();
             this.readTimeOutcomboBox = new System.Windows.Forms.ComboBox();
+            this.ucBtnExt1 = new HZH_Controls.Controls.UCBtnExt();
+            this.ucBtnExt2 = new HZH_Controls.Controls.UCBtnExt();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,9 +86,21 @@ namespace WindowUnit
             this.tableLayoutPanel1.Size = new System.Drawing.Size(244, 306);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // readTimeoutLabel
+            // 
+            this.readTimeoutLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.readTimeoutLabel.AutoSize = true;
+            this.readTimeoutLabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.readTimeoutLabel.Location = new System.Drawing.Point(19, 270);
+            this.readTimeoutLabel.Name = "readTimeoutLabel";
+            this.readTimeoutLabel.Size = new System.Drawing.Size(110, 22);
+            this.readTimeoutLabel.TabIndex = 12;
+            this.readTimeoutLabel.Text = "超时时间(ms)";
+            // 
             // parityComboBox
             // 
             this.parityComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.parityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.parityComboBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.parityComboBox.FormattingEnabled = true;
             this.parityComboBox.Location = new System.Drawing.Point(137, 183);
@@ -202,6 +214,26 @@ namespace WindowUnit
             this.slaveIDTextBox.Size = new System.Drawing.Size(60, 26);
             this.slaveIDTextBox.TabIndex = 10;
             // 
+            // readTimeoutTextBox
+            // 
+            this.readTimeoutTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.readTimeoutTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.readTimeoutTextBox.Location = new System.Drawing.Point(137, 268);
+            this.readTimeoutTextBox.Name = "readTimeoutTextBox";
+            this.readTimeoutTextBox.Size = new System.Drawing.Size(60, 26);
+            this.readTimeoutTextBox.TabIndex = 13;
+            // 
+            // readTimeOutcomboBox
+            // 
+            this.readTimeOutcomboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.readTimeOutcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.readTimeOutcomboBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.readTimeOutcomboBox.FormattingEnabled = true;
+            this.readTimeOutcomboBox.Location = new System.Drawing.Point(137, 141);
+            this.readTimeOutcomboBox.Name = "readTimeOutcomboBox";
+            this.readTimeOutcomboBox.Size = new System.Drawing.Size(60, 24);
+            this.readTimeOutcomboBox.TabIndex = 14;
+            // 
             // ucBtnExt1
             // 
             this.ucBtnExt1.BackColor = System.Drawing.Color.Transparent;
@@ -259,36 +291,6 @@ namespace WindowUnit
             this.ucBtnExt2.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtnExt2.TipsText = "";
             this.ucBtnExt2.BtnClick += new System.EventHandler(this.ucBtnExt2_BtnClick);
-            // 
-            // readTimeoutLabel
-            // 
-            this.readTimeoutLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.readTimeoutLabel.AutoSize = true;
-            this.readTimeoutLabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.readTimeoutLabel.Location = new System.Drawing.Point(55, 270);
-            this.readTimeoutLabel.Name = "readTimeoutLabel";
-            this.readTimeoutLabel.Size = new System.Drawing.Size(74, 22);
-            this.readTimeoutLabel.TabIndex = 12;
-            this.readTimeoutLabel.Text = "超时时间";
-            // 
-            // readTimeoutTextBox
-            // 
-            this.readTimeoutTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.readTimeoutTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.readTimeoutTextBox.Location = new System.Drawing.Point(137, 268);
-            this.readTimeoutTextBox.Name = "readTimeoutTextBox";
-            this.readTimeoutTextBox.Size = new System.Drawing.Size(60, 26);
-            this.readTimeoutTextBox.TabIndex = 13;
-            // 
-            // readTimeOutcomboBox
-            // 
-            this.readTimeOutcomboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.readTimeOutcomboBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.readTimeOutcomboBox.FormattingEnabled = true;
-            this.readTimeOutcomboBox.Location = new System.Drawing.Point(137, 141);
-            this.readTimeOutcomboBox.Name = "readTimeOutcomboBox";
-            this.readTimeOutcomboBox.Size = new System.Drawing.Size(60, 24);
-            this.readTimeOutcomboBox.TabIndex = 14;
             // 
             // ComDateSetWindow
             // 

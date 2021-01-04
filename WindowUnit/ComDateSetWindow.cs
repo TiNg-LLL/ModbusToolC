@@ -89,7 +89,17 @@ namespace WindowUnit
             IniFunc.writeString("COMDate", "SlaveID", this.slaveIDTextBox.Text, filenameSystemDate);
             //超时时间写入
             IniFunc.writeString("COMDate", "ReadTimeout", this.readTimeoutTextBox.Text, filenameSystemDate);
-            this.Close();
+            if (COMFunc.serialPort.IsOpen)
+            {
+                if (MessageBox.Show("端口现已是连接状态，需要断开后重新连接，修改才能生效", "修改已保存", MessageBoxButtons.OK) == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 

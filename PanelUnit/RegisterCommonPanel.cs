@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Func;
+using Modbus.Device;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,9 +8,8 @@ namespace PanelUnit
 {
     public class RegisterCommonPanel : TableLayoutPanel
     {
-        //成员
+        //交互成员
         private Label RegisterName = new Label();
-
         private Label RegisterSign = new Label();
         private Label RegisterNowValue = new Label();
         private TextBox RegisterValueText = new TextBox();
@@ -16,6 +17,9 @@ namespace PanelUnit
 
         //标识特征
         private int ID;
+
+        //ModbusFunc成员
+        IModbusSerialMaster master = ModbusSerialMaster.CreateRtu(COMFunc.serialPort);
 
         //无参构造方法
         public RegisterCommonPanel()
@@ -98,12 +102,18 @@ namespace PanelUnit
             this.RegisterButton.Size = new Size(75, 25);
             this.RegisterButton.Click += new EventHandler(this.ResgisterButton_Click);
         }
-
+        //按钮功能
         private void ResgisterButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(RegisterValueText.Text);
-            RegisterNowValue.Text = RegisterValueText.Text;
-            RegisterName.Text = RegisterValueText.Text;
+            //byte[] data = new byte[] { 0x01, 0x06, 0x00, 0x00, 0x00, 0x0a, 0x09, 0xcd};
+            ////01 06 00 00 00 0a 09 cd
+            //COMFunc.serialPort.Write(data,0,8);
+            //RegisterValueText.Text = COMFunc.serialPort.Read(data, 5, 2).ToString();
+
+            ushort startAddress = (ushort)Convert.ToInt32("1", 16);
+            ushort[] data = {ushort.Parse(this.RegisterValueText.Text)};
+
+            master.WriteMultipleRegisters(1, startAddress, data);
         }
 
         public void SetID(int ID)

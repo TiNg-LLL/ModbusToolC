@@ -1,6 +1,7 @@
 ﻿using Func;
 using PanelCollection;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using WindowUnit;
@@ -83,11 +84,21 @@ namespace FirstWindow
         private void 端口连接ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             comFunc.COMConnect();
+            this.端口连接ToolStripMenuItem.Enabled = false;
+            this.端口连接ToolStripMenuItem.Text = "已连接";
+            this.statusStrip1.BackColor = SystemColors.HotTrack;
+            this.toolStripStatusLabel1.Text = "COM端口已连接";
+            this.toolStripStatusLabel1.ForeColor = Color.FromArgb(255, 255, 255);
         }
         //端口断开按钮
         private void 端口断开ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             comFunc.COMClose();
+            this.端口连接ToolStripMenuItem.Enabled = true;
+            this.端口连接ToolStripMenuItem.Text = "连接";
+            this.statusStrip1.BackColor = SystemColors.ScrollBar;
+            this.toolStripStatusLabel1.Text = "COM端口未连接";
+            this.toolStripStatusLabel1.ForeColor = Color.FromArgb(0, 0, 0);
         }
     }
 }
