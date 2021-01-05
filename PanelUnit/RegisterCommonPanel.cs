@@ -1,5 +1,4 @@
 ﻿using Func;
-using Modbus.Device;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -18,8 +17,12 @@ namespace PanelUnit
         //标识特征
         private int ID;
 
+        //modbus参数成员
+        int registerWriteAddress;
+        int registerReadAddress;
+
         //ModbusFunc成员
-        IModbusSerialMaster master = ModbusSerialMaster.CreateRtu(COMFunc.serialPort);
+        ModbusFunc modbusFunc = new ModbusFunc();
 
         //无参构造方法
         public RegisterCommonPanel()
@@ -101,6 +104,9 @@ namespace PanelUnit
             this.RegisterButton.Cursor = Cursors.Hand;
             this.RegisterButton.Size = new Size(75, 25);
             this.RegisterButton.Click += new EventHandler(this.ResgisterButton_Click);
+
+            //从非 UI 线程更新 UI 线程  线程不安全
+            CheckForIllegalCrossThreadCalls = false;
         }
         //按钮功能
         private void ResgisterButton_Click(object sender, EventArgs e)
@@ -110,12 +116,20 @@ namespace PanelUnit
             //COMFunc.serialPort.Write(data,0,8);
             //RegisterValueText.Text = COMFunc.serialPort.Read(data, 5, 2).ToString();
 
-            ushort startAddress = (ushort)Convert.ToInt32("1", 16);
-            ushort[] data = {ushort.Parse(this.RegisterValueText.Text)};
+            //ushort startAddress = (ushort)Convert.ToInt32("1", 16);
+            //ushort[] data = { ushort.Parse(this.RegisterValueText.Text) };
+            //master.WriteMultipleRegisters(1, startAddress, data);
 
-            master.WriteMultipleRegisters(1, startAddress, data);
+            if (!(this.RegisterValueText.Text.Length == 0))
+            {
+                Console.WriteLine(registerWriteAddress);
+                Console.WriteLine(RegisterValueText.Text);
+                modbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
+            }
         }
-
+        //
+        //对象ID set get
+        //
         public void SetID(int ID)
         {
             this.ID = ID;
@@ -125,15 +139,49 @@ namespace PanelUnit
         {
             return ID;
         }
-
-        public void SetResgisterName(String name)
+        //
+        //对象名称 set get
+        //
+        public void SetRegisterName(String name)
         {
             this.RegisterName.Text = name;
         }
 
-        public String GetResgisterName()
+        public String GetRegisterName()
         {
             return RegisterName.Text;
+        }
+        //
+        //寄存器写入地址  set get
+        //
+        public void SetRegisterWriteAddress(int RegisterWriteAddress)
+        {
+            this.registerWriteAddress = RegisterWriteAddress;
+        }
+
+        public int GetRegisterWriteAddress()
+        {
+            return registerWriteAddress;
+        }
+        //
+        //寄存器读取地址  set get
+        //
+        public void SetRegisterReadAddress(int RegisterReadAddress)
+        {
+            this.registerReadAddress = RegisterReadAddress;
+        }
+
+        public int GetRegisterReadAddress()
+        {
+            return registerReadAddress;
+        }
+
+        //
+        //寄存器读取参数label get
+        //
+        public Label GetRegisterNowValue()
+        {
+            return RegisterNowValue;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Func;
 using PanelUnit;
+using ReadThreadSpace;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -25,10 +26,15 @@ namespace PanelCollection
             for (int i = 1; i <= registerAmount; i++)
             {
                 registerList.Add(new RegisterCommonPanel());
+                //设置成员ID
                 registerList[i - 1].SetID(i);
-                registerList[i - 1].SetResgisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
+                //设置成员名称
+                registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
+                //设置成员写入地址
+                registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "读取错误", filename)));
+                //设置成员读取地址
+                registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "读取错误", filename)));
             }
-
             //
             //Panel初始化
             //
@@ -43,8 +49,14 @@ namespace PanelCollection
             //this.BackColor = Color.DarkRed;  //背景颜色
             this.CellBorderStyle = TableLayoutPanelCellBorderStyle.InsetDouble;   //边框样式
             this.Dock = DockStyle.Fill;  //铺满
+            //
+            //new出读取线程
+            //
+            new ReadThread();
         }
-        //内容刷新
+        //
+        //内容刷新方法
+        //
         public void Flash()
         {
             registerList.Clear();
@@ -55,8 +67,14 @@ namespace PanelCollection
             for (int i = 1; i <= registerAmount; i++)
             {
                 registerList.Add(new RegisterCommonPanel());
+                //设置成员ID
                 registerList[i - 1].SetID(i);
-                registerList[i - 1].SetResgisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
+                //设置成员名称
+                registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
+                //设置成员写入地址
+                registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "读取错误", filename)));
+                //设置成员读取地址
+                registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "读取错误", filename)));
             }
 
             this.ColumnCount = 1;  //列数

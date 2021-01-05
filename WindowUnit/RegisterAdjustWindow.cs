@@ -27,11 +27,15 @@ namespace WindowUnit
             for (int i = 1; i <= RegisterCollection.registerAmount; i++)
             {
                 IniFunc.writeString("RegisterName", "RegisterName" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterNameText(), filename);
+                IniFunc.writeString("RegisterWriteAddress", "RegisterWriteAddress" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterWriteAddressText(), filename);
+                IniFunc.writeString("RegisterReadAddress", "RegisterReadAddress" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterReadAddressText(), filename);
             }
-            //显示刷新
+            //内容刷新
             for (int i = 1; i <= RegisterCollection.registerAmount; i++)
             {
-                RegisterCollection.registerList[i - 1].SetResgisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
+                RegisterCollection.registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
+                RegisterCollection.registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "读取错误", filename)));
+                RegisterCollection.registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "读取错误", filename)));
             }
             //设置窗口关闭
             this.Close();

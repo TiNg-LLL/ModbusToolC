@@ -44,8 +44,8 @@ namespace WindowUnit
             this.slaveIDTextBox = new System.Windows.Forms.TextBox();
             this.readTimeoutTextBox = new System.Windows.Forms.TextBox();
             this.readTimeOutcomboBox = new System.Windows.Forms.ComboBox();
-            this.ucBtnExt1 = new HZH_Controls.Controls.UCBtnExt();
-            this.ucBtnExt2 = new HZH_Controls.Controls.UCBtnExt();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -234,71 +234,35 @@ namespace WindowUnit
             this.readTimeOutcomboBox.Size = new System.Drawing.Size(60, 24);
             this.readTimeOutcomboBox.TabIndex = 14;
             // 
-            // ucBtnExt1
+            // button1
             // 
-            this.ucBtnExt1.BackColor = System.Drawing.Color.Transparent;
-            this.ucBtnExt1.BtnBackColor = System.Drawing.Color.Transparent;
-            this.ucBtnExt1.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ucBtnExt1.BtnForeColor = System.Drawing.Color.White;
-            this.ucBtnExt1.BtnText = "应用";
-            this.ucBtnExt1.ConerRadius = 10;
-            this.ucBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ucBtnExt1.EnabledMouseEffect = true;
-            this.ucBtnExt1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.ucBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucBtnExt1.ForeColor = System.Drawing.Color.White;
-            this.ucBtnExt1.IsRadius = true;
-            this.ucBtnExt1.IsShowRect = false;
-            this.ucBtnExt1.IsShowTips = false;
-            this.ucBtnExt1.Location = new System.Drawing.Point(30, 315);
-            this.ucBtnExt1.Margin = new System.Windows.Forms.Padding(0);
-            this.ucBtnExt1.Name = "ucBtnExt1";
-            this.ucBtnExt1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.ucBtnExt1.RectColor = System.Drawing.Color.Gainsboro;
-            this.ucBtnExt1.RectWidth = 1;
-            this.ucBtnExt1.Size = new System.Drawing.Size(80, 30);
-            this.ucBtnExt1.TabIndex = 5;
-            this.ucBtnExt1.TabStop = false;
-            this.ucBtnExt1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-            this.ucBtnExt1.TipsText = "";
-            this.ucBtnExt1.BtnClick += new System.EventHandler(this.ucBtnExt1_BtnClick);
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(30, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 30);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "应用";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ucBtnExt2
+            // button2
             // 
-            this.ucBtnExt2.BackColor = System.Drawing.Color.Transparent;
-            this.ucBtnExt2.BtnBackColor = System.Drawing.Color.Transparent;
-            this.ucBtnExt2.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ucBtnExt2.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.ucBtnExt2.BtnText = "取消";
-            this.ucBtnExt2.ConerRadius = 10;
-            this.ucBtnExt2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ucBtnExt2.EnabledMouseEffect = true;
-            this.ucBtnExt2.FillColor = System.Drawing.Color.White;
-            this.ucBtnExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucBtnExt2.ForeColor = System.Drawing.Color.White;
-            this.ucBtnExt2.IsRadius = true;
-            this.ucBtnExt2.IsShowRect = true;
-            this.ucBtnExt2.IsShowTips = false;
-            this.ucBtnExt2.Location = new System.Drawing.Point(135, 315);
-            this.ucBtnExt2.Margin = new System.Windows.Forms.Padding(0);
-            this.ucBtnExt2.Name = "ucBtnExt2";
-            this.ucBtnExt2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.ucBtnExt2.RectColor = System.Drawing.Color.Gainsboro;
-            this.ucBtnExt2.RectWidth = 1;
-            this.ucBtnExt2.Size = new System.Drawing.Size(80, 30);
-            this.ucBtnExt2.TabIndex = 6;
-            this.ucBtnExt2.TabStop = false;
-            this.ucBtnExt2.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-            this.ucBtnExt2.TipsText = "";
-            this.ucBtnExt2.BtnClick += new System.EventHandler(this.ucBtnExt2_BtnClick);
+            this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Location = new System.Drawing.Point(135, 315);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 30);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "取消";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ComDateSetWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(244, 361);
-            this.Controls.Add(this.ucBtnExt2);
-            this.Controls.Add(this.ucBtnExt1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -327,10 +291,10 @@ namespace WindowUnit
         private System.Windows.Forms.TextBox startDateTextBox;
         private System.Windows.Forms.TextBox slaveIDTextBox;
         private System.Windows.Forms.ComboBox parityComboBox;
-        private HZH_Controls.Controls.UCBtnExt ucBtnExt1;
-        private HZH_Controls.Controls.UCBtnExt ucBtnExt2;
         private System.Windows.Forms.Label readTimeoutLabel;
         private System.Windows.Forms.TextBox readTimeoutTextBox;
         private System.Windows.Forms.ComboBox readTimeOutcomboBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

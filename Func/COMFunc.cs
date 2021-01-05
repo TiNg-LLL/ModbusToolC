@@ -11,7 +11,7 @@ namespace Func
         private String Parity;
         private int StartDate;
         private String StopDate;
-        private String SlaveID;
+        public static byte SlaveID;
 
         public static SerialPort serialPort = new SerialPort();
 
@@ -29,7 +29,7 @@ namespace Func
                     Parity = IniFunc.getString("COMDate", "Parity", "", filenameSystemDate);
                     StartDate = int.Parse(IniFunc.getString("COMDate", "StartDate", "", filenameSystemDate));
                     StopDate = IniFunc.getString("COMDate", "StopDate", "", filenameSystemDate);
-                    SlaveID = IniFunc.getString("COMDate", "SlaveID", "", filenameSystemDate);
+                    SlaveID = byte.Parse(IniFunc.getString("COMDate", "SlaveID", "", filenameSystemDate));
 
                     serialPort.PortName = COM;
                     serialPort.BaudRate = Baudrate;

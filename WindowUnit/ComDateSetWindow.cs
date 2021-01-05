@@ -64,16 +64,9 @@ namespace WindowUnit
             }
         }
         //
-        //取消按钮
-        //
-        private void ucBtnExt2_BtnClick(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        //
         //应用按钮
         //
-        private void ucBtnExt1_BtnClick(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             //端口写入
             IniFunc.writeString("COMDate", "COM", this.comboBox.Text, filenameSystemDate);
@@ -100,6 +93,13 @@ namespace WindowUnit
             {
                 this.Close();
             }
+        }
+        //
+        //取消按钮
+        //
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

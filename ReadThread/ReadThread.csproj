@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79AE251E-E5DE-42C7-9939-EDBE6F67A0A3}</ProjectGuid>
+    <ProjectGuid>{38847910-87CF-4BA0-8442-A69D5A774C7A}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Func</RootNamespace>
-    <AssemblyName>Func</AssemblyName>
+    <RootNamespace>ReadThread</RootNamespace>
+    <AssemblyName>ReadThread</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,13 +39,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="COMFunc.cs" />
-    <Compile Include="IniFunc.cs" />
-    <Compile Include="ModbusFunc.cs" />
+    <Compile Include="ReadThread.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ModbusFunc">
-      <HintPath>..\ModbusFunc\bin\Debug\ModbusFunc.dll</HintPath>
+    <Reference Include="Func">
+      <HintPath>..\Func\bin\Debug\Func.dll</HintPath>
+    </Reference>
+    <Reference Include="PanelCollection">
+      <HintPath>..\PanelCollection\bin\Debug\PanelCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="PanelUnit">
+      <HintPath>..\PanelUnit\bin\Debug\PanelUnit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />

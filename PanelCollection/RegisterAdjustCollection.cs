@@ -56,8 +56,14 @@ namespace PanelCollection
             for (int i = 1; i <= RegisterCollection.registerAmount; i++)
             {
                 resgisterAdjustList.Add(new RegisterNameAdjustPanel());
+                //设置成员ID
                 resgisterAdjustList[i - 1].SetID(i);
+                //设置成员名称
                 resgisterAdjustList[i - 1].SetRegisterNameText(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
+                //设置成员写入地址
+                resgisterAdjustList[i - 1].SetRegisterWriteAddressText(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "读取错误", filename));
+                //设置成员读取地址
+                resgisterAdjustList[i - 1].SetRegisterReadAddressText(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "读取错误", filename));
             }
 
             this.ColumnCount = 1;  //列数

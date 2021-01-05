@@ -40,9 +40,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Func\bin\Debug\Func.dll</HintPath>
     </Reference>
-    <Reference Include="HZH_Controls">
-      <HintPath>..\..\NetWinformControl\HZH_Controls\HZH_Controls\bin\Debug\HZH_Controls.dll</HintPath>
-    </Reference>
     <Reference Include="PanelCollection">
       <HintPath>..\PanelCollection\bin\Debug\PanelCollection.dll</HintPath>
     </Reference>

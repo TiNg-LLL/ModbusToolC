@@ -69,7 +69,9 @@ namespace PanelUnit
             this.RegisterReadAddressText.Font = new Font("宋体", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
             //this.RegisterReadAddressText.BackColor = Color.Green;  //背景颜色
         }
-
+        //
+        //ID set get
+        //
         public void SetID(int ID)
         {
             this.ID = ID;
@@ -79,7 +81,9 @@ namespace PanelUnit
         {
             return ID;
         }
-
+        //
+        //名称 set get
+        //
         public void SetRegisterNameText(String name)
         {
             this.RegisterNameText.Text = name;
@@ -88,6 +92,30 @@ namespace PanelUnit
         public String GetRegisterNameText()
         {
             return RegisterNameText.Text;
+        }
+        //
+        //寄存器写入地址 set get
+        //
+        public void SetRegisterWriteAddressText(String RegisterWriteAddress)
+        {
+            this.RegisterWriteAddressText.Text = RegisterWriteAddress;
+        }
+
+        public String GetRegisterWriteAddressText()
+        {
+            return RegisterWriteAddressText.Text;
+        }
+        //
+        //寄存器读取地址 set get
+        //
+        public void SetRegisterReadAddressText(String RegisterReadAddress)
+        {
+            this.RegisterReadAddressText.Text = RegisterReadAddress;
+        }
+
+        public String GetRegisterReadAddressText()
+        {
+            return RegisterReadAddressText.Text;
         }
     }
 }
