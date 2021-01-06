@@ -21,14 +21,14 @@ namespace Func
             if (COMFunc.serialPort.IsOpen)
             {
                 ushort startAddress = (ushort)RegisterWriteAddress;
-                ushort[] datas = { ushort.Parse(data) };
+                ushort datas = ushort.Parse(data);
                 try
                 {
-                    modbus.WriteMultipleRegisters(COMFunc.SlaveID, startAddress, datas);
+                    modbus.WriteSingleRegister(COMFunc.SlaveID, startAddress, datas);
                 }
                 catch (System.Exception)
                 {
-                    throw;
+                    //throw;
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace Func
                 }
                 catch (System.Exception)
                 {
-                    throw;
+                    //throw;
                 }
             }
             return "";

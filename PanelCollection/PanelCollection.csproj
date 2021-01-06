@@ -53,9 +53,6 @@
     <Reference Include="PanelUnit">
       <HintPath>..\PanelUnit\bin\Debug\PanelUnit.dll</HintPath>
     </Reference>
-    <Reference Include="ReadThread">
-      <HintPath>..\ReadThread\bin\Debug\ReadThread.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />

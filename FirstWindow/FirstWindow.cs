@@ -1,5 +1,6 @@
 ﻿using Func;
 using PanelCollection;
+using ReadThreadSpace;
 using System;
 using System.Drawing;
 using System.IO;
@@ -41,6 +42,11 @@ namespace FirstWindow
             //添加resgisterCollection
             this.ClientSize = new System.Drawing.Size(width, height);
             this.groupBox1.Controls.Add(resgisterCollection = new RegisterCollection());
+            //
+            //new出线程
+            //
+            ReadModbusThread  readModbusThread = new ReadModbusThread();
+            LabelFlashThread labelFlashThread = new LabelFlashThread();
         }
 
         //参数信息修改显示副窗口按钮

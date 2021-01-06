@@ -1,6 +1,5 @@
 ﻿using Func;
 using PanelUnit;
-using ReadThreadSpace;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -11,7 +10,8 @@ namespace PanelCollection
     {
         //创建Register集合
         public static List<RegisterCommonPanel> registerList = new List<RegisterCommonPanel>();
-
+        //创建Register读取结果集合
+        public static List<string> registerValueList = new List<string>();
         //寄存器功能模块数量
         public static int registerAmount;
 
@@ -26,14 +26,15 @@ namespace PanelCollection
             for (int i = 1; i <= registerAmount; i++)
             {
                 registerList.Add(new RegisterCommonPanel());
+                registerValueList.Add("");
                 //设置成员ID
                 registerList[i - 1].SetID(i);
                 //设置成员名称
                 registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
                 //设置成员写入地址
-                registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "读取错误", filename)));
+                registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "0", filename)));
                 //设置成员读取地址
-                registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "读取错误", filename)));
+                registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "0", filename)));
             }
             //
             //Panel初始化
@@ -49,10 +50,6 @@ namespace PanelCollection
             //this.BackColor = Color.DarkRed;  //背景颜色
             this.CellBorderStyle = TableLayoutPanelCellBorderStyle.InsetDouble;   //边框样式
             this.Dock = DockStyle.Fill;  //铺满
-            //
-            //new出读取线程
-            //
-            new ReadThread();
         }
         //
         //内容刷新方法
@@ -60,6 +57,7 @@ namespace PanelCollection
         public void Flash()
         {
             registerList.Clear();
+            registerValueList.Clear();
             this.Controls.Clear();
             this.ColumnStyles.Clear();
             registerAmount = int.Parse(IniFunc.getString("RegisterAmount", "RegisterAmount", "读取错误", filename));
@@ -67,14 +65,15 @@ namespace PanelCollection
             for (int i = 1; i <= registerAmount; i++)
             {
                 registerList.Add(new RegisterCommonPanel());
+                registerValueList.Add("");
                 //设置成员ID
                 registerList[i - 1].SetID(i);
                 //设置成员名称
                 registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
                 //设置成员写入地址
-                registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "读取错误", filename)));
+                registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "0", filename)));
                 //设置成员读取地址
-                registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "读取错误", filename)));
+                registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "0", filename)));
             }
 
             this.ColumnCount = 1;  //列数

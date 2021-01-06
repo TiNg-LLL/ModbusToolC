@@ -39,7 +39,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ReadThread.cs" />
+    <Compile Include="LabelFlashThread.cs" />
+    <Compile Include="ReadModbusThread.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Func">
@@ -49,7 +50,7 @@
       <HintPath>..\PanelCollection\bin\Debug\PanelCollection.dll</HintPath>
     </Reference>
     <Reference Include="PanelUnit">
-      <HintPath>..\PanelUnit\bin\Debug\PanelUnit.dll</HintPath>
+      <HintPath>..\PanelCollection\bin\Debug\PanelUnit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />

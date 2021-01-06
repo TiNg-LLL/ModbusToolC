@@ -40,6 +40,9 @@
     <Reference Include="PanelCollection">
       <HintPath>..\PanelCollection\bin\Debug\PanelCollection.dll</HintPath>
     </Reference>
+    <Reference Include="ReadThread">
+      <HintPath>..\ReadThread\bin\Debug\ReadThread.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

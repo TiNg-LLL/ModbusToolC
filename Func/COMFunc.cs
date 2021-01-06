@@ -59,6 +59,7 @@ namespace Func
                             break;
                     }
                     serialPort.ReadTimeout = int.Parse(IniFunc.getString("COMDate", "ReadTimeout", "", filenameSystemDate));
+                    serialPort.WriteTimeout = serialPort.ReadTimeout;
                     serialPort.Open();
                     Console.WriteLine("端口已连接");
                 }

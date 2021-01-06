@@ -22,7 +22,7 @@ namespace PanelUnit
         int registerReadAddress;
 
         //ModbusFunc成员
-        ModbusFunc modbusFunc = new ModbusFunc();
+        public static ModbusFunc modbusFunc = new ModbusFunc();
 
         //无参构造方法
         public RegisterCommonPanel()
@@ -122,8 +122,8 @@ namespace PanelUnit
 
             if (!(this.RegisterValueText.Text.Length == 0))
             {
-                Console.WriteLine(registerWriteAddress);
-                Console.WriteLine(RegisterValueText.Text);
+                //Console.WriteLine(registerWriteAddress);
+                //Console.WriteLine(RegisterValueText.Text);
                 modbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
             }
         }
