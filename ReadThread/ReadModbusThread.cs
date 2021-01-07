@@ -31,18 +31,20 @@ namespace ReadThreadSpace
         {
             while (true)
             {
+                ThreadFather.met.WaitOne();
                 if (COMFunc.serialPort.IsOpen)
                 {
                     for (int i = 0; i < RegisterCollection.registerAmount; i++)
                     {
-                        RegisterCollection.registerValueList[i] = modbusFunc.MyReadHoldingRegisters(RegisterCollection.registerList[i].GetRegisterReadAddress());
-                        //Thread.Sleep(10);
+                        try
+                        {
+                            RegisterCollection.registerValueList[i] = modbusFunc.MyReadHoldingRegisters(RegisterCollection.registerList[i].GetRegisterReadAddress());
+                        }
+                        catch (Exception)
+                        {
+                        }
                     }
                     Console.WriteLine("----------------------------------------------------一次循环结果----------------------------------------------------");
-                }
-                else
-                {
-                Thread.Sleep(500);
                 }
             }
         }

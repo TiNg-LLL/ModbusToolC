@@ -66,8 +66,16 @@ namespace FirstWindow
             if (e.KeyCode == Keys.Control || e.KeyCode == Keys.Enter)
             {
                 IniFunc.writeString("RegisterAmount", "RegisterAmount", this.参数数量TextBox.Text, filename);
-                resgisterCollection.Flash();
-                Console.WriteLine("参数数量成功修改为" + 参数数量TextBox.Text);
+                if (MessageBox.Show("需要重启软件，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Application.Restart();
+                }
+                else
+                {
+                    //this.Close();
+                    resgisterCollection.Flash();
+
+                }
             }
         }
 

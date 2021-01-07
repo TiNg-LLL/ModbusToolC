@@ -18,15 +18,12 @@ namespace ReadThreadSpace
         List<LabelFlashThread> labelFlashThreadList;
         //线程挂起启动标记 true为挂起
         Boolean b = true;
-        Boolean c = true;   //辅助标记
+        Boolean c = false;   //辅助标记
+
+        public static ManualResetEvent met = new ManualResetEvent(false);
 
         public ThreadFather()
         {
-            // childref = new ThreadStart(RegisterReadThread);
-            childThread = new Thread(new ParameterizedThreadStart(RegisterReadThread));
-            childThread.IsBackground = true;  //设置为后台线程
-            childThread.Name = "管理线程";
-            childThread.Start();
             //
             //new出modbua与label刷新线程
             //
@@ -36,6 +33,12 @@ namespace ReadThreadSpace
             {
                 labelFlashThreadList.Add(new LabelFlashThread(i));
             }
+
+            //管理线程
+            childThread = new Thread(new ParameterizedThreadStart(RegisterReadThread));
+            childThread.IsBackground = true;  //设置为后台线程
+            childThread.Name = "管理线程";
+            childThread.Start();
         }
 
 
@@ -48,30 +51,19 @@ namespace ReadThreadSpace
                 {
                     if (c)
                     {
-                        //管理线程挂起
-                        Thread.Sleep(200);
-                        readModbusThread.getThread().Suspend();
-                        for (int i = 0; i < RegisterCollection.registerAmount; i++)
-                        {
-                            labelFlashThreadList[i].getThread().Suspend();
-                        }
+                        Thread.Sleep(500);
+                        met.Reset();
                         c = false;
-                        Console.WriteLine("线程已挂起");
+                        Console.WriteLine("线程已暂停");
                     }
                 }
                 else
                 {
                     if (c)
                     {
-                        //管理线程恢复
-                        Thread.Sleep(200);
-                        readModbusThread.getThread().Resume();
-                        for (int i = 0; i < RegisterCollection.registerAmount; i++)
-                        {
-                            labelFlashThreadList[i].getThread().Resume();
-                        }
+                        met.Set();
                         c = false;
-                        Console.WriteLine("线程已恢复");
+                        Console.WriteLine("线程已继续");
                     }
                 }
             }
@@ -90,3 +82,8 @@ namespace ReadThreadSpace
         }
     }
 }
+
+
+
+
+

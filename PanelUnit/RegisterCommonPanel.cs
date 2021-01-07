@@ -91,6 +91,7 @@ namespace PanelUnit
             this.RegisterValueText.Size = new Size(70, 10);  //输入框大小
             this.RegisterValueText.Font = new Font("宋体", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
             //this.ResgisterText.BackColor = Color.Green;  //背景颜色
+            this.RegisterValueText.KeyUp += new KeyEventHandler(this.ResgisterText_KeyUp);
             //
             // 按钮
             //
@@ -111,19 +112,16 @@ namespace PanelUnit
         //按钮功能
         private void ResgisterButton_Click(object sender, EventArgs e)
         {
-            //byte[] data = new byte[] { 0x01, 0x06, 0x00, 0x00, 0x00, 0x0a, 0x09, 0xcd};
-            ////01 06 00 00 00 0a 09 cd
-            //COMFunc.serialPort.Write(data,0,8);
-            //RegisterValueText.Text = COMFunc.serialPort.Read(data, 5, 2).ToString();
-
-            //ushort startAddress = (ushort)Convert.ToInt32("1", 16);
-            //ushort[] data = { ushort.Parse(this.RegisterValueText.Text) };
-            //master.WriteMultipleRegisters(1, startAddress, data);
-
             if (!(this.RegisterValueText.Text.Length == 0))
             {
-                //Console.WriteLine(registerWriteAddress);
-                //Console.WriteLine(RegisterValueText.Text);
+                modbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
+            }
+        }
+        //输入值填写框回车动作
+        private void ResgisterText_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Control || e.KeyCode == Keys.Enter)
+            {
                 modbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
             }
         }

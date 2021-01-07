@@ -30,15 +30,15 @@ namespace WindowUnit
                 IniFunc.writeString("RegisterName", "RegisterName" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterNameText(), filename);
                 //名称对象刷新
                 RegisterCollection.registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
-                if (IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "", filename).Equals(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "", filename)) &&
-                    RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterReadAddressText().Equals(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "", filename)))
+                if (IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "", filename).Equals(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "", filename)))
                 {
-                        //原写入读取地址一致时且读取地址没有被修改时  ini文件刷新
-                        IniFunc.writeString("RegisterWriteAddress", "RegisterWriteAddress" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterWriteAddressText(), filename);
-                        IniFunc.writeString("RegisterReadAddress", "RegisterReadAddress" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterWriteAddressText(), filename);
-                        //写入读取地址对象刷新
-                        RegisterCollection.registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "0", filename)));
-                        RegisterCollection.registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "0", filename)));
+                      
+                    //原写入读取地址一致时  ini文件刷新
+                    IniFunc.writeString("RegisterWriteAddress", "RegisterWriteAddress" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterWriteAddressText(), filename);
+                    IniFunc.writeString("RegisterReadAddress", "RegisterReadAddress" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterWriteAddressText(), filename);
+                    //写入读取地址对象刷新
+                    RegisterCollection.registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "0", filename)));
+                    RegisterCollection.registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "0", filename)));
                 }
                 else
                 {

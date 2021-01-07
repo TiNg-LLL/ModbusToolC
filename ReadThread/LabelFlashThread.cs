@@ -29,24 +29,32 @@ namespace ReadThreadSpace
         {
             while (true)
             {
+                ThreadFather.met.WaitOne();
                 if (COMFunc.serialPort.IsOpen)
                 {
-                    //RegisterCollection.registerList[i].GetRegisterNowValue().Invoke(
-                    //    new Action(() => { RegisterCollection.registerList[i].GetRegisterNowValue().Text = 
-                    //        RegisterCollection.registerValueList[i]; }));
-
-                    RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
-                        RegisterCollection.registerValueList[(int)obj];
-
-                    Thread.Sleep(50);
+                    try
+                    {
+                        RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
+    RegisterCollection.registerValueList[(int)obj];
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    Thread.Sleep(20);
                 }
                 else
                 {
                     for (int i = 0; i < RegisterCollection.registerAmount; i++)
                     {
-                        RegisterCollection.registerList[i].GetRegisterNowValue().Text = "未连接";
+                        try
+                        {
+                            RegisterCollection.registerList[i].GetRegisterNowValue().Text = "0000";
+                        }
+                        catch (Exception)
+                        {
+                        }
+                        Thread.Sleep(20);
                     }
-                    Thread.Sleep(500);
                 }
             }
         }
