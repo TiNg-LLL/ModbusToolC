@@ -16,12 +16,12 @@ namespace ReadThreadSpace
         private Thread childThread;
         private ModbusFunc modbusFunc = RegisterCommonPanel.modbusFunc;
 
-
         public ReadModbusThread()
         {
             childref = new ThreadStart(RegisterReadThread);
             childThread = new Thread(childref);
             childThread.IsBackground = true;  //设置为后台线程
+            childThread.Name = "modbus读取线程";
             childThread.Start();
         }
         //
@@ -42,9 +42,14 @@ namespace ReadThreadSpace
                 }
                 else
                 {
-                Thread.Sleep(10);
+                Thread.Sleep(500);
                 }
             }
+        }
+
+        public Thread getThread()
+        {
+            return childThread;
         }
     }
 }

@@ -11,35 +11,34 @@ namespace ReadThreadSpace
 {
     public class LabelFlashThread
     {
-        private ThreadStart childref;
+        //new一个线程
         private Thread childThread;
 
-        public LabelFlashThread()
+        public LabelFlashThread(int i)
         {
-            childref = new ThreadStart(RegisterReadThread);
-            childThread = new Thread(childref);
+            // childref = new ThreadStart(RegisterReadThread);
+            childThread = new Thread(new ParameterizedThreadStart(RegisterReadThread));
             childThread.IsBackground = true;  //设置为后台线程
-            childThread.Start();
+            childThread.Name = "Label刷新线程";
+            childThread.Start(i);
         }
         //
         //寄存器Label刷新线程方法
         //
-        public void RegisterReadThread()
+        public void RegisterReadThread(object obj)
         {
             while (true)
             {
                 if (COMFunc.serialPort.IsOpen)
                 {
-                    for (int i = 0; i < RegisterCollection.registerAmount; i++)
-                    {
-                        //RegisterCollection.registerList[i].GetRegisterNowValue().Invoke(
-                        //    new Action(() => { RegisterCollection.registerList[i].GetRegisterNowValue().Text = 
-                        //        RegisterCollection.registerValueList[i]; }));
+                    //RegisterCollection.registerList[i].GetRegisterNowValue().Invoke(
+                    //    new Action(() => { RegisterCollection.registerList[i].GetRegisterNowValue().Text = 
+                    //        RegisterCollection.registerValueList[i]; }));
 
-                        RegisterCollection.registerList[i].GetRegisterNowValue().Text =
-                            RegisterCollection.registerValueList[i];
-                    }
-                    Thread.Sleep(20);
+                    RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
+                        RegisterCollection.registerValueList[(int)obj];
+
+                    Thread.Sleep(50);
                 }
                 else
                 {
@@ -50,6 +49,11 @@ namespace ReadThreadSpace
                     Thread.Sleep(500);
                 }
             }
+        }
+
+        public Thread getThread()
+        {
+            return childThread;
         }
     }
 }

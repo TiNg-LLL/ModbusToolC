@@ -2,8 +2,10 @@
 using PanelCollection;
 using ReadThreadSpace;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using WindowUnit;
 
@@ -30,11 +32,13 @@ namespace FirstWindow
 
         //获取窗口大小参数
         public static int width = int.Parse(IniFunc.getString("FirstWindowSize", "Width", "800", filenameSystemDate));
-
         public static int height = int.Parse(IniFunc.getString("FirstWindowSize", "Height", "400", filenameSystemDate));
 
         //COM端口功能
         COMFunc comFunc = new COMFunc();
+
+        //线程的爸爸
+        ThreadFather threadFather;
 
         public FirstWindow()
         {
@@ -42,11 +46,8 @@ namespace FirstWindow
             //添加resgisterCollection
             this.ClientSize = new System.Drawing.Size(width, height);
             this.groupBox1.Controls.Add(resgisterCollection = new RegisterCollection());
-            //
-            //new出线程
-            //
-            ReadModbusThread  readModbusThread = new ReadModbusThread();
-            LabelFlashThread labelFlashThread = new LabelFlashThread();
+            threadFather = new ThreadFather();
+            //threadFather.ThreadStop();
         }
 
         //参数信息修改显示副窗口按钮
@@ -95,6 +96,7 @@ namespace FirstWindow
             this.statusStrip1.BackColor = SystemColors.HotTrack;
             this.toolStripStatusLabel1.Text = "COM端口已连接";
             this.toolStripStatusLabel1.ForeColor = Color.FromArgb(255, 255, 255);
+            threadFather.ThreadStart();
         }
         //端口断开按钮
         private void 端口断开ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,6 +107,7 @@ namespace FirstWindow
             this.statusStrip1.BackColor = SystemColors.ScrollBar;
             this.toolStripStatusLabel1.Text = "COM端口未连接";
             this.toolStripStatusLabel1.ForeColor = Color.FromArgb(0, 0, 0);
+            threadFather.ThreadStop();
         }
     }
 }

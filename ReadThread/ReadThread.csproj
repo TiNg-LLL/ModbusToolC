@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="LabelFlashThread.cs" />
     <Compile Include="ReadModbusThread.cs" />
+    <Compile Include="ThreadFather.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Func">
