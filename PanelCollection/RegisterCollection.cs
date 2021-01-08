@@ -28,7 +28,7 @@ namespace PanelCollection
                 registerList.Add(new RegisterCommonPanel());
                 registerValueList.Add("");
                 //设置成员ID
-                registerList[i - 1].SetID(i);
+                registerList[i - 1].ID = i;
                 //设置成员名称
                 registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
                 //设置成员写入地址
@@ -67,7 +67,7 @@ namespace PanelCollection
                 registerList.Add(new RegisterCommonPanel());
                 registerValueList.Add("");
                 //设置成员ID
-                registerList[i - 1].SetID(i);
+                registerList[i - 1].ID = i;
                 //设置成员名称
                 registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
                 //设置成员写入地址

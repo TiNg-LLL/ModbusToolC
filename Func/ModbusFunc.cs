@@ -1,30 +1,24 @@
 ﻿using Modbus.Device;
+using Modbus.Utility;
 
 namespace Func
 {
     public class ModbusFunc
     {
-        IModbusSerialMaster modbus = ModbusSerialMaster.CreateRtu(COMFunc.serialPort);
+        static IModbusSerialMaster modbus = ModbusSerialMaster.CreateRtu(COMFunc.serialPort);
 
-        ushort[] data;
-
-
-        //无参构造方法
-        public ModbusFunc()
-        {
-        }
         //
         //寄存器多个写入方法
         //
-        public void MyWriteMultipleRegisters(int RegisterWriteAddress, string data)
+        public static void MyWriteMultipleRegisters(int RegisterWriteAddress, string data)
         {
             if (COMFunc.serialPort.IsOpen)
             {
                 ushort startAddress = (ushort)RegisterWriteAddress;
-                ushort datas = ushort.Parse(data);
+                // datas = ushort.Parse(data);
                 try
                 {
-                    modbus.WriteSingleRegister(COMFunc.SlaveID, startAddress, datas);
+                    modbus.WriteMultipleRegisters(COMFunc.SlaveID, startAddress, DataTreat.RegisterWriteDataTreat(data));
                 }
                 catch (System.Exception)
                 {
@@ -35,15 +29,14 @@ namespace Func
         //
         //寄存器多个读取方法
         //
-        public string MyReadHoldingRegisters(int RegisterReadAddress)
+        public static string MyReadHoldingRegisters(int RegisterReadAddress)
         {
             if (COMFunc.serialPort.IsOpen)
             {
                 ushort startAddress = (ushort)RegisterReadAddress;
                 try
                 {
-                    data = modbus.ReadHoldingRegisters(COMFunc.SlaveID, startAddress, 1);
-                    return data[0].ToString();
+                    return DataTreat.RegisterReadDataTreat(modbus.ReadHoldingRegisters(COMFunc.SlaveID, startAddress, 2));
                 }
                 catch (System.Exception)
                 {

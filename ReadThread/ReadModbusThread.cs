@@ -14,7 +14,7 @@ namespace ReadThreadSpace
     {
         private ThreadStart childref;
         private Thread childThread;
-        private ModbusFunc modbusFunc = RegisterCommonPanel.modbusFunc;
+        //private ModbusFunc modbusFunc = RegisterCommonPanel.modbusFunc;
 
         public ReadModbusThread()
         {
@@ -38,7 +38,7 @@ namespace ReadThreadSpace
                     {
                         try
                         {
-                            RegisterCollection.registerValueList[i] = modbusFunc.MyReadHoldingRegisters(RegisterCollection.registerList[i].GetRegisterReadAddress());
+                            RegisterCollection.registerValueList[i] = ModbusFunc.MyReadHoldingRegisters(RegisterCollection.registerList[i].GetRegisterReadAddress());
                             Thread.Sleep(5);
                         }
                         catch (Exception)

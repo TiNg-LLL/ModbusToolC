@@ -101,13 +101,23 @@ namespace FirstWindow
         //端口连接按钮
         private void 端口连接ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            comFunc.COMConnect();
-            this.端口连接ToolStripMenuItem.Enabled = false;
-            this.端口连接ToolStripMenuItem.Text = "已连接";
-            this.statusStrip1.BackColor = SystemColors.HotTrack;
-            this.toolStripStatusLabel1.Text = "COM端口已连接";
-            this.toolStripStatusLabel1.ForeColor = Color.FromArgb(255, 255, 255);
-            threadFather.ThreadStart();
+            try
+            {
+                comFunc.COMConnect();
+            }
+            catch (Exception)
+            {
+                this.toolStripStatusLabel1.Text = "COM端口被占用";
+            }
+            if (COMFunc.serialPort.IsOpen)
+            {
+                this.端口连接ToolStripMenuItem.Enabled = false;
+                this.端口连接ToolStripMenuItem.Text = "已连接";
+                this.statusStrip1.BackColor = SystemColors.HotTrack;
+                this.toolStripStatusLabel1.Text = "COM端口已连接";
+                this.toolStripStatusLabel1.ForeColor = Color.FromArgb(255, 255, 255);
+                threadFather.ThreadStart();
+            }
         }
         //端口断开按钮
         private void 端口断开ToolStripMenuItem_Click(object sender, EventArgs e)

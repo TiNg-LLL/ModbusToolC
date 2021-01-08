@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="COMFunc.cs" />
+    <Compile Include="DataTreat.cs" />
     <Compile Include="IniFunc.cs" />
     <Compile Include="ModbusFunc.cs" />
   </ItemGroup>

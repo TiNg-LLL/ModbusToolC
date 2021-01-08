@@ -15,14 +15,14 @@ namespace PanelUnit
         private Button RegisterButton = new Button();
 
         //标识特征
-        private int ID;
+        public int ID { get; set; }
 
         //modbus参数成员
         int registerWriteAddress;
         int registerReadAddress;
 
         //ModbusFunc成员
-        public static ModbusFunc modbusFunc = new ModbusFunc();
+        //public static ModbusFunc modbusFunc = new ModbusFunc();
 
         //无参构造方法
         public RegisterCommonPanel()
@@ -56,7 +56,7 @@ namespace PanelUnit
             this.RegisterName.Name = "ResgisterName";
             this.RegisterName.TabIndex = 2;
             this.RegisterName.Text = "初始代码段";
-            this.RegisterName.Font = new Font("微软雅黑", 11F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(134)));
+            this.RegisterName.Font = new Font("微软雅黑", 11F, FontStyle.Bold, GraphicsUnit.Point, 134);
             //this.ResgisterName.BackColor = Color.Red;  //背景颜色
             //
             // :
@@ -67,7 +67,7 @@ namespace PanelUnit
             this.RegisterSign.Name = "Resgistersign";
             this.RegisterSign.TabIndex = 2;
             this.RegisterSign.Text = ":";
-            this.RegisterSign.Font = new Font("宋体", 10F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(134)));
+            this.RegisterSign.Font = new Font("宋体", 10F, FontStyle.Bold, GraphicsUnit.Point, 134);
             //this.Resgistersign.BackColor = Color.Red;  //背景颜色
             //
             // 读取值
@@ -78,7 +78,7 @@ namespace PanelUnit
             this.RegisterNowValue.Name = "ResgisterValue";
             this.RegisterNowValue.TabIndex = 2;
             this.RegisterNowValue.Text = "00000000";
-            this.RegisterNowValue.Font = new Font("宋体", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
+            this.RegisterNowValue.Font = new Font("宋体", 10F, FontStyle.Regular, GraphicsUnit.Point, 134);
             //this.ResgisterValue.BackColor = Color.Cyan;  //背景颜色
             //
             // 输入值填写框
@@ -89,7 +89,7 @@ namespace PanelUnit
             this.RegisterValueText.TabIndex = 2;
             //this.ResgisterText.Text = "3333333";
             this.RegisterValueText.Size = new Size(70, 10);  //输入框大小
-            this.RegisterValueText.Font = new Font("宋体", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
+            this.RegisterValueText.Font = new Font("宋体", 10F, FontStyle.Regular, GraphicsUnit.Point, 134);
             //this.ResgisterText.BackColor = Color.Green;  //背景颜色
             this.RegisterValueText.KeyUp += new KeyEventHandler(this.ResgisterText_KeyUp);
             //
@@ -114,7 +114,7 @@ namespace PanelUnit
         {
             if (!(this.RegisterValueText.Text.Length == 0))
             {
-                modbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
+                ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
             }
         }
         //输入值填写框回车动作
@@ -122,24 +122,24 @@ namespace PanelUnit
         {
             if (e.KeyCode == Keys.Control || e.KeyCode == Keys.Enter)
             {
-                modbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
+                ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
             }
         }
-        //
+        //***
         //对象ID set get
-        //
-        public void SetID(int ID)
-        {
-            this.ID = ID;
-        }
+        //***
+        //public void SetID(int ID)
+        //{
+        //    this.ID = ID;
+        //}
 
-        public int GetID()
-        {
-            return ID;
-        }
-        //
-        //对象名称 set get
-        //
+        //public int GetID()
+        //{
+        //    return ID;
+        //}
+        //***
+        //设置或获取参数名称
+        //***
         public void SetRegisterName(String name)
         {
             this.RegisterName.Text = name;
@@ -149,9 +149,9 @@ namespace PanelUnit
         {
             return RegisterName.Text;
         }
-        //
+        //***
         //寄存器写入地址  set get
-        //
+        //***
         public void SetRegisterWriteAddress(int RegisterWriteAddress)
         {
             this.registerWriteAddress = RegisterWriteAddress;
@@ -161,9 +161,9 @@ namespace PanelUnit
         {
             return registerWriteAddress;
         }
-        //
+        //***
         //寄存器读取地址  set get
-        //
+        //***
         public void SetRegisterReadAddress(int RegisterReadAddress)
         {
             this.registerReadAddress = RegisterReadAddress;
@@ -173,10 +173,9 @@ namespace PanelUnit
         {
             return registerReadAddress;
         }
-
-        //
+        //***
         //寄存器读取参数label get
-        //
+        //***
         public Label GetRegisterNowValue()
         {
             return RegisterNowValue;

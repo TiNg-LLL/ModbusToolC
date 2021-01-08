@@ -64,9 +64,9 @@ namespace Func
                     Console.WriteLine("端口已连接");
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                throw e;
             }
         }
 
