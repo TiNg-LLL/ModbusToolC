@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminWindow.Designer.cs">
+      <DependentUpon>AdminWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComDateSetWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     <Compile Include="SizeAdjustWindow.Designer.cs">
       <DependentUpon>SizeAdjustWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminWindow.resx">
+      <DependentUpon>AdminWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ComDateSetWindow.resx">
       <DependentUpon>ComDateSetWindow.cs</DependentUpon>
     </EmbeddedResource>

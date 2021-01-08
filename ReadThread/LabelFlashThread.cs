@@ -48,7 +48,7 @@ namespace ReadThreadSpace
                     {
                         try
                         {
-                            RegisterCollection.registerList[i].GetRegisterNowValue().Text = "0000";
+                            RegisterCollection.registerList[i].GetRegisterNowValue().Text = "000";
                         }
                         catch (Exception)
                         {

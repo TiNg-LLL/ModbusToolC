@@ -25,6 +25,9 @@ namespace FirstWindow
         //Com参数设置副窗口
         private ComDateSetWindow comDateSetWindow = new ComDateSetWindow();
 
+        //权限登入副窗口
+        private AdminWindow adminWindow = new AdminWindow();
+
         //初始化INI文件地址
         private static string filename = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
 
@@ -116,6 +119,11 @@ namespace FirstWindow
             this.toolStripStatusLabel1.Text = "COM端口未连接";
             this.toolStripStatusLabel1.ForeColor = Color.FromArgb(0, 0, 0);
             threadFather.ThreadStop();
+        }
+
+        private void 登入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            adminWindow.ShowDialog();
         }
     }
 }

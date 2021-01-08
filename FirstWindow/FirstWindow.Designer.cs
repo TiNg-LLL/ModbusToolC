@@ -18,7 +18,13 @@ namespace FirstWindow
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
+            try
+            {
+                base.Dispose(disposing);
+            }
+            catch (System.Exception)
+            {
+            }
         }
 
         #region Windows 窗体设计器生成的代码
@@ -42,6 +48,9 @@ namespace FirstWindow
             this.参数信息修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.窗口大小设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.权限ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.登入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -66,6 +75,7 @@ namespace FirstWindow
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.连接ToolStripMenuItem,
             this.设置ToolStripMenuItem,
+            this.权限ToolStripMenuItem,
             this.关于ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -87,26 +97,26 @@ namespace FirstWindow
             // 端口连接ToolStripMenuItem
             // 
             this.端口连接ToolStripMenuItem.Name = "端口连接ToolStripMenuItem";
-            this.端口连接ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.端口连接ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.端口连接ToolStripMenuItem.Text = "连接";
             this.端口连接ToolStripMenuItem.Click += new System.EventHandler(this.端口连接ToolStripMenuItem_Click);
             // 
             // 端口断开ToolStripMenuItem
             // 
             this.端口断开ToolStripMenuItem.Name = "端口断开ToolStripMenuItem";
-            this.端口断开ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.端口断开ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.端口断开ToolStripMenuItem.Text = "断开";
             this.端口断开ToolStripMenuItem.Click += new System.EventHandler(this.端口断开ToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(159, 6);
             // 
             // 端口参数设置ToolStripMenuItem
             // 
             this.端口参数设置ToolStripMenuItem.Name = "端口参数设置ToolStripMenuItem";
-            this.端口参数设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.端口参数设置ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.端口参数设置ToolStripMenuItem.Text = "端口参数设置";
             this.端口参数设置ToolStripMenuItem.Click += new System.EventHandler(this.端口参数设置ToolStripMenuItem_Click);
             // 
@@ -126,7 +136,7 @@ namespace FirstWindow
             this.参数文件修改ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.参数数量TextBox});
             this.参数文件修改ToolStripMenuItem.Name = "参数文件修改ToolStripMenuItem";
-            this.参数文件修改ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.参数文件修改ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.参数文件修改ToolStripMenuItem.Text = "参数数量";
             this.参数文件修改ToolStripMenuItem.DropDownOpening += new System.EventHandler(this.参数数量修改ToolStripMenuItem_DropDownOpening);
             // 
@@ -141,21 +151,43 @@ namespace FirstWindow
             // 参数信息修改ToolStripMenuItem
             // 
             this.参数信息修改ToolStripMenuItem.Name = "参数信息修改ToolStripMenuItem";
-            this.参数信息修改ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
-            this.参数信息修改ToolStripMenuItem.Text = "参数信息修改";
+            this.参数信息修改ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.参数信息修改ToolStripMenuItem.Text = "地址信息修改";
             this.参数信息修改ToolStripMenuItem.Click += new System.EventHandler(this.参数信息修改ToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // 窗口大小设置ToolStripMenuItem
             // 
             this.窗口大小设置ToolStripMenuItem.Name = "窗口大小设置ToolStripMenuItem";
-            this.窗口大小设置ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.窗口大小设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.窗口大小设置ToolStripMenuItem.Text = "窗口大小设置";
             this.窗口大小设置ToolStripMenuItem.Click += new System.EventHandler(this.窗口大小设置ToolStripMenuItem_Click);
+            // 
+            // 权限ToolStripMenuItem
+            // 
+            this.权限ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.登入ToolStripMenuItem,
+            this.退出ToolStripMenuItem});
+            this.权限ToolStripMenuItem.Name = "权限ToolStripMenuItem";
+            this.权限ToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.权限ToolStripMenuItem.Text = "权限";
+            // 
+            // 登入ToolStripMenuItem
+            // 
+            this.登入ToolStripMenuItem.Name = "登入ToolStripMenuItem";
+            this.登入ToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.登入ToolStripMenuItem.Text = "登入";
+            this.登入ToolStripMenuItem.Click += new System.EventHandler(this.登入ToolStripMenuItem_Click);
+            // 
+            // 退出ToolStripMenuItem
+            // 
+            this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.退出ToolStripMenuItem.Text = "退出";
             // 
             // 关于ToolStripMenuItem
             // 
@@ -222,6 +254,9 @@ namespace FirstWindow
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem 端口参数设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem 权限ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 登入ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
     }
 }
 

@@ -39,12 +39,17 @@ namespace ReadThreadSpace
                         try
                         {
                             RegisterCollection.registerValueList[i] = modbusFunc.MyReadHoldingRegisters(RegisterCollection.registerList[i].GetRegisterReadAddress());
+                            Thread.Sleep(5);
                         }
                         catch (Exception)
                         {
                         }
                     }
-                    Console.WriteLine("----------------------------------------------------一次循环结果----------------------------------------------------");
+                    //Console.WriteLine("----------------------------------------------------一次循环结果----------------------------------------------------");
+                }
+                else
+                {
+                    Thread.Sleep(1000);
                 }
             }
         }

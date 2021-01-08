@@ -7,7 +7,7 @@
     <ProjectGuid>{82B63E30-D04B-4A3F-95CF-E9F43EC7E5BC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>FirstWindow</RootNamespace>
-    <AssemblyName>FirstWindow</AssemblyName>
+    <AssemblyName>ModbusToolC</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
