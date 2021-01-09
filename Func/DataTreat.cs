@@ -38,5 +38,15 @@ namespace Func
             ushort highOrderValue = BitConverter.ToUInt16(BitConverter.GetBytes(i), 2);
             return new ushort[] { lowOrderValue, highOrderValue };
         }
+        //脉冲转换为mm单位  数据读取后使用
+        public static String RegisterDataProportionToMM(int i1, float i2)
+        {
+            return ((float)i1 / i2).ToString("F2"); //保留两位小数
+        }
+        //mm单位转换为脉冲   数据写入时使用
+        public static String RegisterDataProportionMMTo(float i1, float i2)
+        {
+            return ((int)(i1 * i2)).ToString();
+        }
     }
 }

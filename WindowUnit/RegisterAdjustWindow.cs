@@ -26,13 +26,15 @@ namespace WindowUnit
             //参数刷新
             for (int i = 1; i <= RegisterCollection.registerAmount; i++)
             {
+                //***
                 //名称ini文件刷新
                 IniFunc.writeString("RegisterName", "RegisterName" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterNameText(), filename);
                 //名称对象刷新
                 RegisterCollection.registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
+                //***
+                //地址刷新---先判断写入地址与读取地址是否一致  如果一致  只需修改写入地址  读取地址自动修改为一致；
                 if (IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "", filename).Equals(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "", filename)))
                 {
-                      
                     //原写入读取地址一致时  ini文件刷新
                     IniFunc.writeString("RegisterWriteAddress", "RegisterWriteAddress" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterWriteAddressText(), filename);
                     IniFunc.writeString("RegisterReadAddress", "RegisterReadAddress" + i, RegisterAdjustCollection.resgisterAdjustList[i - 1].GetRegisterWriteAddressText(), filename);
@@ -49,6 +51,17 @@ namespace WindowUnit
                     RegisterCollection.registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "0", filename)));
                     RegisterCollection.registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "0", filename)));
                 }
+                //***
+                //数据转换刷新
+                if (RegisterAdjustCollection.resgisterAdjustList[i - 1].RegisterDataTransform.Checked)
+                {
+                    RegisterCollection.registerList[i - 1].dataTransform = true;
+                }
+                else
+                {
+                    RegisterCollection.registerList[i - 1].dataTransform = false;
+                }
+                IniFunc.writeString("RegisterDataTransform", "RegisterDataTransform" + i, RegisterCollection.registerList[i - 1].dataTransform.ToString(), filename);
             }
             //设置窗口关闭
             this.Close();

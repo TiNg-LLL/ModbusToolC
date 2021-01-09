@@ -63,6 +63,12 @@
     <Compile Include="AdminWindow.Designer.cs">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssistDateSetWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssistDateSetWindow.Designer.cs">
+      <DependentUpon>AssistDateSetWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComDateSetWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssistDateSetWindow.resx">
+      <DependentUpon>AssistDateSetWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ComDateSetWindow.resx">
       <DependentUpon>ComDateSetWindow.cs</DependentUpon>

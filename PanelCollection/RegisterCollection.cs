@@ -14,6 +14,8 @@ namespace PanelCollection
         public static List<string> registerValueList = new List<string>();
         //寄存器功能模块数量
         public static int registerAmount;
+        //寄存器单位转换比率
+        public static float registerDataProportion { get; set; }
 
         //初始化INI文件地址
         private string filename = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
@@ -35,6 +37,10 @@ namespace PanelCollection
                 registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "0", filename)));
                 //设置成员读取地址
                 registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "0", filename)));
+                //设置成员数据转换Boolean
+                registerList[i - 1].dataTransform = bool.Parse(IniFunc.getString("RegisterDataTransform", "RegisterDataTransform" + i, "false", filename));
+                //设置寄存器单位转换比率
+                registerDataProportion = float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename));
             }
             //
             //Panel初始化

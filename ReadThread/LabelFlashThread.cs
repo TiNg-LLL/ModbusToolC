@@ -30,16 +30,32 @@ namespace ReadThreadSpace
             while (true)
             {
                 ThreadFather.met.WaitOne();
+                //判断COM端口是否已连接
                 if (COMFunc.serialPort.IsOpen)
                 {
-                    try
+                    //判断刷新至Label的值是否需要单位转换
+                    if (RegisterCollection.registerList[(int)obj].dataTransform)
                     {
-                        RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
-    RegisterCollection.registerValueList[(int)obj];
+                        try
+                        {
+                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
+                            DataTreat.RegisterDataProportionToMM(int.Parse(RegisterCollection.registerValueList[(int)obj]),RegisterCollection.registerDataProportion);
+                        }
+                        catch (Exception)
+                        {
+                        }
                     }
-                    catch (Exception)
-                    {
+                    else {
+                        try
+                        {
+                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
+        RegisterCollection.registerValueList[(int)obj];
+                        }
+                        catch (Exception)
+                        {
+                        }
                     }
+
                     Thread.Sleep(20);
                 }
                 else

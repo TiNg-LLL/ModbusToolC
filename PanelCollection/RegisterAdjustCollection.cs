@@ -57,13 +57,15 @@ namespace PanelCollection
             {
                 resgisterAdjustList.Add(new RegisterNameAdjustPanel());
                 //设置成员ID
-                resgisterAdjustList[i - 1].SetID(i);
+                resgisterAdjustList[i - 1].ID = i;
                 //设置成员名称
                 resgisterAdjustList[i - 1].SetRegisterNameText(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
                 //设置成员写入地址
                 resgisterAdjustList[i - 1].SetRegisterWriteAddressText(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "读取错误", filename));
                 //设置成员读取地址
                 resgisterAdjustList[i - 1].SetRegisterReadAddressText(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "读取错误", filename));
+                //设置成员数据转换Boolean
+                resgisterAdjustList[i - 1].RegisterDataTransform.Checked = bool.Parse(IniFunc.getString("RegisterDataTransform", "RegisterDataTransform" + i, "false", filename));
             }
 
             this.ColumnCount = 1;  //列数

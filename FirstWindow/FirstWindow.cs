@@ -28,6 +28,9 @@ namespace FirstWindow
         //权限登入副窗口
         private AdminWindow adminWindow = new AdminWindow();
 
+        //辅助信息修改副窗口
+        private AssistDateSetWindow assistDateSetWindow = new AssistDateSetWindow();
+
         //初始化INI文件地址
         private static string filename = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
 
@@ -134,6 +137,11 @@ namespace FirstWindow
         private void 登入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             adminWindow.ShowDialog();
+        }
+
+        private void 辅助信息修改ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            assistDateSetWindow.ShowDialog();
         }
     }
 }

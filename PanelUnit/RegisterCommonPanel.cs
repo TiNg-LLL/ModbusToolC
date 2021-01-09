@@ -1,6 +1,7 @@
 ﻿using Func;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace PanelUnit
@@ -16,13 +17,14 @@ namespace PanelUnit
 
         //标识特征
         public int ID { get; set; }
+        public bool dataTransform { get; set; }
 
         //modbus参数成员
         int registerWriteAddress;
         int registerReadAddress;
 
-        //ModbusFunc成员
-        //public static ModbusFunc modbusFunc = new ModbusFunc();
+        //初始化INI文件地址
+        private string filename = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
 
         //无参构造方法
         public RegisterCommonPanel()
@@ -92,6 +94,7 @@ namespace PanelUnit
             this.RegisterValueText.Font = new Font("宋体", 10F, FontStyle.Regular, GraphicsUnit.Point, 134);
             //this.ResgisterText.BackColor = Color.Green;  //背景颜色
             this.RegisterValueText.KeyUp += new KeyEventHandler(this.ResgisterText_KeyUp);
+            this.RegisterValueText.KeyPress += new KeyPressEventHandler(this.RegisterValueText_KeyPress);
             //
             // 按钮
             //
@@ -109,12 +112,20 @@ namespace PanelUnit
             //从非 UI 线程更新 UI 线程  线程不安全
             CheckForIllegalCrossThreadCalls = false;
         }
-        //按钮功能
+        //设置按钮功能
         private void ResgisterButton_Click(object sender, EventArgs e)
         {
             if (!(this.RegisterValueText.Text.Length == 0))
             {
-                ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
+                if (dataTransform)
+                {
+                    ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress,
+                        DataTreat.RegisterDataProportionMMTo(float.Parse(this.RegisterValueText.Text),
+                        float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename))));
+                }
+                else {
+                    ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
+                }
             }
         }
         //输入值填写框回车动作
@@ -122,7 +133,29 @@ namespace PanelUnit
         {
             if (e.KeyCode == Keys.Control || e.KeyCode == Keys.Enter)
             {
-                ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
+                if (dataTransform)
+                {
+                    ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress,
+                        DataTreat.RegisterDataProportionMMTo(float.Parse(this.RegisterValueText.Text), 
+                        float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename))));
+                }
+                else
+                {
+                    ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
+                }
+            }
+        }
+
+        //输入框只能填写数字
+        private void RegisterValueText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || (e.KeyChar == '.') || (e.KeyChar == '-') || (e.KeyChar == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
         //***
