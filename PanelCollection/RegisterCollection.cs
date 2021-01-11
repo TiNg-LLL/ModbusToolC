@@ -27,10 +27,8 @@ namespace PanelCollection
             //在集合中创建对应数量的对象
             for (int i = 1; i <= registerAmount; i++)
             {
-                registerList.Add(new RegisterCommonPanel());
+                registerList.Add(new RegisterCommonPanel(i));
                 registerValueList.Add("");
-                //设置成员ID
-                registerList[i - 1].ID = i;
                 //设置成员名称
                 registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
                 //设置成员写入地址
@@ -70,16 +68,16 @@ namespace PanelCollection
 
             for (int i = 1; i <= registerAmount; i++)
             {
-                registerList.Add(new RegisterCommonPanel());
+                registerList.Add(new RegisterCommonPanel(i));
                 registerValueList.Add("");
-                //设置成员ID
-                registerList[i - 1].ID = i;
                 //设置成员名称
                 registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
                 //设置成员写入地址
                 registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "0", filename)));
                 //设置成员读取地址
                 registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "0", filename)));
+                //设置成员数据转换Boolean
+                registerList[i - 1].dataTransform = bool.Parse(IniFunc.getString("RegisterDataTransform", "RegisterDataTransform" + i, "false", filename));
             }
 
             this.ColumnCount = 1;  //列数

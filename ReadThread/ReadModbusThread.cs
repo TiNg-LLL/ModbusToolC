@@ -43,6 +43,8 @@ namespace ReadThreadSpace
                         }
                         catch (Exception)
                         {
+                            RegisterCollection.registerValueList[i] = "";
+                            Thread.Sleep(50);
                         }
                     }
                     //Console.WriteLine("----------------------------------------------------一次循环结果----------------------------------------------------");

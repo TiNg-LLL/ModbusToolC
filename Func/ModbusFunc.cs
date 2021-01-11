@@ -20,9 +20,9 @@ namespace Func
                 {
                     modbus.WriteMultipleRegisters(COMFunc.SlaveID, startAddress, DataTreat.RegisterWriteDataTreat(data));
                 }
-                catch (System.Exception)
+                catch (System.Exception e)
                 {
-                    //throw;
+                    throw e;
                 }
             }
         }
@@ -38,9 +38,9 @@ namespace Func
                 {
                     return DataTreat.RegisterReadDataTreat(modbus.ReadHoldingRegisters(COMFunc.SlaveID, startAddress, 2));
                 }
-                catch (System.Exception)
+                catch (System.Exception e)
                 {
-                    //throw;
+                    throw e;
                 }
             }
             return "";

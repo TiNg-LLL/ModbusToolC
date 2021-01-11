@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadThread", "ReadThread\Re
 		{FC6554B0-769B-46DF-AD58-E90574CF0D7D} = {FC6554B0-769B-46DF-AD58-E90574CF0D7D}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls", "Controls\Controls.csproj", "{6441FD69-2398-4461-B01F-4A2F57708CF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +84,10 @@ Global
 		{38847910-87CF-4BA0-8442-A69D5A774C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38847910-87CF-4BA0-8442-A69D5A774C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38847910-87CF-4BA0-8442-A69D5A774C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6441FD69-2398-4461-B01F-4A2F57708CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6441FD69-2398-4461-B01F-4A2F57708CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6441FD69-2398-4461-B01F-4A2F57708CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6441FD69-2398-4461-B01F-4A2F57708CF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

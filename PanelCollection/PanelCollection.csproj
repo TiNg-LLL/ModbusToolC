@@ -39,6 +39,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoilJustReadCollection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CoilJustReadCollection.Designer.cs">
+      <DependentUpon>CoilJustReadCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterCollection.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -54,8 +60,15 @@
       <HintPath>..\PanelUnit\bin\Debug\PanelUnit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CoilJustReadCollection.resx">
+      <DependentUpon>CoilJustReadCollection.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

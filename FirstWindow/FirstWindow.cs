@@ -16,6 +16,9 @@ namespace FirstWindow
         //寄存器功能模块
         public static RegisterCollection resgisterCollection = new RegisterCollection();
 
+        //线圈只读状态灯模块
+        public static CoilJustReadCollection coilJustReadCollection = new CoilJustReadCollection();
+
         //参数信息设置副窗口
         private RegisterAdjustWindow registerAdjustWindow = new RegisterAdjustWindow();
 
@@ -33,7 +36,6 @@ namespace FirstWindow
 
         //初始化INI文件地址
         private static string filename = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
-
         private static string filenameSystemDate = Directory.GetCurrentDirectory() + @"\SystemDate.ini";
 
         //获取窗口大小参数
@@ -51,7 +53,8 @@ namespace FirstWindow
             InitializeComponent();
             //添加resgisterCollection
             this.ClientSize = new System.Drawing.Size(width, height);
-            this.groupBox1.Controls.Add(resgisterCollection = new RegisterCollection());
+            this.groupBox1.Controls.Add(resgisterCollection);
+            this.groupBox2.Controls.Add(coilJustReadCollection);
             threadFather = new ThreadFather();
             //threadFather.ThreadStop();
         }
@@ -142,6 +145,14 @@ namespace FirstWindow
         private void 辅助信息修改ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             assistDateSetWindow.ShowDialog();
+        }
+
+        private void 软件重启ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("是否重启", "重启", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
         }
     }
 }

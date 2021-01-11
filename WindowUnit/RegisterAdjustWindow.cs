@@ -53,6 +53,7 @@ namespace WindowUnit
                 }
                 //***
                 //数据转换刷新
+                //***
                 if (RegisterAdjustCollection.resgisterAdjustList[i - 1].RegisterDataTransform.Checked)
                 {
                     RegisterCollection.registerList[i - 1].dataTransform = true;
@@ -62,6 +63,18 @@ namespace WindowUnit
                     RegisterCollection.registerList[i - 1].dataTransform = false;
                 }
                 IniFunc.writeString("RegisterDataTransform", "RegisterDataTransform" + i, RegisterCollection.registerList[i - 1].dataTransform.ToString(), filename);
+                //***
+                //JustLabel刷新
+                //***
+                if (RegisterAdjustCollection.resgisterAdjustList[i - 1].RegisterJustLabel.Checked)
+                {
+                    RegisterCollection.registerList[i - 1].justLabel = true;
+                }
+                else
+                {
+                    RegisterCollection.registerList[i - 1].justLabel = false;
+                }
+                IniFunc.writeString("RegisterJustLabel", "RegisterJustLabel" + i, RegisterCollection.registerList[i - 1].justLabel.ToString(), filename);
             }
             //设置窗口关闭
             this.Close();

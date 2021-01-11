@@ -18,6 +18,7 @@ namespace PanelUnit
         //标识特征
         public int ID { get; set; }
         public bool dataTransform { get; set; }
+        public bool justLabel { get; set; }
 
         //modbus参数成员
         int registerWriteAddress;
@@ -27,11 +28,15 @@ namespace PanelUnit
         private string filename = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
 
         //无参构造方法
-        public RegisterCommonPanel()
+        public RegisterCommonPanel(int ID)
         {
-            //
+            //设置ID
+            this.ID = ID;
+            //设置成员JustLabel Boolean
+            justLabel = bool.Parse(IniFunc.getString("RegisterJustLabel", "RegisterJustLabel" + ID, "false", filename));
+            //***
             //Panel初始化
-            //
+            //***
             this.ColumnCount = 5;  //列数
             this.RowCount = 1;  //行数
             this.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130F));
@@ -111,7 +116,25 @@ namespace PanelUnit
 
             //从非 UI 线程更新 UI 线程  线程不安全
             CheckForIllegalCrossThreadCalls = false;
+
+            //判断是否为justLabel
+            if (justLabel)
+            {
+                this.Controls.Remove(RegisterValueText);
+                this.Controls.Remove(RegisterButton);
+                this.ColumnCount = 3;  //列数
+                this.ColumnStyles.Clear();
+                this.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130F));
+                this.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 15F));
+                this.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+                this.Size = new Size(390, 35);
+                this.RegisterName.Font = new Font("微软雅黑", 15F, FontStyle.Bold, GraphicsUnit.Point, 134);
+                this.RegisterNowValue.Font = new Font("微软雅黑", 16F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            }
         }
+        //*****
+        //---------------------------------------------------------功能方法段------------------------------------------------------------
+        //*****
         //设置按钮功能
         private void ResgisterButton_Click(object sender, EventArgs e)
         {
@@ -123,7 +146,8 @@ namespace PanelUnit
                         DataTreat.RegisterDataProportionMMTo(float.Parse(this.RegisterValueText.Text),
                         float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename))));
                 }
-                else {
+                else
+                {
                     ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
                 }
             }
@@ -136,7 +160,7 @@ namespace PanelUnit
                 if (dataTransform)
                 {
                     ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress,
-                        DataTreat.RegisterDataProportionMMTo(float.Parse(this.RegisterValueText.Text), 
+                        DataTreat.RegisterDataProportionMMTo(float.Parse(this.RegisterValueText.Text),
                         float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename))));
                 }
                 else

@@ -66,6 +66,8 @@ namespace PanelCollection
                 resgisterAdjustList[i - 1].SetRegisterReadAddressText(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "读取错误", filename));
                 //设置成员数据转换Boolean
                 resgisterAdjustList[i - 1].RegisterDataTransform.Checked = bool.Parse(IniFunc.getString("RegisterDataTransform", "RegisterDataTransform" + i, "false", filename));
+                //设置成员JustLabel Boolean
+                resgisterAdjustList[i - 1].RegisterJustLabel.Checked = bool.Parse(IniFunc.getString("RegisterJustLabel", "RegisterJustLabel" + i, "false", filename));
             }
 
             this.ColumnCount = 1;  //列数

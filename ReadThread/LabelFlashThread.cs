@@ -44,6 +44,7 @@ namespace ReadThreadSpace
                         catch (Exception)
                         {
                             RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "";
+                            Thread.Sleep(500);
                         }
                     }
                     else {
@@ -54,6 +55,8 @@ namespace ReadThreadSpace
                         }
                         catch (Exception)
                         {
+                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "";
+                            Thread.Sleep(500);
                         }
                     }
                     Thread.Sleep(20);
@@ -68,6 +71,7 @@ namespace ReadThreadSpace
                         }
                         catch (Exception)
                         {
+                            Thread.Sleep(500);
                         }
                         Thread.Sleep(20);
                     }
