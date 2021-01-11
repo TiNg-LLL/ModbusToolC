@@ -12,9 +12,12 @@ namespace PanelUnit
 {
     public partial class CoilJustReadPanel : UserControl
     {
-        public CoilJustReadPanel()
+        public int ID { get; set; }
+        public CoilJustReadPanel(int i)
         {
             InitializeComponent();
+            this.ID = i;
+            //this.BackColor = Color.DarkRed;  //背景颜色
         }
     }
 }

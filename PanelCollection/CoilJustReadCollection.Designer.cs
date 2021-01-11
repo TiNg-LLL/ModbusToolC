@@ -30,26 +30,16 @@ namespace PanelCollection
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.coilJustReadPanel1 = new PanelUnit.CoilJustReadPanel();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.coilJustReadPanel1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(400, 440);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // coilJustReadPanel1
-            // 
-            this.coilJustReadPanel1.Location = new System.Drawing.Point(3, 3);
-            this.coilJustReadPanel1.Name = "coilJustReadPanel1";
-            this.coilJustReadPanel1.Size = new System.Drawing.Size(75, 90);
-            this.coilJustReadPanel1.TabIndex = 1;
             // 
             // CoilJustReadCollection
             // 
@@ -58,7 +48,6 @@ namespace PanelCollection
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "CoilJustReadCollection";
             this.Size = new System.Drawing.Size(400, 440);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -67,6 +56,5 @@ namespace PanelCollection
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private PanelUnit.CoilJustReadPanel coilJustReadPanel1;
     }
 }

@@ -36,6 +36,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowUnit", "WindowUnit\Wi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{9A5E7F44-4F28-4A1E-8A75-30ABACCC8A0C}"
 	ProjectSection(SolutionItems) = preProject
+		CoilJustRead.ini = CoilJustRead.ini
 		Resgiter.ini = Resgiter.ini
 		SystemDate.ini = SystemDate.ini
 	EndProjectSection
