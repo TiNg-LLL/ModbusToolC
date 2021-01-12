@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace ReadThreadSpace
 {
-    public class LabelFlashThread
+    public class RegisterLabelFlashThread
     {
         //new一个线程
         private Thread childThread;
 
-        public LabelFlashThread(int i)
+        public RegisterLabelFlashThread(int i)
         {
             // childref = new ThreadStart(RegisterReadThread);
             childThread = new Thread(new ParameterizedThreadStart(RegisterReadThread));
@@ -39,15 +39,16 @@ namespace ReadThreadSpace
                         try
                         {
                             RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
-                            DataTreat.RegisterDataProportionToMM(int.Parse(RegisterCollection.registerValueList[(int)obj]),RegisterCollection.registerDataProportion);
+                            DataTreat.RegisterDataProportionToMM(int.Parse(RegisterCollection.registerValueList[(int)obj]), RegisterCollection.registerDataProportion);
                         }
                         catch (Exception)
                         {
                             RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "";
-                            Thread.Sleep(500);
+                            Thread.Sleep(200);
                         }
                     }
-                    else {
+                    else
+                    {
                         try
                         {
                             RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
@@ -56,25 +57,22 @@ namespace ReadThreadSpace
                         catch (Exception)
                         {
                             RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "";
-                            Thread.Sleep(500);
+                            Thread.Sleep(200);
                         }
                     }
                     Thread.Sleep(20);
                 }
                 else
                 {
-                    for (int i = 0; i < RegisterCollection.registerAmount; i++)
+                    try
                     {
-                        try
-                        {
-                            RegisterCollection.registerList[i].GetRegisterNowValue().Text = "000";
-                        }
-                        catch (Exception)
-                        {
-                            Thread.Sleep(500);
-                        }
-                        Thread.Sleep(20);
+                        RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "000";
                     }
+                    catch (Exception)
+                    {
+                        Thread.Sleep(200);
+                    }
+                    Thread.Sleep(20);
                 }
             }
         }

@@ -15,7 +15,8 @@ namespace ReadThreadSpace
         private Thread childThread;
         //modbua与label刷新线程对象
         ReadModbusThread readModbusThread;
-        List<LabelFlashThread> labelFlashThreadList;
+        List<RegisterLabelFlashThread> registerLabelFlashThreadList;
+        List<CoilJustReadLabelFlashThread> coilJustReadLabelFlashThreadList;
         //线程挂起启动标记 true为挂起
         Boolean b = true;
         Boolean c = false;   //辅助标记
@@ -28,10 +29,15 @@ namespace ReadThreadSpace
             //new出modbua与label刷新线程
             //
             readModbusThread = new ReadModbusThread();
-            labelFlashThreadList = new List<LabelFlashThread>();
+            registerLabelFlashThreadList = new List<RegisterLabelFlashThread>();
+            coilJustReadLabelFlashThreadList = new List<CoilJustReadLabelFlashThread>();
             for (int i = 0; i < RegisterCollection.registerAmount; i++)
             {
-                labelFlashThreadList.Add(new LabelFlashThread(i));
+                registerLabelFlashThreadList.Add(new RegisterLabelFlashThread(i));
+            }
+            for (int i = 0; i < CoilJustReadCollection.coilJustReadAmount; i++)
+            {
+                coilJustReadLabelFlashThreadList.Add(new CoilJustReadLabelFlashThread(i));
             }
 
             //管理线程
@@ -46,7 +52,7 @@ namespace ReadThreadSpace
         {
             while (true)
             {
-                Thread.Sleep(200);
+                Thread.Sleep(100);
                 if (b)
                 {
                     if (c)

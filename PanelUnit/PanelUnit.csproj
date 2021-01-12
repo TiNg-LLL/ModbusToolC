@@ -39,16 +39,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoilJustReadPanel.cs">
+    <Compile Include="CoilJustRead\CoilJustReadAdjustPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CoilJustReadPanel.Designer.cs">
+    <Compile Include="CoilJustRead\CoilJustReadAdjustPanel.Designer.cs">
+      <DependentUpon>CoilJustReadAdjustPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoilJustRead\CoilJustReadPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CoilJustRead\CoilJustReadPanel.Designer.cs">
       <DependentUpon>CoilJustReadPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegisterCommonPanel.cs">
+    <Compile Include="Register\RegisterCommonPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RegisterNameAdjustPanel.cs">
+    <Compile Include="Register\RegisterNameAdjustPanel.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -66,7 +72,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CoilJustReadPanel.resx">
+    <EmbeddedResource Include="CoilJustRead\CoilJustReadAdjustPanel.resx">
+      <DependentUpon>CoilJustReadAdjustPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoilJustRead\CoilJustReadPanel.resx">
       <DependentUpon>CoilJustReadPanel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

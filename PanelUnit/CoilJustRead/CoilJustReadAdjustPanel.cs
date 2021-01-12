@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace PanelUnit
 {
-    public partial class CoilJustReadPanel : UserControl
+    public partial class CoilJustReadAdjustPanel : UserControl
     {
+        //标识特征
         public int ID { get; set; }
-        public CoilJustReadPanel(int i)
+
+        public CoilJustReadAdjustPanel()
         {
             InitializeComponent();
-            this.ID = i;
-            //this.BackColor = Color.DarkRed;  //背景颜色
         }
     }
 }

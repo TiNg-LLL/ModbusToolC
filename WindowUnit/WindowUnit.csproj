@@ -69,16 +69,22 @@
     <Compile Include="AssistDateSetWindow.Designer.cs">
       <DependentUpon>AssistDateSetWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdjustWindows\CoilJustReadAdjustWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdjustWindows\CoilJustReadAdjustWindow.Designer.cs">
+      <DependentUpon>CoilJustReadAdjustWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComDateSetWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ComDateSetWindow.Designer.cs">
       <DependentUpon>ComDateSetWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegisterAdjustWindow.cs">
+    <Compile Include="AdjustWindows\RegisterAdjustWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterAdjustWindow.Designer.cs">
+    <Compile Include="AdjustWindows\RegisterAdjustWindow.Designer.cs">
       <DependentUpon>RegisterAdjustWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +94,9 @@
     <Compile Include="SizeAdjustWindow.Designer.cs">
       <DependentUpon>SizeAdjustWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdjustWindows\CoilJustReadAdjustWindow.resx">
+      <DependentUpon>CoilJustReadAdjustWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,7 +115,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegisterAdjustWindow.resx">
+    <EmbeddedResource Include="AdjustWindows\RegisterAdjustWindow.resx">
       <DependentUpon>RegisterAdjustWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SizeAdjustWindow.resx">

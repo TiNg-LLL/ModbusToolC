@@ -37,8 +37,9 @@ namespace PanelCollection
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(240, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(400, 440);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(240, 440);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // CoilJustReadCollection

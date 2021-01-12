@@ -7,7 +7,7 @@ namespace WindowUnit
 {
     public partial class RegisterAdjustWindow : Form
     {
-        //new出寄存器功能模块
+        //new出寄存器地址修改组合模块
         public static RegisterAdjustCollection registerAdjustCollection = new RegisterAdjustCollection();
 
         //初始化INI文件地址
@@ -84,7 +84,9 @@ namespace WindowUnit
         {
             this.Close();
         }
+        //***
         //窗口内容刷新
+        //***
         public void Flash()
         {
             this.Controls.Clear();

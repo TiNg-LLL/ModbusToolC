@@ -39,16 +39,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoilJustReadAdjustCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CoilJustReadCollection.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CoilJustReadCollection.Designer.cs">
       <DependentUpon>CoilJustReadCollection.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegisterCollection.cs">
+    <Compile Include="Register\RegisterCollection.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RegisterAdjustCollection.cs">
+    <Compile Include="Register\RegisterAdjustCollection.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

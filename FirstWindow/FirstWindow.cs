@@ -19,8 +19,11 @@ namespace FirstWindow
         //线圈只读状态灯模块
         public static CoilJustReadCollection coilJustReadCollection = new CoilJustReadCollection();
 
-        //参数信息设置副窗口
+        //参数地址设置副窗口
         private RegisterAdjustWindow registerAdjustWindow = new RegisterAdjustWindow();
+
+        //状态地址设置副窗口
+        private CoilJustReadAdjustWindow coilJustReadAdjustWindow = new CoilJustReadAdjustWindow();
 
         //窗口大小调整副窗口
         private SizeAdjustWindow sizeAdjustWindow = new SizeAdjustWindow();
@@ -35,8 +38,9 @@ namespace FirstWindow
         private AssistDateSetWindow assistDateSetWindow = new AssistDateSetWindow();
 
         //初始化INI文件地址
-        private static string filename = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
         private static string filenameSystemDate = Directory.GetCurrentDirectory() + @"\SystemDate.ini";
+        private static string filenameRegister = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
+        private static string filenameCoilJustRead = Directory.GetCurrentDirectory() + @"\CoilJustRead.ini";
 
         //获取窗口大小参数
         public static int width = int.Parse(IniFunc.getString("FirstWindowSize", "Width", "800", filenameSystemDate));
@@ -58,8 +62,9 @@ namespace FirstWindow
             threadFather = new ThreadFather();
             //threadFather.ThreadStop();
         }
-
-        //参数信息修改显示副窗口按钮
+        //***
+        //参数地址修改显示副窗口按钮
+        //***
         private void 参数信息修改ToolStripMenuItem_Click_1(object sender, System.EventArgs e)
         {
             //参数信息列表刷新
@@ -68,13 +73,14 @@ namespace FirstWindow
             //窗口显示
             registerAdjustWindow.ShowDialog();
         }
-
+        //***
         //参数数量修改textbox
+        //***
         private void toolStripTextBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Control || e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                IniFunc.writeString("RegisterAmount", "RegisterAmount", this.参数数量TextBox.Text, filename);
+                IniFunc.writeString("RegisterAmount", "RegisterAmount", this.参数数量TextBox.Text, filenameRegister);
                 if (MessageBox.Show("需要重启软件，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Application.Restart();
@@ -82,29 +88,62 @@ namespace FirstWindow
                 else
                 {
                     //this.Close();
-                    resgisterCollection.Flash();
+                    //resgisterCollection.Flash();
 
                 }
             }
         }
-
+        //***
         //参数数量修改鼠标放置动作
+        //***
         private void 参数数量修改ToolStripMenuItem_DropDownOpening(object sender, System.EventArgs e)
         {
             //给toolStripTextBox1赋值
             this.参数数量TextBox.Text = RegisterCollection.registerAmount.ToString();
         }
+        //***
+        //状态数量修改textbox
+        //***
+        private void 状态数量toolStripTextBox2_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                IniFunc.writeString("CoilJustReadAmount", "CoilJustReadAmount", this.状态数量TextBox.Text, filenameCoilJustRead);
+                if (MessageBox.Show("需要重启软件，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Application.Restart();
+                }
+                else
+                {
+                    //this.Close();
+                    //coilJustReadCollection.Flash();
+                }
+            }
+        }
+        //***
+        //状态数量修改鼠标放置动作
+        //***
+        private void 状态数量ToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            this.状态数量TextBox.Text = CoilJustReadCollection.coilJustReadAmount.ToString();
+        }
+        //***
         //窗口大小设置副窗口按钮
+        //***
         private void 窗口大小设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             sizeAdjustWindow.ShowDialog();
         }
+        //***
         //端口设置副窗口按钮
+        //***
         private void 端口参数设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             comDateSetWindow.ShowDialog();
         }
+        //***
         //端口连接按钮
+        //***
         private void 端口连接ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -125,7 +164,9 @@ namespace FirstWindow
                 threadFather.ThreadStart();
             }
         }
+        //***
         //端口断开按钮
+        //***
         private void 端口断开ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             comFunc.COMClose();
@@ -153,6 +194,13 @@ namespace FirstWindow
             {
                 Application.Restart();
             }
+        }
+
+        private void 状态地址修改ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CoilJustReadAdjustWindow.coilJustReadAdjustCollection.Flash();
+            coilJustReadAdjustWindow.Flash();
+            coilJustReadAdjustWindow.ShowDialog();
         }
     }
 }

@@ -45,5 +45,21 @@ namespace Func
             }
             return "";
         }
+
+        public static bool MyReadCoils(int CoilJustReadAddress) {
+            if (COMFunc.serialPort.IsOpen)
+            {
+                ushort startAddress = (ushort)CoilJustReadAddress;
+                try
+                {
+                    return modbus.ReadCoils(COMFunc.SlaveID,startAddress,1)[0];
+                }
+                catch (System.Exception e)
+                {
+                    throw e;
+                }
+            }
+            return false;
+        }
     }
 }

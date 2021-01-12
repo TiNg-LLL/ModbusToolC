@@ -37,26 +37,51 @@ namespace PanelCollection
             {
                 coilJustReadList.Add(new CoilJustReadPanel(i));
                 coilJustReadValueList.Add(false);
-                ////设置成员名称
-                //registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
-                ////设置成员写入地址
-                //registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "0", filename)));
-                ////设置成员读取地址
-                //registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "0", filename)));
-                ////设置成员数据转换Boolean
-                //registerList[i - 1].dataTransform = bool.Parse(IniFunc.getString("RegisterDataTransform", "RegisterDataTransform" + i, "false", filename));
+                //设置成员名称
+                coilJustReadList[i - 1].label1.Text = IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "读取错误", filename);
+                //设置成员读取地址
+                coilJustReadList[i - 1].coilJustReadAddress = int.Parse(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "0", filename));
+                //设置成员Color
+                coilJustReadList[i - 1].c[0] = ColorTranslator.FromHtml(IniFunc.getString("CoilJustReadColor", "CoilJustReadColor" + i, "#D3D3D3", filename));
                 ////设置寄存器单位转换比率
                 //registerDataProportion = float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename));
             }
-
-            //
+            //***
             //Panel初始化
-            //
+            //***
             for (int i = 0; i < coilJustReadAmount; i++)
             {
                 this.flowLayoutPanel1.Controls.Add(coilJustReadList[i]);
             }
             //this.BackColor = Color.DarkRed;  //背景颜色
+        }
+
+        public void Flash()
+        {
+            coilJustReadList.Clear();
+            coilJustReadValueList.Clear();
+            this.flowLayoutPanel1.Controls.Clear();
+            coilJustReadAmount = int.Parse(IniFunc.getString("CoilJustReadAmount", "CoilJustReadAmount", "读取错误", filename));
+
+            //在集合中创建对应数量的对象
+            for (int i = 1; i <= coilJustReadAmount; i++)
+            {
+                coilJustReadList.Add(new CoilJustReadPanel(i));
+                coilJustReadValueList.Add(false);
+                //设置成员名称
+                coilJustReadList[i - 1].label1.Text = IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "读取错误", filename);
+                //设置成员读取地址
+                coilJustReadList[i - 1].coilJustReadAddress = int.Parse(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "0", filename));
+                //设置成员Color
+                coilJustReadList[i - 1].c[0] = ColorTranslator.FromHtml(IniFunc.getString("CoilJustReadColor", "CoilJustReadColor" + i, "#D3D3D3", filename));
+            }
+            //***
+            //Panel初始化
+            //***
+            for (int i = 0; i < coilJustReadAmount; i++)
+            {
+                this.flowLayoutPanel1.Controls.Add(coilJustReadList[i]);
+            }
         }
     }
 }

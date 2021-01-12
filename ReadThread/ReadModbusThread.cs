@@ -34,6 +34,7 @@ namespace ReadThreadSpace
                 ThreadFather.met.WaitOne();
                 if (COMFunc.serialPort.IsOpen)
                 {
+                    //寄存器读取循环
                     for (int i = 0; i < RegisterCollection.registerAmount; i++)
                     {
                         try
@@ -47,11 +48,26 @@ namespace ReadThreadSpace
                             Thread.Sleep(50);
                         }
                     }
+                    //线圈读取循环
+                    for (int i = 0; i < CoilJustReadCollection.coilJustReadAmount; i++)
+                    {
+                        try
+                        {
+                            CoilJustReadCollection.coilJustReadValueList[i] = ModbusFunc.MyReadCoils(CoilJustReadCollection.coilJustReadList[i].coilJustReadAddress);
+                            //Console.WriteLine(CoilJustReadCollection.coilJustReadValueList[i]);
+                            Thread.Sleep(5);
+                        }
+                        catch (Exception)
+                        {
+                            RegisterCollection.registerValueList[i] = "";
+                            Thread.Sleep(50);
+                        }
+                    }
                     //Console.WriteLine("----------------------------------------------------一次循环结果----------------------------------------------------");
                 }
                 else
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                 }
             }
         }
