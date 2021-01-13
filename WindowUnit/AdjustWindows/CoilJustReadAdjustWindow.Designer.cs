@@ -43,7 +43,7 @@ namespace WindowUnit
             this.panel1.Location = new System.Drawing.Point(5, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(184, 181);
+            this.panel1.Size = new System.Drawing.Size(234, 181);
             this.panel1.TabIndex = 0;
             // 
             // RegisterNamelabel
@@ -66,7 +66,7 @@ namespace WindowUnit
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterWritelabel.AutoSize = true;
             this.RegisterWritelabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.RegisterWritelabel.Location = new System.Drawing.Point(118, 5);
+            this.RegisterWritelabel.Location = new System.Drawing.Point(135, 5);
             this.RegisterWritelabel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.RegisterWritelabel.Name = "RegisterWritelabel";
             this.RegisterWritelabel.Size = new System.Drawing.Size(74, 22);
@@ -93,7 +93,7 @@ namespace WindowUnit
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(100, 220);
+            this.button2.Location = new System.Drawing.Point(150, 220);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 32);
             this.button2.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace WindowUnit
             // CoilJustReadAdjustWindow
             // 
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(194, 261);
+            this.ClientSize = new System.Drawing.Size(244, 261);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.RegisterWritelabel);

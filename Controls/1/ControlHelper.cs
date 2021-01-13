@@ -26,9 +26,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
-using HZH_Controls.Controls;
+using Controls;
 
-namespace HZH_Controls
+namespace Controls
 {
     /// <summary>
     /// Class ControlHelper.

@@ -41,6 +41,8 @@ namespace PanelCollection
                 coilJustReadAdjustList[i - 1].coilJustReadTextBox1.Text = IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "读取错误", filename);
                 //设置成员读取地址
                 coilJustReadAdjustList[i - 1].coilJustReadTextBox2.Text = IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "读取错误", filename);
+                //设置成员读取地址MXY
+                coilJustReadAdjustList[i - 1].comboBox1.Text = IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "读取错误", filename);
             }
 
             this.ColumnCount = 1;  //列数

@@ -18,6 +18,7 @@ namespace PanelUnit
         public CoilJustReadAdjustPanel()
         {
             InitializeComponent();
+            this.comboBox1.Items.AddRange(new String[] { "M", "X", "Y" });
         }
     }
 }

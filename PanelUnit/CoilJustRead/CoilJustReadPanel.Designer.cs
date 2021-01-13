@@ -32,7 +32,7 @@ namespace PanelUnit
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ucSignalLamp1 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp1 = new Controls.UCSignalLamp();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +84,7 @@ namespace PanelUnit
             // CoilJustReadPanel
             // 
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Name = "CoilJustReadPanel";
             this.Size = new System.Drawing.Size(139, 155);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -97,7 +97,7 @@ namespace PanelUnit
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        public HZH_Controls.Controls.UCSignalLamp ucSignalLamp1;
+        public Controls.UCSignalLamp ucSignalLamp1;
         public System.Windows.Forms.Label label1;
     }
 }

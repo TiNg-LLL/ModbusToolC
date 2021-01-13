@@ -39,6 +39,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoilButton\CoilButtonPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CoilButton\CoilButtonPanel.Designer.cs">
+      <DependentUpon>CoilButtonPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="CoilJustRead\CoilJustReadAdjustPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CoilButton\CoilButtonPanel.resx">
+      <DependentUpon>CoilButtonPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CoilJustRead\CoilJustReadAdjustPanel.resx">
       <DependentUpon>CoilJustReadAdjustPanel.cs</DependentUpon>
     </EmbeddedResource>

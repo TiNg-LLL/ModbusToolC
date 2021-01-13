@@ -62,6 +62,7 @@ namespace FirstWindow
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -150,13 +151,12 @@ namespace FirstWindow
             this.参数文件修改ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.参数数量TextBox});
             this.参数文件修改ToolStripMenuItem.Name = "参数文件修改ToolStripMenuItem";
-            this.参数文件修改ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.参数文件修改ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.参数文件修改ToolStripMenuItem.Text = "参数数量";
             this.参数文件修改ToolStripMenuItem.DropDownOpening += new System.EventHandler(this.参数数量修改ToolStripMenuItem_DropDownOpening);
             // 
             // 参数数量TextBox
             // 
-            this.参数数量TextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.参数数量TextBox.Name = "参数数量TextBox";
             this.参数数量TextBox.Size = new System.Drawing.Size(25, 23);
             this.参数数量TextBox.Text = "0";
@@ -165,27 +165,26 @@ namespace FirstWindow
             // 参数信息修改ToolStripMenuItem
             // 
             this.参数信息修改ToolStripMenuItem.Name = "参数信息修改ToolStripMenuItem";
-            this.参数信息修改ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.参数信息修改ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.参数信息修改ToolStripMenuItem.Text = "参数地址修改";
             this.参数信息修改ToolStripMenuItem.Click += new System.EventHandler(this.参数信息修改ToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(159, 6);
             // 
             // 状态数量ToolStripMenuItem
             // 
             this.状态数量ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.状态数量TextBox});
             this.状态数量ToolStripMenuItem.Name = "状态数量ToolStripMenuItem";
-            this.状态数量ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.状态数量ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.状态数量ToolStripMenuItem.Text = "状态数量";
             this.状态数量ToolStripMenuItem.DropDownOpening += new System.EventHandler(this.状态数量ToolStripMenuItem_DropDownOpening);
             // 
             // 状态数量TextBox
             // 
-            this.状态数量TextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.状态数量TextBox.Name = "状态数量TextBox";
             this.状态数量TextBox.Size = new System.Drawing.Size(25, 23);
             this.状态数量TextBox.Text = "0";
@@ -194,38 +193,38 @@ namespace FirstWindow
             // 状态地址修改ToolStripMenuItem
             // 
             this.状态地址修改ToolStripMenuItem.Name = "状态地址修改ToolStripMenuItem";
-            this.状态地址修改ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.状态地址修改ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.状态地址修改ToolStripMenuItem.Text = "状态地址修改";
             this.状态地址修改ToolStripMenuItem.Click += new System.EventHandler(this.状态地址修改ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
             // 
             // 辅助信息修改ToolStripMenuItem
             // 
             this.辅助信息修改ToolStripMenuItem.Name = "辅助信息修改ToolStripMenuItem";
-            this.辅助信息修改ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.辅助信息修改ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.辅助信息修改ToolStripMenuItem.Text = "辅助信息修改";
             this.辅助信息修改ToolStripMenuItem.Click += new System.EventHandler(this.辅助信息修改ToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(159, 6);
             // 
             // 窗口大小设置ToolStripMenuItem
             // 
             this.窗口大小设置ToolStripMenuItem.Name = "窗口大小设置ToolStripMenuItem";
-            this.窗口大小设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.窗口大小设置ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.窗口大小设置ToolStripMenuItem.Text = "窗口大小设置";
             this.窗口大小设置ToolStripMenuItem.Click += new System.EventHandler(this.窗口大小设置ToolStripMenuItem_Click);
             // 
             // 软件重启ToolStripMenuItem
             // 
             this.软件重启ToolStripMenuItem.Name = "软件重启ToolStripMenuItem";
-            this.软件重启ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.软件重启ToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.软件重启ToolStripMenuItem.Text = "软件重启";
             this.软件重启ToolStripMenuItem.Click += new System.EventHandler(this.软件重启ToolStripMenuItem_Click);
             // 
@@ -286,11 +285,23 @@ namespace FirstWindow
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "状态";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.AutoSize = true;
+            this.groupBox3.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox3.Location = new System.Drawing.Point(500, 180);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 100);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "按钮";
+            // 
             // FirstWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 361);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
@@ -339,6 +350,7 @@ namespace FirstWindow
         private System.Windows.Forms.ToolStripMenuItem 状态数量ToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox 状态数量TextBox;
         private System.Windows.Forms.ToolStripMenuItem 状态地址修改ToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

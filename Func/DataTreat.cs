@@ -9,6 +9,8 @@ namespace Func
 {
     public class DataTreat
     {
+        //***
+        //寄存器读取数据双字转换
         public static String RegisterReadDataTreat(ushort[] us)
         {
             //***以下代码为java版时使用的转换，现在C#中弃用；***
@@ -30,7 +32,8 @@ namespace Func
             b2.CopyTo(b3, b1.Length);
             return BitConverter.ToInt32(b3, 0).ToString();
         }
-
+        //***
+        //寄存器写入转双字写出
         public static ushort[] RegisterWriteDataTreat(String s)
         {
             int i = int.Parse(s);
@@ -38,15 +41,68 @@ namespace Func
             ushort highOrderValue = BitConverter.ToUInt16(BitConverter.GetBytes(i), 2);
             return new ushort[] { lowOrderValue, highOrderValue };
         }
+        //***
         //脉冲转换为mm单位  数据读取后使用
         public static String RegisterDataProportionToMM(int i1, float i2)
         {
             return ((float)i1 / i2).ToString("F2"); //保留两位小数
         }
+        //***
         //mm单位转换为脉冲   数据写入时使用
         public static String RegisterDataProportionMMTo(float i1, float i2)
         {
             return ((int)(i1 * i2)).ToString();
+        }
+        //***
+        //寄存器地址转换
+        public static int RegisterAddressTransform(int i)
+        {
+            if (i < 8000)
+            {
+                return i;
+            }
+            else
+            {
+                return i + 8384;
+            }
+        }
+        //***
+        //线圈MXY地址转换
+        public static int CoilMXYAddressTransform(int i, string s)
+        {
+            if (s.Equals("M"))
+            {
+                if (i < 8000)
+                {
+                    return i;
+                }
+                else
+                {
+                    return i + 16576;
+                }
+            }
+            else if (s.Equals("Y"))
+            {
+                if (i < 8)
+                {
+                    return i + 18432;
+                }
+                else
+                {
+                    return i + 18430;
+                }
+            }
+            else
+            {
+                if (i < 8)
+                {
+                    return i + 16384;
+                }
+                else
+                {
+                    return i + 16382;
+                }
+            }
         }
     }
 }

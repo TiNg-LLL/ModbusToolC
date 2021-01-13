@@ -52,7 +52,7 @@ namespace PanelCollection
             }
             this.AutoSize = true;
             //this.BackColor = Color.DarkRed;  //背景颜色
-            this.CellBorderStyle = TableLayoutPanelCellBorderStyle.InsetDouble;   //边框样式
+            this.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset;   //边框样式
             this.Dock = DockStyle.Fill;  //铺满
         }
         //

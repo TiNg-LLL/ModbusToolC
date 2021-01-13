@@ -37,13 +37,17 @@ namespace ReadThreadSpace
                 {
                     try
                     {
-                        if (CoilJustReadCollection.coilJustReadValueList[(int)obj])
+                        if ((bool)CoilJustReadCollection.coilJustReadValueList[(int)obj])
                         {
                             CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = CoilJustReadCollection.coilJustReadList[(int)obj].c;
                         }
-                        else
+                        else if (!(bool)CoilJustReadCollection.coilJustReadValueList[(int)obj])
                         {
                             CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = new Color[] { Color.FromArgb(165, 165, 165) };
+                        }
+                        else
+                        {
+                            CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = new Color[] { Color.FromArgb(211, 211, 211) };
                         }
                     }
                     catch (Exception)
@@ -51,7 +55,7 @@ namespace ReadThreadSpace
                         CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = new Color[] { Color.FromArgb(211, 211, 211) };
                         Thread.Sleep(200);
                     }
-                    Thread.Sleep(20);
+                    Thread.Sleep(100);
                 }
                 else
                 {
@@ -63,7 +67,7 @@ namespace ReadThreadSpace
                     {
                         Thread.Sleep(200);
                     }
-                    Thread.Sleep(20);
+                    Thread.Sleep(200);
                 }
             }
         }

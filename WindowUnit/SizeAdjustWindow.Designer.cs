@@ -46,18 +46,18 @@ namespace WindowUnit
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 5);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(293, 44);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(293, 49);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // textBox2
@@ -137,7 +137,7 @@ namespace WindowUnit
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SizeAdjustWindow";
-            this.Padding = new System.Windows.Forms.Padding(20, 5, 20, 45);
+            this.Padding = new System.Windows.Forms.Padding(20, 0, 20, 45);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "窗口大小调节";
             this.tableLayoutPanel1.ResumeLayout(false);

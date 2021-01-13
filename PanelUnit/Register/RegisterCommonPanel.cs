@@ -84,7 +84,7 @@ namespace PanelUnit
             this.RegisterNowValue.TextAlign = ContentAlignment.MiddleLeft;
             this.RegisterNowValue.Name = "ResgisterValue";
             this.RegisterNowValue.TabIndex = 2;
-            this.RegisterNowValue.Text = "00000000";
+            this.RegisterNowValue.Text = "000";
             this.RegisterNowValue.Font = new Font("宋体", 10F, FontStyle.Regular, GraphicsUnit.Point, 134);
             //this.ResgisterValue.BackColor = Color.Cyan;  //背景颜色
             //
@@ -150,6 +150,7 @@ namespace PanelUnit
                 {
                     ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
                 }
+                RegisterValueText.Text = "";
             }
         }
         //输入值填写框回车动作
@@ -167,6 +168,7 @@ namespace PanelUnit
                 {
                     ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
                 }
+                RegisterValueText.Text = "";
             }
         }
 

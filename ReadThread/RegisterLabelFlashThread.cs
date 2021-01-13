@@ -33,34 +33,40 @@ namespace ReadThreadSpace
                 //判断COM端口是否已连接
                 if (COMFunc.serialPort.IsOpen)
                 {
-                    //判断刷新至Label的值是否需要单位转换
-                    if (RegisterCollection.registerList[(int)obj].dataTransform)
+                    try
                     {
-                        try
+                        //判断刷新至Label的值是否需要单位转换
+                        if (RegisterCollection.registerList[(int)obj].dataTransform)
                         {
-                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
-                            DataTreat.RegisterDataProportionToMM(int.Parse(RegisterCollection.registerValueList[(int)obj]), RegisterCollection.registerDataProportion);
+                            try
+                            {
+                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
+                                DataTreat.RegisterDataProportionToMM(int.Parse(RegisterCollection.registerValueList[(int)obj]), RegisterCollection.registerDataProportion) + "mm";
+                            }
+                            catch (Exception)
+                            {
+                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "";
+                                Thread.Sleep(200);
+                            }
                         }
-                        catch (Exception)
+                        else  //不转换
                         {
-                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "";
-                            Thread.Sleep(200);
+                            try
+                            {
+                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
+            RegisterCollection.registerValueList[(int)obj];
+                            }
+                            catch (Exception)
+                            {
+                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "";
+                                Thread.Sleep(200);
+                            }
                         }
+                        Thread.Sleep(100);
                     }
-                    else
+                    catch (Exception)
                     {
-                        try
-                        {
-                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
-        RegisterCollection.registerValueList[(int)obj];
-                        }
-                        catch (Exception)
-                        {
-                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "";
-                            Thread.Sleep(200);
-                        }
                     }
-                    Thread.Sleep(20);
                 }
                 else
                 {
@@ -72,7 +78,7 @@ namespace ReadThreadSpace
                     {
                         Thread.Sleep(200);
                     }
-                    Thread.Sleep(20);
+                    Thread.Sleep(200);
                 }
             }
         }

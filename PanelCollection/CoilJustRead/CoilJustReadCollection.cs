@@ -18,7 +18,7 @@ namespace PanelCollection
         //创建CoilJustRead集合
         public static List<CoilJustReadPanel> coilJustReadList = new List<CoilJustReadPanel>();
         //创建CoilJustRead读取结果集合
-        public static List<bool> coilJustReadValueList = new List<bool>();
+        public static List<bool?> coilJustReadValueList = new List<bool?>();
         //线圈只读功能模块数量
         public static int coilJustReadAmount;
 
@@ -36,15 +36,15 @@ namespace PanelCollection
             for (int i = 1; i <= coilJustReadAmount; i++)
             {
                 coilJustReadList.Add(new CoilJustReadPanel(i));
-                coilJustReadValueList.Add(false);
+                coilJustReadValueList.Add(null);
                 //设置成员名称
                 coilJustReadList[i - 1].label1.Text = IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "读取错误", filename);
                 //设置成员读取地址
                 coilJustReadList[i - 1].coilJustReadAddress = int.Parse(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "0", filename));
                 //设置成员Color
                 coilJustReadList[i - 1].c[0] = ColorTranslator.FromHtml(IniFunc.getString("CoilJustReadColor", "CoilJustReadColor" + i, "#D3D3D3", filename));
-                ////设置寄存器单位转换比率
-                //registerDataProportion = float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename));
+                //设置成员读取地址MXY
+                coilJustReadList[i - 1].coilJustReadMXYAddress = IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "M", filename);
             }
             //***
             //Panel初始化
@@ -74,6 +74,8 @@ namespace PanelCollection
                 coilJustReadList[i - 1].coilJustReadAddress = int.Parse(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "0", filename));
                 //设置成员Color
                 coilJustReadList[i - 1].c[0] = ColorTranslator.FromHtml(IniFunc.getString("CoilJustReadColor", "CoilJustReadColor" + i, "#D3D3D3", filename));
+                //设置成员读取地址MXY
+                coilJustReadList[i - 1].coilJustReadMXYAddress = IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "M", filename);
             }
             //***
             //Panel初始化

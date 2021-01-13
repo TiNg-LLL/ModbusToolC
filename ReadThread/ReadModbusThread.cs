@@ -34,40 +34,54 @@ namespace ReadThreadSpace
                 ThreadFather.met.WaitOne();
                 if (COMFunc.serialPort.IsOpen)
                 {
-                    //寄存器读取循环
-                    for (int i = 0; i < RegisterCollection.registerAmount; i++)
+                    try
                     {
-                        try
+                        //寄存器读取循环
+                        for (int i = 0; i < RegisterCollection.registerAmount; i++)
                         {
-                            RegisterCollection.registerValueList[i] = ModbusFunc.MyReadHoldingRegisters(RegisterCollection.registerList[i].GetRegisterReadAddress());
-                            Thread.Sleep(5);
-                        }
-                        catch (Exception)
-                        {
-                            RegisterCollection.registerValueList[i] = "";
-                            Thread.Sleep(50);
+                            try
+                            {
+                                RegisterCollection.registerValueList[i] = ModbusFunc.MyReadHoldingRegisters(DataTreat.RegisterAddressTransform(RegisterCollection.registerList[i].GetRegisterReadAddress()));
+                                Thread.Sleep(20);
+                            }
+                            catch (Exception)
+                            {
+                                RegisterCollection.registerValueList[i] = "";
+                                Thread.Sleep(100);
+                            }
                         }
                     }
-                    //线圈读取循环
-                    for (int i = 0; i < CoilJustReadCollection.coilJustReadAmount; i++)
+                    catch (Exception)
                     {
-                        try
+                    }
+                    try
+                    {
+                        //线圈读取循环
+                        for (int i = 0; i < CoilJustReadCollection.coilJustReadAmount; i++)
                         {
-                            CoilJustReadCollection.coilJustReadValueList[i] = ModbusFunc.MyReadCoils(CoilJustReadCollection.coilJustReadList[i].coilJustReadAddress);
-                            //Console.WriteLine(CoilJustReadCollection.coilJustReadValueList[i]);
-                            Thread.Sleep(5);
+                            try
+                            {
+                                CoilJustReadCollection.coilJustReadValueList[i] = ModbusFunc.MyReadCoils(
+                                    DataTreat.CoilMXYAddressTransform(CoilJustReadCollection.coilJustReadList[i].coilJustReadAddress,
+                                    CoilJustReadCollection.coilJustReadList[i].coilJustReadMXYAddress));
+                                //Console.WriteLine(CoilJustReadCollection.coilJustReadValueList[i]);
+                                Thread.Sleep(20);
+                            }
+                            catch (Exception)
+                            {
+                                CoilJustReadCollection.coilJustReadValueList[i] = null;
+                                Thread.Sleep(100);
+                            }
                         }
-                        catch (Exception)
-                        {
-                            RegisterCollection.registerValueList[i] = "";
-                            Thread.Sleep(50);
-                        }
+                    }
+                    catch (Exception)
+                    {
                     }
                     //Console.WriteLine("----------------------------------------------------一次循环结果----------------------------------------------------");
                 }
                 else
                 {
-                    Thread.Sleep(500);
+                    Thread.Sleep(200);
                 }
             }
         }

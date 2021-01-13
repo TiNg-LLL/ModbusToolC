@@ -22,7 +22,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.ComponentModel;
 
-namespace HZH_Controls.Controls
+namespace Controls
 {
     /// <summary>
     /// Class UCSignalLamp.

@@ -1,5 +1,6 @@
 ﻿using Func;
 using PanelCollection;
+using PanelCollection.CoilButton;
 using ReadThreadSpace;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,9 @@ namespace FirstWindow
 
         //线圈只读状态灯模块
         public static CoilJustReadCollection coilJustReadCollection = new CoilJustReadCollection();
+
+        //线圈按钮模块
+        public static CoilButtonCollection coilButtonCollection = new CoilButtonCollection();
 
         //参数地址设置副窗口
         private RegisterAdjustWindow registerAdjustWindow = new RegisterAdjustWindow();
@@ -58,9 +62,11 @@ namespace FirstWindow
             //添加resgisterCollection
             this.ClientSize = new System.Drawing.Size(width, height);
             this.groupBox1.Controls.Add(resgisterCollection);
+            this.groupBox2.Location = new Point(this.groupBox1.Width + 50, 35);
             this.groupBox2.Controls.Add(coilJustReadCollection);
+            this.groupBox3.Location = new Point(this.groupBox1.Width + 50, 180);
+            this.groupBox3.Controls.Add(coilButtonCollection);
             threadFather = new ThreadFather();
-            //threadFather.ThreadStop();
         }
         //***
         //参数地址修改显示副窗口按钮
@@ -81,15 +87,13 @@ namespace FirstWindow
             if (e.KeyCode == Keys.Enter)
             {
                 IniFunc.writeString("RegisterAmount", "RegisterAmount", this.参数数量TextBox.Text, filenameRegister);
-                if (MessageBox.Show("需要重启软件，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("需要重启软件才能生效，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Application.Restart();
                 }
                 else
                 {
-                    //this.Close();
                     //resgisterCollection.Flash();
-
                 }
             }
         }
@@ -109,13 +113,12 @@ namespace FirstWindow
             if (e.KeyCode == Keys.Enter)
             {
                 IniFunc.writeString("CoilJustReadAmount", "CoilJustReadAmount", this.状态数量TextBox.Text, filenameCoilJustRead);
-                if (MessageBox.Show("需要重启软件，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("需要重启软件才能生效，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Application.Restart();
                 }
                 else
                 {
-                    //this.Close();
                     //coilJustReadCollection.Flash();
                 }
             }

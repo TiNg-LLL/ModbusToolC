@@ -45,6 +45,12 @@ namespace WindowUnit
                 //***
                 //读取地址对象刷新
                 CoilJustReadCollection.coilJustReadList[i - 1].coilJustReadAddress = int.Parse(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "0", filename));
+                //***
+                //MXY地址ini文件刷新
+                IniFunc.writeString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, CoilJustReadAdjustCollection.coilJustReadAdjustList[i - 1].comboBox1.Text, filename);
+                //***
+                //MXY读取地址对象刷新
+                CoilJustReadCollection.coilJustReadList[i - 1].coilJustReadMXYAddress = IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "M", filename);
             }
             //设置窗口关闭
             this.Close();

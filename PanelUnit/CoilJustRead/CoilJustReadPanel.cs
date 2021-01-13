@@ -1,5 +1,5 @@
 ﻿using Func;
-using HZH_Controls.Controls;
+using Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +24,7 @@ namespace PanelUnit
 
         //modbus参数成员
         public int coilJustReadAddress { get; set; }
+        public string coilJustReadMXYAddress { get; set; }
 
         //初始化INI文件地址
         private string filename = Directory.GetCurrentDirectory() + @"\CoilJustRead.ini";
