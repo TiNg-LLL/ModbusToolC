@@ -25,6 +25,7 @@ namespace PanelCollection.CoilButton
 
         //初始化INI文件地址
         private string filename = Directory.GetCurrentDirectory() + @"\CoilButton.ini";
+
         public CoilButtonCollection()
         {
             InitializeComponent();
@@ -40,10 +41,14 @@ namespace PanelCollection.CoilButton
                 coilButtonValueList.Add(null);
                 //设置成员名称
                 coilButtonList[i - 1].ucBtnExt1.lbl.Text = IniFunc.getString("CoilButtonName", "CoilButtonName" + i, "读取错误", filename);
+                //设置成员写入地址
+                coilButtonList[i - 1].coilButtonWriteAddress = int.Parse(IniFunc.getString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, "0", filename));
+                //设置成员写入地址MXY
+                coilButtonList[i - 1].coilButtonWriteMXYAddress = IniFunc.getString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, "M", filename);
                 //设置成员读取地址
-                coilButtonList[i - 1].coilButtonAddress = int.Parse(IniFunc.getString("CoilButtonAddress", "CoilButtonAddress" + i, "0", filename));
+                coilButtonList[i - 1].coilButtonReadAddress = int.Parse(IniFunc.getString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, "0", filename));
                 //设置成员读取地址MXY
-                coilButtonList[i - 1].coilButtonMXYAddress = IniFunc.getString("CoilButtonMXYAddress", "CoilButtonMXYAddress" + i, "M", filename);
+                coilButtonList[i - 1].coilButtonReadMXYAddress = IniFunc.getString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, "M", filename);
             }
             //***
             //Panel初始化
@@ -58,9 +63,9 @@ namespace PanelCollection.CoilButton
                 this.tableLayoutPanel1.ColumnCount = 4;  //列数
             }
             this.tableLayoutPanel1.ColumnStyles.Clear();
-            for (int i = 0; i <= this.tableLayoutPanel1.ColumnCount; i++)
+            for (int i = 0; i < this.tableLayoutPanel1.ColumnCount; i++)
             {
-                this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 52F));
+                this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             }
             //行数设置
             if ((coilButtonAmount / 4) <= 1)
@@ -69,12 +74,12 @@ namespace PanelCollection.CoilButton
             }
             else
             {
-                this.tableLayoutPanel1.RowCount = ((coilButtonAmount / 4) + 1);  //行数
+                this.tableLayoutPanel1.RowCount = (coilButtonAmount / 4);  //行数
             }
             this.tableLayoutPanel1.RowStyles.Clear();
             for (int i = 0; i <= this.tableLayoutPanel1.RowCount; i++)
             {
-                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             }
             //添加Label对象
             for (int i = 0; i < coilButtonAmount; i++)
@@ -96,10 +101,10 @@ namespace PanelCollection.CoilButton
                     this.tableLayoutPanel1.Controls.Add(coilButtonList[i], i - 12, 3);
                 }
             }
-            this.tableLayoutPanel1.AutoSize = true;
+            //this.tableLayoutPanel1.AutoSize = true;
             //this.BackColor = Color.DarkRed;  //背景颜色
             this.tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset;   //边框样式
-            this.tableLayoutPanel1.Dock = DockStyle.Fill;  //铺满
+            //this.tableLayoutPanel1.Dock = DockStyle.Fill;  //铺满
         }
     }
 }

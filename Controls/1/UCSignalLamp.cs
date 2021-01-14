@@ -54,7 +54,7 @@ namespace Controls
         /// <summary>
         /// The lamp color
         /// </summary>
-        private Color[] lampColor = new Color[] { Color.FromArgb(255, 77, 59) };
+        private Color[] lampColor = new Color[] { Color.FromArgb(255, 255, 255) };
 
         /// <summary>
         /// Gets or sets the color of the lamp.
@@ -149,6 +149,8 @@ namespace Controls
             timer = new Timer();
             timer.Interval = 200;
             timer.Tick += timer_Tick;
+            //从非 UI 线程更新 UI 线程  线程不安全
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         /// <summary>
@@ -208,6 +210,19 @@ namespace Controls
             {
                 g.DrawEllipse(new Pen(new SolidBrush(this.BackColor), 2), new Rectangle(4, 4, this.Width - 1 - 8, this.Height - 1 - 8));
             }
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // UCSignalLamp
+            // 
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.ForeColor = System.Drawing.Color.Transparent;
+            this.Name = "UCSignalLamp";
+            this.ResumeLayout(false);
+
         }
     }
 }

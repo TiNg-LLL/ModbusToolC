@@ -56,7 +56,7 @@ namespace Controls
             this.lbl.BackColor = System.Drawing.Color.Transparent;
             this.lbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl.ForeColor = System.Drawing.Color.White;
+            this.lbl.ForeColor = System.Drawing.Color.Black;
             this.lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl.Location = new System.Drawing.Point(0, 0);
             this.lbl.Margin = new System.Windows.Forms.Padding(0);
@@ -65,7 +65,6 @@ namespace Controls
             this.lbl.TabIndex = 0;
             this.lbl.Text = "自定义按钮";
             this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseDown);
             // 
             // UCBtnExt
             // 
@@ -78,7 +77,7 @@ namespace Controls
             this.IsShowRect = true;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCBtnExt";
-            this.RectColor = System.Drawing.Color.Gray;
+            this.RectColor = System.Drawing.Color.Black;
             this.Size = new System.Drawing.Size(100, 50);
             this.ResumeLayout(false);
 

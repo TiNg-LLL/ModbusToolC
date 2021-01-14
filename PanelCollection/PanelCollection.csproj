@@ -45,6 +45,9 @@
     <Compile Include="CoilButton\CoilButtonCollection.Designer.cs">
       <DependentUpon>CoilButtonCollection.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoilButton\CoilButtonAdjustCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CoilJustRead\CoilJustReadAdjustCollection.cs">
       <SubType>Component</SubType>
     </Compile>

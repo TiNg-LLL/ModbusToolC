@@ -1,4 +1,5 @@
 ﻿using PanelCollection;
+using PanelCollection.CoilButton;
 using ReadThreadSpace;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace ReadThreadSpace
         ReadModbusThread readModbusThread;
         List<RegisterLabelFlashThread> registerLabelFlashThreadList;
         List<CoilJustReadLabelFlashThread> coilJustReadLabelFlashThreadList;
+        List<CoilButtonLabelFlashThread> coilButtonLabelFlashThreadList;
         //线程挂起启动标记 true为挂起
         Boolean b = true;
         Boolean c = false;   //辅助标记
@@ -31,6 +33,7 @@ namespace ReadThreadSpace
             readModbusThread = new ReadModbusThread();
             registerLabelFlashThreadList = new List<RegisterLabelFlashThread>();
             coilJustReadLabelFlashThreadList = new List<CoilJustReadLabelFlashThread>();
+            coilButtonLabelFlashThreadList = new List<CoilButtonLabelFlashThread>();
             for (int i = 0; i < RegisterCollection.registerAmount; i++)
             {
                 registerLabelFlashThreadList.Add(new RegisterLabelFlashThread(i));
@@ -39,7 +42,10 @@ namespace ReadThreadSpace
             {
                 coilJustReadLabelFlashThreadList.Add(new CoilJustReadLabelFlashThread(i));
             }
-
+            for (int i = 0; i < CoilButtonCollection.coilButtonAmount; i++)
+            {
+                coilButtonLabelFlashThreadList.Add(new CoilButtonLabelFlashThread(i));
+            }
             //管理线程
             childThread = new Thread(new ParameterizedThreadStart(RegisterReadThread));
             childThread.IsBackground = true;  //设置为后台线程

@@ -61,6 +61,7 @@ namespace PanelUnit
             this.RegisterWriteAddressText.Size = new Size(70, 10);  //输入框大小
             this.RegisterWriteAddressText.Font = new Font("宋体", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
             this.RegisterWriteAddressText.KeyPress += new KeyPressEventHandler(this.RegisterValueText_KeyPress);
+            this.RegisterWriteAddressText.KeyUp += new KeyEventHandler(this.RegisterWriteAddressText_KeyUp);
             //this.RegisterWriteAddressText.BackColor = Color.Green;  //背景颜色
 
             //
@@ -73,6 +74,7 @@ namespace PanelUnit
             this.RegisterReadAddressText.Size = new Size(70, 10);  //输入框大小
             this.RegisterReadAddressText.Font = new Font("宋体", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
             this.RegisterReadAddressText.KeyPress += new KeyPressEventHandler(this.RegisterValueText_KeyPress);
+            this.RegisterReadAddressText.KeyUp += new KeyEventHandler(this.RegisterReadAddressText_KeyUp);
             //this.RegisterReadAddressText.BackColor = Color.Green;  //背景颜色
             // ***
             // checkBox1寄存器数据是否转换为mm选项
@@ -105,6 +107,22 @@ namespace PanelUnit
             else
             {
                 e.Handled = true;
+            }
+        }
+        //空格建使读取写入地址一致
+        private void RegisterWriteAddressText_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                this.RegisterReadAddressText.Text = this.RegisterWriteAddressText.Text;
+            }
+        }
+        //空格建使读取写入地址一致
+        private void RegisterReadAddressText_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                this.RegisterWriteAddressText.Text = this.RegisterReadAddressText.Text;
             }
         }
         //***

@@ -154,6 +154,8 @@ namespace Controls
             this.TabStop = false;
             this.lbl.MouseEnter += lbl_MouseEnter;
             this.lbl.MouseLeave += lbl_MouseLeave;
+            //从非 UI 线程更新 UI 线程  线程不安全
+            CheckForIllegalCrossThreadCalls = false;
         }
         Color m_cacheColor = Color.Empty;
         void lbl_MouseLeave(object sender, EventArgs e)
@@ -166,11 +168,12 @@ namespace Controls
                 }
                 else
                 {
-                    if (m_cacheColor != Color.Empty)
-                    {
-                        this.FillColor = m_cacheColor;
-                        m_cacheColor = Color.Empty;
-                    }
+                    //if (m_cacheColor != Color.Empty)
+                    //{
+                    //    this.FillColor = m_cacheColor;
+                    //    m_cacheColor = Color.Empty;
+                    //}
+                    this.IsShowRect = false;
                 }
             }
         }
@@ -185,11 +188,12 @@ namespace Controls
                 }
                 else
                 {
-                    if (FillColor != Color.Empty && FillColor != null)
-                    {
-                        m_cacheColor = this.FillColor;
-                        this.FillColor = this.FillColor.ChangeColor(-0.2f);
-                    }
+                    //if (FillColor != Color.Empty && FillColor != null)
+                    //{
+                    //    m_cacheColor = this.FillColor;
+                    //    this.FillColor = this.FillColor.ChangeColor(-0.2f);
+                    //}
+                    this.IsShowRect = true;
                 }
             }
         }

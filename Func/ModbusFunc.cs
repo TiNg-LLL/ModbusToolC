@@ -45,11 +45,13 @@ namespace Func
             }
             return "";
         }
-
-        public static bool MyReadCoils(int CoilJustReadAddress) {
+        //***
+        //线圈单个读取
+        //***
+        public static bool MyReadCoils(int CoilReadAddress) {
             if (COMFunc.serialPort.IsOpen)
             {
-                ushort startAddress = (ushort)CoilJustReadAddress;
+                ushort startAddress = (ushort)CoilReadAddress;
                 try
                 {
                     return modbus.ReadCoils(COMFunc.SlaveID,startAddress,1)[0];
@@ -60,6 +62,24 @@ namespace Func
                 }
             }
             return false;
+        }
+        //***
+        //线圈单个写入
+        //***
+        public static void MyWriteSingleCoil(int CoilWriteAddress,bool b)
+        {
+            if (COMFunc.serialPort.IsOpen)
+            {
+                ushort startAddress = (ushort)CoilWriteAddress;
+                try
+                {
+                    modbus.WriteSingleCoil(COMFunc.SlaveID, startAddress, b);
+                }
+                catch (System.Exception e)
+                {
+                    throw e;
+                }
+            }
         }
     }
 }

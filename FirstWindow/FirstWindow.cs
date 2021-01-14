@@ -29,6 +29,9 @@ namespace FirstWindow
         //状态地址设置副窗口
         private CoilJustReadAdjustWindow coilJustReadAdjustWindow = new CoilJustReadAdjustWindow();
 
+        //按钮地址设置副窗口
+        private CoilButtonAdjustWindow coilButtonAdjustWindow = new CoilButtonAdjustWindow();
+
         //窗口大小调整副窗口
         private SizeAdjustWindow sizeAdjustWindow = new SizeAdjustWindow();
 
@@ -45,6 +48,7 @@ namespace FirstWindow
         private static string filenameSystemDate = Directory.GetCurrentDirectory() + @"\SystemDate.ini";
         private static string filenameRegister = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
         private static string filenameCoilJustRead = Directory.GetCurrentDirectory() + @"\CoilJustRead.ini";
+        private static string filenameButtonRead = Directory.GetCurrentDirectory() + @"\CoilButton.ini";
 
         //获取窗口大小参数
         public static int width = int.Parse(IniFunc.getString("FirstWindowSize", "Width", "800", filenameSystemDate));
@@ -66,6 +70,8 @@ namespace FirstWindow
             this.groupBox2.Controls.Add(coilJustReadCollection);
             this.groupBox3.Location = new Point(this.groupBox1.Width + 50, 180);
             this.groupBox3.Controls.Add(coilButtonCollection);
+            this.groupBox3.Width = this.groupBox2.Width;
+            this.groupBox3.Height = ((CoilButtonCollection.coilButtonAmount / 5)+1) * 62 + 23;
             threadFather = new ThreadFather();
         }
         //***
@@ -129,6 +135,29 @@ namespace FirstWindow
         private void 状态数量ToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
         {
             this.状态数量TextBox.Text = CoilJustReadCollection.coilJustReadAmount.ToString();
+        }
+        //***
+        //按钮数量修改textbox
+        //***
+        private void 按钮数量TextBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                IniFunc.writeString("CoilButtonAmount", "CoilButtonAmount", this.按钮数量TextBox1.Text, filenameButtonRead);
+                if (MessageBox.Show("需要重启软件才能生效，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Application.Restart();
+                }
+                else
+                {
+                    //coilJustReadCollection.Flash();
+                }
+            }
+        }
+        //按钮数量修改鼠标放置动作
+        private void 按钮数量ToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            this.按钮数量TextBox1.Text = CoilButtonCollection.coilButtonAmount.ToString();
         }
         //***
         //窗口大小设置副窗口按钮
@@ -198,12 +227,23 @@ namespace FirstWindow
                 Application.Restart();
             }
         }
-
+        //***
+        //状态地址修改副窗口显示
+        //***
         private void 状态地址修改ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CoilJustReadAdjustWindow.coilJustReadAdjustCollection.Flash();
-            coilJustReadAdjustWindow.Flash();
+            //coilJustReadAdjustWindow.Flash();
             coilJustReadAdjustWindow.ShowDialog();
+        }
+        //***
+        //按钮地址修改副窗口显示
+        //***
+        private void 按钮地址修改ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CoilButtonAdjustWindow.coilButtonAdjustCollection.Flash();
+            //coilButtonAdjustWindow.Flash();
+            coilButtonAdjustWindow.ShowDialog();
         }
     }
 }

@@ -64,6 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="1\UCSignalLamp.resx">
+      <DependentUpon>UCSignalLamp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2\UCBtnExt.resx">
       <DependentUpon>UCBtnExt.cs</DependentUpon>
     </EmbeddedResource>

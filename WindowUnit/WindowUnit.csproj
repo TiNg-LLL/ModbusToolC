@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdjustWindows\CoilButtonAdjustWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdjustWindows\CoilButtonAdjustWindow.Designer.cs">
+      <DependentUpon>CoilButtonAdjustWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <EmbeddedResource Include="AdjustWindows\CoilJustReadAdjustWindow.resx">
       <DependentUpon>CoilJustReadAdjustWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdjustWindows\CoilButtonAdjustWindow.resx">
+      <DependentUpon>CoilButtonAdjustWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +144,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controls\Controls.csproj">
+      <Project>{6441FD69-2398-4461-B01F-4A2F57708CF6}</Project>
+      <Name>Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PanelUnit\PanelUnit.csproj">
       <Project>{08AD728F-EE33-4252-834B-86BC79486D18}</Project>
       <Name>PanelUnit</Name>

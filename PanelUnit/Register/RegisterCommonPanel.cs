@@ -156,7 +156,7 @@ namespace PanelUnit
         //输入值填写框回车动作
         private void ResgisterText_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Control || e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 if (dataTransform)
                 {
