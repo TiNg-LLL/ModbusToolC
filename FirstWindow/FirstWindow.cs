@@ -68,7 +68,7 @@ namespace FirstWindow
             this.groupBox1.Controls.Add(resgisterCollection);
             this.groupBox2.Location = new Point(this.groupBox1.Width + 50, 35);
             this.groupBox2.Controls.Add(coilJustReadCollection);
-            this.groupBox3.Location = new Point(this.groupBox1.Width + 50, 180);
+            this.groupBox3.Location = new Point(this.groupBox1.Width + 50, this.groupBox2.Location.Y + this.groupBox2.Height +20);
             this.groupBox3.Controls.Add(coilButtonCollection);
             this.groupBox3.Width = this.groupBox2.Width;
             this.groupBox3.Height = ((CoilButtonCollection.coilButtonAmount / 5)+1) * 62 + 23;

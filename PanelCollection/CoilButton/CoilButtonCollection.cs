@@ -49,6 +49,8 @@ namespace PanelCollection.CoilButton
                 coilButtonList[i - 1].coilButtonReadAddress = int.Parse(IniFunc.getString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, "0", filename));
                 //设置成员读取地址MXY
                 coilButtonList[i - 1].coilButtonReadMXYAddress = IniFunc.getString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, "M", filename);
+                //设置成员功能点动切换Bool
+                coilButtonList[i - 1].coilButtonTransform = bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename));
             }
             //***
             //Panel初始化

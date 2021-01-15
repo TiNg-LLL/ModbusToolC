@@ -55,7 +55,7 @@ namespace ReadThreadSpace
                         CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = new Color[] { Color.FromArgb(211, 211, 211) };
                         Thread.Sleep(200);
                     }
-                    Thread.Sleep(50);
+                    Thread.Sleep(150);
                 }
                 else
                 {

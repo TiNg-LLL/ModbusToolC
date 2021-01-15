@@ -15,6 +15,7 @@ namespace ReadThreadSpace
     {
         private ThreadStart childref;
         private Thread childThread;
+        int time;
         //private ModbusFunc modbusFunc = RegisterCommonPanel.modbusFunc;
 
         public ReadModbusThread()
@@ -24,6 +25,7 @@ namespace ReadThreadSpace
             childThread.IsBackground = true;  //设置为后台线程
             childThread.Name = "modbus读取线程";
             childThread.Start();
+            time = 0;
         }
         //
         //寄存器modbus读取线程方法
@@ -44,12 +46,12 @@ namespace ReadThreadSpace
                             try
                             {
                                 RegisterCollection.registerValueList[i] = ModbusFunc.MyReadHoldingRegisters(DataTreat.RegisterAddressTransform(RegisterCollection.registerList[i].GetRegisterReadAddress()));
-                                Thread.Sleep(10);
+                                Thread.Sleep(time);
                             }
                             catch (Exception)
                             {
                                 RegisterCollection.registerValueList[i] = "";
-                                Thread.Sleep(20);
+                                Thread.Sleep(time);
                             }
                         }
                     }
@@ -68,13 +70,12 @@ namespace ReadThreadSpace
                                 CoilJustReadCollection.coilJustReadValueList[i] = ModbusFunc.MyReadCoils(
                                     DataTreat.CoilMXYAddressTransform(CoilJustReadCollection.coilJustReadList[i].coilJustReadAddress,
                                     CoilJustReadCollection.coilJustReadList[i].coilJustReadMXYAddress));
-                                //Console.WriteLine(CoilJustReadCollection.coilJustReadValueList[i]);
-                                Thread.Sleep(10);
+                                Thread.Sleep(time);
                             }
                             catch (Exception)
                             {
                                 CoilJustReadCollection.coilJustReadValueList[i] = null;
-                                Thread.Sleep(20);
+                                Thread.Sleep(time);
                             }
                         }
                     }
@@ -94,13 +95,12 @@ namespace ReadThreadSpace
                                     DataTreat.CoilMXYAddressTransform(CoilButtonCollection.coilButtonList[i].coilButtonReadAddress,
                                     CoilButtonCollection.coilButtonList[i].coilButtonReadMXYAddress));
                                 CoilButtonCollection.coilButtonList[i].nowValue = (bool)CoilButtonCollection.coilButtonValueList[i];
-                                //Console.WriteLine(CoilButtonCollection.coilButtonValueList[i]);
-                                Thread.Sleep(10);
+                                Thread.Sleep(time);
                             }
                             catch (Exception)
                             {
                                 CoilButtonCollection.coilButtonValueList[i] = null;
-                                Thread.Sleep(20);
+                                Thread.Sleep(time);
                             }
                         }
                     }

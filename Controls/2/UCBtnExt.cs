@@ -203,10 +203,10 @@ namespace Controls
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
-        private void lbl_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (this.BtnClick != null)
-                BtnClick(this, e);
-        }
+        //private void lbl_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    if (this.BtnClick != null)
+        //        BtnClick(this, e);
+        //}
     }
 }

@@ -63,7 +63,7 @@ namespace PanelUnit
             this.RegisterName.Name = "ResgisterName";
             this.RegisterName.TabIndex = 2;
             this.RegisterName.Text = "初始代码段";
-            this.RegisterName.Font = new Font("微软雅黑", 11F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            this.RegisterName.Font = new Font("微软雅黑", 11F, FontStyle.Regular, GraphicsUnit.Point, 134);
             //this.ResgisterName.BackColor = Color.Red;  //背景颜色
             //
             // :

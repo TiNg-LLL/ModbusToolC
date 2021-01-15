@@ -32,34 +32,50 @@ namespace PanelUnit
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.coilButtonWritecomboBox = new System.Windows.Forms.ComboBox();
             this.coilButtonTextBox1 = new System.Windows.Forms.TextBox();
             this.coilButtonWriteTextBox = new System.Windows.Forms.TextBox();
-            this.coilButtonReadcomboBox = new System.Windows.Forms.ComboBox();
-            this.coilButtonWritecomboBox = new System.Windows.Forms.ComboBox();
             this.coilButtonReadtextBox = new System.Windows.Forms.TextBox();
+            this.coilButtonReadcomboBox = new System.Windows.Forms.ComboBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnCount = 7;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.Controls.Add(this.coilButtonWritecomboBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.coilButtonTextBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.coilButtonWriteTextBox, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.coilButtonReadtextBox, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.coilButtonReadcomboBox, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.radioButton1, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.radioButton2, 6, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(350, 30);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(445, 30);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // coilButtonWritecomboBox
+            // 
+            this.coilButtonWritecomboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.coilButtonWritecomboBox.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.coilButtonWritecomboBox.FormattingEnabled = true;
+            this.coilButtonWritecomboBox.Location = new System.Drawing.Point(109, 4);
+            this.coilButtonWritecomboBox.Name = "coilButtonWritecomboBox";
+            this.coilButtonWritecomboBox.Size = new System.Drawing.Size(40, 21);
+            this.coilButtonWritecomboBox.TabIndex = 4;
             // 
             // coilButtonTextBox1
             // 
@@ -78,8 +94,19 @@ namespace PanelUnit
             this.coilButtonWriteTextBox.Name = "coilButtonWriteTextBox";
             this.coilButtonWriteTextBox.Size = new System.Drawing.Size(70, 23);
             this.coilButtonWriteTextBox.TabIndex = 2;
-            this.coilButtonWriteTextBox.KeyPress += new KeyPressEventHandler(this.textBoxText_KeyPress);
-            this.coilButtonWriteTextBox.KeyUp += new KeyEventHandler(this.coilButtonWriteTextBox_KeyUp);
+            this.coilButtonWriteTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxText_KeyPress);
+            this.coilButtonWriteTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.coilButtonWriteTextBox_KeyUp);
+            // 
+            // coilButtonReadtextBox
+            // 
+            this.coilButtonReadtextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.coilButtonReadtextBox.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.coilButtonReadtextBox.Location = new System.Drawing.Point(277, 3);
+            this.coilButtonReadtextBox.Name = "coilButtonReadtextBox";
+            this.coilButtonReadtextBox.Size = new System.Drawing.Size(70, 23);
+            this.coilButtonReadtextBox.TabIndex = 5;
+            this.coilButtonReadtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxText_KeyPress);
+            this.coilButtonReadtextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.coilButtonReadtextBox_KeyUp);
             // 
             // coilButtonReadcomboBox
             // 
@@ -91,36 +118,42 @@ namespace PanelUnit
             this.coilButtonReadcomboBox.Size = new System.Drawing.Size(40, 21);
             this.coilButtonReadcomboBox.TabIndex = 3;
             // 
-            // coilButtonWritecomboBox
+            // radioButton1
             // 
-            this.coilButtonWritecomboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.coilButtonWritecomboBox.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.coilButtonWritecomboBox.FormattingEnabled = true;
-            this.coilButtonWritecomboBox.Location = new System.Drawing.Point(109, 4);
-            this.coilButtonWritecomboBox.Name = "coilButtonWritecomboBox";
-            this.coilButtonWritecomboBox.Size = new System.Drawing.Size(40, 21);
-            this.coilButtonWritecomboBox.TabIndex = 4;
+            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(350, 7);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(47, 16);
+            this.radioButton1.TabIndex = 6;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "点动";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // coilButtonReadtextBox
+            // radioButton2
             // 
-            this.coilButtonReadtextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.coilButtonReadtextBox.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.coilButtonReadtextBox.Location = new System.Drawing.Point(277, 3);
-            this.coilButtonReadtextBox.Name = "coilButtonReadtextBox";
-            this.coilButtonReadtextBox.Size = new System.Drawing.Size(70, 23);
-            this.coilButtonReadtextBox.TabIndex = 5;
-            this.coilButtonReadtextBox.KeyPress += new KeyPressEventHandler(this.textBoxText_KeyPress);
-            this.coilButtonReadtextBox.KeyUp += new KeyEventHandler(this.coilButtonReadtextBox_KeyUp);
+            this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(398, 7);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(47, 16);
+            this.radioButton2.TabIndex = 7;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "切换";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // CoilButtonAdjustPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CoilButtonAdjustPanel";
-            this.Size = new System.Drawing.Size(350, 30);
+            this.Size = new System.Drawing.Size(445, 30);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+
         }
         //输入框只能填写数字
         private void textBoxText_KeyPress(object sender, KeyPressEventArgs e)
@@ -162,5 +195,7 @@ namespace PanelUnit
 
         public System.Windows.Forms.ComboBox coilButtonWritecomboBox;
         public System.Windows.Forms.TextBox coilButtonReadtextBox;
+        public RadioButton radioButton1;
+        public RadioButton radioButton2;
     }
 }

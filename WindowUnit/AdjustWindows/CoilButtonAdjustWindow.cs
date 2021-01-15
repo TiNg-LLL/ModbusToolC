@@ -33,7 +33,7 @@ namespace WindowUnit
                 //名称对象刷新
                 CoilButtonCollection.coilButtonList[i - 1].ucBtnExt1.lbl.Text = IniFunc.getString("CoilButtonName", "CoilButtonName" + i, "读取错误", filename);
                 //***
-                //读取
+                //读取地址
                 //***
                 //读取地址ini文件刷新
                 IniFunc.writeString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonReadtextBox.Text, filename);
@@ -44,7 +44,7 @@ namespace WindowUnit
                 //读取MXY地址对象刷新
                 CoilButtonCollection.coilButtonList[i - 1].coilButtonReadMXYAddress = IniFunc.getString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, "M", filename);
                 //***
-                //写入
+                //写入地址
                 //***
                 //写入地址ini文件刷新
                 IniFunc.writeString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonWriteTextBox.Text, filename);
@@ -54,6 +54,19 @@ namespace WindowUnit
                 IniFunc.writeString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonWritecomboBox.Text, filename);
                 //写入MXY地址对象刷新
                 CoilButtonCollection.coilButtonList[i - 1].coilButtonWriteMXYAddress = IniFunc.getString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, "M", filename);
+                //***
+                //点动切换
+                //***
+                if (CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].radioButton1.Checked)
+                {
+                    IniFunc.writeString("CoilButtonTransform", "CoilButtonTransform" + i, "true", filename);
+                    CoilButtonCollection.coilButtonList[i - 1].coilButtonTransform = bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename));
+                }
+                else
+                {
+                    IniFunc.writeString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename);
+                    CoilButtonCollection.coilButtonList[i - 1].coilButtonTransform = bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename));
+                }
             }
             //设置窗口关闭
             this.Close();

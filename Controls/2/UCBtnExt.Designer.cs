@@ -49,6 +49,7 @@ namespace Controls
         private void InitializeComponent()
         {
             this.lbl = new System.Windows.Forms.Label();
+            this.ucSignalLamp1 = new Controls.UCSignalLamp();
             this.SuspendLayout();
             // 
             // lbl
@@ -66,18 +67,35 @@ namespace Controls
             this.lbl.Text = "自定义按钮";
             this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ucSignalLamp1
+            // 
+            this.ucSignalLamp1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucSignalLamp1.BackColor = System.Drawing.Color.Transparent;
+            this.ucSignalLamp1.IsHighlight = false;
+            this.ucSignalLamp1.IsShowBorder = false;
+            this.ucSignalLamp1.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.LightGray};
+            this.ucSignalLamp1.Location = new System.Drawing.Point(87, 2);
+            this.ucSignalLamp1.Name = "ucSignalLamp1";
+            this.ucSignalLamp1.Size = new System.Drawing.Size(10, 10);
+            this.ucSignalLamp1.TabIndex = 2;
+            this.ucSignalLamp1.TwinkleSpeed = 0;
+            // 
             // UCBtnExt
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
             this.ConerRadius = 10;
+            this.Controls.Add(this.ucSignalLamp1);
             this.Controls.Add(this.lbl);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FillColor = System.Drawing.Color.DarkGray;
             this.IsRadius = true;
             this.IsShowRect = true;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCBtnExt";
             this.RectColor = System.Drawing.Color.Black;
+            this.RectWidth = 2;
             this.Size = new System.Drawing.Size(100, 50);
             this.ResumeLayout(false);
 
@@ -89,5 +107,6 @@ namespace Controls
         /// The label
         /// </summary>
         public System.Windows.Forms.Label lbl;
+        public UCSignalLamp ucSignalLamp1;
     }
 }

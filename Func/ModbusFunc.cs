@@ -40,7 +40,6 @@ namespace Func
                 }
                 catch (System.Exception e)
                 {
-                    throw e;
                 }
             }
             return "";
@@ -58,7 +57,6 @@ namespace Func
                 }
                 catch (System.Exception e)
                 {
-                    throw e;
                 }
             }
             return false;
@@ -77,7 +75,6 @@ namespace Func
                 }
                 catch (System.Exception e)
                 {
-                    throw e;
                 }
             }
         }

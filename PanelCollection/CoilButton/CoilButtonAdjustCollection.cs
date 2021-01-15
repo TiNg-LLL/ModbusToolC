@@ -48,6 +48,15 @@ namespace PanelCollection
                 coilButtonAdjustList[i - 1].coilButtonWriteTextBox.Text = IniFunc.getString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, "读取错误", filename);
                 //设置成员写入地址MXY
                 coilButtonAdjustList[i - 1].coilButtonWritecomboBox.Text = IniFunc.getString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, "读取错误", filename);
+                //设置成员点动切换选择
+                if (bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "读取错误", filename)))
+                {
+                    coilButtonAdjustList[i - 1].radioButton1.Checked = true;
+                }
+                else if (!bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "读取错误", filename)))
+                {
+                    coilButtonAdjustList[i - 1].radioButton2.Checked = true;
+                }
             }
 
             this.ColumnCount = 1;  //列数
