@@ -50,7 +50,7 @@ namespace ReadThreadSpace
                             }
                             catch (Exception)
                             {
-                                RegisterCollection.registerValueList[i] = "";
+                                RegisterCollection.registerValueList[i] = "error";
                                 Thread.Sleep(time);
                             }
                         }

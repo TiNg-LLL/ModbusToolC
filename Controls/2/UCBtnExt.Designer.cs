@@ -62,10 +62,11 @@ namespace Controls
             this.lbl.Location = new System.Drawing.Point(0, 0);
             this.lbl.Margin = new System.Windows.Forms.Padding(0);
             this.lbl.Name = "lbl";
+            this.lbl.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.lbl.Size = new System.Drawing.Size(100, 50);
             this.lbl.TabIndex = 0;
             this.lbl.Text = "自定义按钮";
-            this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ucSignalLamp1
             // 

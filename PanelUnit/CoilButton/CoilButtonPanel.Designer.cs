@@ -37,12 +37,12 @@ namespace PanelUnit.CoilButton
             // ucBtnExt1
             // 
             this.ucBtnExt1.BackColor = System.Drawing.Color.Transparent;
-            this.ucBtnExt1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ucBtnExt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ucBtnExt1.BtnBackColor = System.Drawing.Color.Transparent;
-            this.ucBtnExt1.BtnFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnExt1.BtnFont = new System.Drawing.Font("微软雅黑", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ucBtnExt1.BtnForeColor = System.Drawing.Color.Black;
             this.ucBtnExt1.BtnText = "测试";
-            this.ucBtnExt1.ConerRadius = 10;
+            this.ucBtnExt1.ConerRadius = 2;
             this.ucBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnExt1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucBtnExt1.EnabledMouseEffect = true;

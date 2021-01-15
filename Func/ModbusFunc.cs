@@ -7,9 +7,9 @@ namespace Func
     {
         static IModbusSerialMaster modbus = ModbusSerialMaster.CreateRtu(COMFunc.serialPort);
 
-        //
+        //***
         //寄存器多个写入方法
-        //
+        //***
         public static void MyWriteMultipleRegisters(int RegisterWriteAddress, string data)
         {
             if (COMFunc.serialPort.IsOpen)
@@ -26,9 +26,9 @@ namespace Func
                 }
             }
         }
-        //
+        //***
         //寄存器多个读取方法
-        //
+        //***
         public static string MyReadHoldingRegisters(int RegisterReadAddress)
         {
             if (COMFunc.serialPort.IsOpen)
@@ -40,6 +40,7 @@ namespace Func
                 }
                 catch (System.Exception e)
                 {
+                    throw e;
                 }
             }
             return "";
@@ -57,6 +58,7 @@ namespace Func
                 }
                 catch (System.Exception e)
                 {
+                    throw e;
                 }
             }
             return false;
@@ -75,6 +77,7 @@ namespace Func
                 }
                 catch (System.Exception e)
                 {
+                    throw e;
                 }
             }
         }

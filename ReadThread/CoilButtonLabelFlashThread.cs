@@ -54,7 +54,7 @@ namespace ReadThreadSpace
                             CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor = new Color[] { Color.Transparent };
                             //new Color[] { CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor };
                             //按钮背景
-                            CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(211, 211, 211);
+                            CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(220, 220, 220);
                         }
                     }
                     catch (Exception)
@@ -63,7 +63,7 @@ namespace ReadThreadSpace
                         CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor = new Color[] { Color.Transparent };
                             //new Color[] { CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor };
                         //按钮背景
-                        CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(211, 211, 211);
+                        CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(220, 220, 220);
                         Thread.Sleep(200);
                     }
                     Thread.Sleep(150);
