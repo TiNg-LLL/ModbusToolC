@@ -119,6 +119,7 @@ namespace WindowUnit
             // CoilButtonAdjustWindow
             // 
             this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(334, 261);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

@@ -63,7 +63,7 @@ namespace ReadThreadSpace
                 {
                     if (c)
                     {
-                        Thread.Sleep(500);
+                        Thread.Sleep(1000);
                         met.Reset();
                         c = false;
                         Console.WriteLine("线程已暂停");

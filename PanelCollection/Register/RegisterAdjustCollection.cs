@@ -41,7 +41,7 @@ namespace PanelCollection
             //}
             this.AutoSize = true;
             //this.BackColor = Color.DarkRed;  //背景颜色
-            this.CellBorderStyle = TableLayoutPanelCellBorderStyle.InsetDouble;   //边框样式
+            this.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;   //边框样式
             //this.Location = new Point(7, 25);  //相对布局位置
             this.Dock = DockStyle.Fill;  //铺满
         }

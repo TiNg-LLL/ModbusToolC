@@ -127,7 +127,7 @@ namespace Controls
         /// <summary>
         /// The timer
         /// </summary>
-        Timer timer;
+        public Timer timer;
         /// <summary>
         /// The int color index
         /// </summary>
@@ -201,7 +201,7 @@ namespace Controls
 
                 Color[] surroundColor = new Color[] { c1 };
                 PathGradientBrush pb = new PathGradientBrush(gp);
-                pb.CenterColor = Color.White;
+                pb.CenterColor = Color.Red;
                 pb.SurroundColors = surroundColor;
                 g.FillPath(pb, gp);
             }
@@ -218,8 +218,8 @@ namespace Controls
             // 
             // UCSignalLamp
             // 
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.ForeColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ForeColor = System.Drawing.Color.Maroon;
             this.Name = "UCSignalLamp";
             this.ResumeLayout(false);
 

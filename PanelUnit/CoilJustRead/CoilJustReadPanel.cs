@@ -35,7 +35,7 @@ namespace PanelUnit
             this.Width = this.ucSignalLamp1.Width;
             this.Height = this.Width + 10;
             this.ID = i;
-            c = new Color[] { new Color() };
+            c = new Color[] { new Color() ,Color.Transparent};
             //this.BackColor = Color.DarkRed;  //背景颜色
 
             //从非 UI 线程更新 UI 线程  线程不安全

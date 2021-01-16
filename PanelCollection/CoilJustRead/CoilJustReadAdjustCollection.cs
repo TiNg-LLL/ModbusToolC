@@ -21,7 +21,7 @@ namespace PanelCollection
         public CoilJustReadAdjustCollection()
         {
             this.AutoSize = true;
-            this.CellBorderStyle = TableLayoutPanelCellBorderStyle.InsetDouble;   //边框样式
+            this.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;   //边框样式
             this.Dock = DockStyle.Fill;  //铺满
         }
 

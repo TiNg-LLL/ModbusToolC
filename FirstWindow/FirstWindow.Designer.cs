@@ -164,7 +164,6 @@ namespace FirstWindow
             // 
             // 参数数量TextBox
             // 
-            this.参数数量TextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.参数数量TextBox.Name = "参数数量TextBox";
             this.参数数量TextBox.Size = new System.Drawing.Size(25, 23);
             this.参数数量TextBox.Text = "0";
@@ -193,7 +192,6 @@ namespace FirstWindow
             // 
             // 状态数量TextBox
             // 
-            this.状态数量TextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.状态数量TextBox.Name = "状态数量TextBox";
             this.状态数量TextBox.Size = new System.Drawing.Size(25, 23);
             this.状态数量TextBox.Text = "0";
@@ -222,7 +220,6 @@ namespace FirstWindow
             // 
             // 按钮数量TextBox1
             // 
-            this.按钮数量TextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.按钮数量TextBox1.Name = "按钮数量TextBox1";
             this.按钮数量TextBox1.Size = new System.Drawing.Size(25, 23);
             this.按钮数量TextBox1.Text = "0";
@@ -338,10 +335,10 @@ namespace FirstWindow
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 361);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;

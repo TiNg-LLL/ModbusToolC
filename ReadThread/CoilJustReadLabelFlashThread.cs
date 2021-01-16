@@ -16,7 +16,8 @@ namespace ReadThreadSpace
         //new一个线程
         private Thread childThread;
 
-
+        //辅助变量
+        int i;
         public CoilJustReadLabelFlashThread(int i)
         {
             childThread = new Thread(new ParameterizedThreadStart(CoilReadThread));
@@ -39,21 +40,39 @@ namespace ReadThreadSpace
                     {
                         if ((bool)CoilJustReadCollection.coilJustReadValueList[(int)obj])
                         {
-                            CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = CoilJustReadCollection.coilJustReadList[(int)obj].c;
+                            if (!(i == 0))
+                            {
+                                CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = CoilJustReadCollection.coilJustReadList[(int)obj].c;
+                                CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Black;
+                                i = 0;
+                            }
                         }
                         else if (!(bool)CoilJustReadCollection.coilJustReadValueList[(int)obj])
                         {
-                            CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = new Color[] { Color.FromArgb(165, 165, 165) };
+                            if (!(i == 1))
+                            {
+                                CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(165, 165, 165), Color.Transparent };
+                                CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Black;
+                                i = 1;
+                            }
                         }
                         else
                         {
-                            CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = new Color[] { Color.FromArgb(220, 220, 220) };
+                            //if (CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.TwinkleSpeed == 0)
+                            //{
+                            //    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(220, 220, 220), Color.FromArgb(50, 50, 50) };
+                            //    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.TwinkleSpeed = 1000;
+                            //}
                         }
                     }
                     catch (Exception)
                     {
-                        CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = new Color[] { Color.FromArgb(220, 220, 220) };
-                        Thread.Sleep(200);
+                        if (!(i == 2))
+                        {
+                            CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(220, 220, 220), Color.Transparent };
+                            CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Red;
+                            i = 2;
+                        }
                     }
                     Thread.Sleep(150);
                 }
@@ -61,7 +80,12 @@ namespace ReadThreadSpace
                 {
                     try
                     {
-                        CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = new Color[] { Color.FromArgb(220, 220, 220) };
+                        if (!(i == 3))
+                        {
+                            CoilJustReadCollection.coilJustReadList[(int)obj].GetUCSignalLamp().LampColor = new Color[] { Color.FromArgb(220, 220, 220), Color.Transparent };
+                            CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Black;
+                            i = 3;
+                        }
                     }
                     catch (Exception)
                     {

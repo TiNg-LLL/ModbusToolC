@@ -46,12 +46,12 @@ namespace ReadThreadSpace
                             try
                             {
                                 RegisterCollection.registerValueList[i] = ModbusFunc.MyReadHoldingRegisters(DataTreat.RegisterAddressTransform(RegisterCollection.registerList[i].GetRegisterReadAddress()));
-                                Thread.Sleep(time);
+                                //Thread.Sleep(time);
                             }
                             catch (Exception)
                             {
                                 RegisterCollection.registerValueList[i] = "error";
-                                Thread.Sleep(time);
+                                //Thread.Sleep(time);
                             }
                         }
                     }
@@ -70,12 +70,12 @@ namespace ReadThreadSpace
                                 CoilJustReadCollection.coilJustReadValueList[i] = ModbusFunc.MyReadCoils(
                                     DataTreat.CoilMXYAddressTransform(CoilJustReadCollection.coilJustReadList[i].coilJustReadAddress,
                                     CoilJustReadCollection.coilJustReadList[i].coilJustReadMXYAddress));
-                                Thread.Sleep(time);
+                                //Thread.Sleep(time);
                             }
                             catch (Exception)
                             {
                                 CoilJustReadCollection.coilJustReadValueList[i] = null;
-                                Thread.Sleep(time);
+                                //Thread.Sleep(time);
                             }
                         }
                     }
@@ -95,12 +95,12 @@ namespace ReadThreadSpace
                                     DataTreat.CoilMXYAddressTransform(CoilButtonCollection.coilButtonList[i].coilButtonReadAddress,
                                     CoilButtonCollection.coilButtonList[i].coilButtonReadMXYAddress));
                                 CoilButtonCollection.coilButtonList[i].nowValue = (bool)CoilButtonCollection.coilButtonValueList[i];
-                                Thread.Sleep(time);
+                                //Thread.Sleep(time);
                             }
                             catch (Exception)
                             {
                                 CoilButtonCollection.coilButtonValueList[i] = null;
-                                Thread.Sleep(time);
+                                //Thread.Sleep(time);
                             }
                         }
                     }

@@ -237,7 +237,7 @@ namespace WindowUnit
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(30, 315);
+            this.button1.Location = new System.Drawing.Point(30, 318);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 30);
             this.button1.TabIndex = 7;
@@ -248,7 +248,7 @@ namespace WindowUnit
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(135, 315);
+            this.button2.Location = new System.Drawing.Point(135, 318);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 30);
             this.button2.TabIndex = 8;
@@ -260,6 +260,7 @@ namespace WindowUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(244, 361);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
