@@ -164,6 +164,7 @@ namespace FirstWindow
             // 
             // 参数数量TextBox
             // 
+            this.参数数量TextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.参数数量TextBox.Name = "参数数量TextBox";
             this.参数数量TextBox.Size = new System.Drawing.Size(25, 23);
             this.参数数量TextBox.Text = "0";
@@ -192,6 +193,7 @@ namespace FirstWindow
             // 
             // 状态数量TextBox
             // 
+            this.状态数量TextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.状态数量TextBox.Name = "状态数量TextBox";
             this.状态数量TextBox.Size = new System.Drawing.Size(25, 23);
             this.状态数量TextBox.Text = "0";
@@ -220,6 +222,7 @@ namespace FirstWindow
             // 
             // 按钮数量TextBox1
             // 
+            this.按钮数量TextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.按钮数量TextBox1.Name = "按钮数量TextBox1";
             this.按钮数量TextBox1.Size = new System.Drawing.Size(25, 23);
             this.按钮数量TextBox1.Text = "0";
@@ -275,15 +278,16 @@ namespace FirstWindow
             // 登入ToolStripMenuItem
             // 
             this.登入ToolStripMenuItem.Name = "登入ToolStripMenuItem";
-            this.登入ToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.登入ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.登入ToolStripMenuItem.Text = "登入";
             this.登入ToolStripMenuItem.Click += new System.EventHandler(this.登入ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.退出ToolStripMenuItem.Text = "退出";
+            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 

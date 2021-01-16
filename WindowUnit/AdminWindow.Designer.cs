@@ -73,6 +73,7 @@ namespace WindowUnit
             this.textBox1.Size = new System.Drawing.Size(150, 26);
             this.textBox1.TabIndex = 1;
             this.textBox1.UseSystemPasswordChar = true;
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // button1
             // 
@@ -84,6 +85,7 @@ namespace WindowUnit
             this.button1.TabIndex = 2;
             this.button1.Text = "登入";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdminWindow
             // 

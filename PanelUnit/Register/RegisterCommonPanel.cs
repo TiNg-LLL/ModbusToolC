@@ -160,13 +160,25 @@ namespace PanelUnit
             {
                 if (dataTransform)
                 {
-                    ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress,
-                        DataTreat.RegisterDataProportionMMTo(float.Parse(this.RegisterValueText.Text),
-                        float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename))));
+                    try
+                    {
+                        ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress,
+    DataTreat.RegisterDataProportionMMTo(float.Parse(this.RegisterValueText.Text),
+    float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename))));
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
                 else
                 {
-                    ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
+                    try
+                    {
+                        ModbusFunc.MyWriteMultipleRegisters(this.registerWriteAddress, this.RegisterValueText.Text);
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
                 RegisterValueText.Text = "";
             }

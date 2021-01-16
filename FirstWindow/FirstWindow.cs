@@ -39,7 +39,7 @@ namespace FirstWindow
         private ComDateSetWindow comDateSetWindow = new ComDateSetWindow();
 
         //权限登入副窗口
-        private AdminWindow adminWindow = new AdminWindow();
+        private AdminWindow adminWindow;
 
         //辅助信息修改副窗口
         private AssistDateSetWindow assistDateSetWindow = new AssistDateSetWindow();
@@ -73,6 +73,8 @@ namespace FirstWindow
             this.groupBox3.Width = this.groupBox2.Width;
             this.groupBox3.Height = ((CoilButtonCollection.coilButtonAmount / 5)+1) * 62 + 23;
             threadFather = new ThreadFather();
+            adminWindow = new AdminWindow(设置ToolStripMenuItem);
+            设置ToolStripMenuItem.Enabled = false;
         }
         //***
         //参数地址修改显示副窗口按钮
@@ -244,6 +246,11 @@ namespace FirstWindow
             CoilButtonAdjustWindow.coilButtonAdjustCollection.Flash();
             //coilButtonAdjustWindow.Flash();
             coilButtonAdjustWindow.ShowDialog();
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            设置ToolStripMenuItem.Enabled = false;
         }
     }
 }
