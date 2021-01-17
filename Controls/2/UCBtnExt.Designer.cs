@@ -76,7 +76,7 @@ namespace Controls
             this.ucSignalLamp1.IsShowBorder = false;
             this.ucSignalLamp1.LampColor = new System.Drawing.Color[] {
         System.Drawing.Color.LightGray};
-            this.ucSignalLamp1.Location = new System.Drawing.Point(88, 2);
+            this.ucSignalLamp1.Location = new System.Drawing.Point(89, 0);
             this.ucSignalLamp1.Name = "ucSignalLamp1";
             this.ucSignalLamp1.Size = new System.Drawing.Size(10, 10);
             this.ucSignalLamp1.TabIndex = 2;

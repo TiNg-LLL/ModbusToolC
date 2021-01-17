@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PanelUnit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,7 @@ namespace WindowUnit
             if (textBox1.Text.Equals("0123"))
             {
                 t.Enabled = true;
+                CoilJustReadPanel.b = true;
                 textBox1.Text = "";
                 this.Close();
             }
@@ -43,6 +45,7 @@ namespace WindowUnit
                 if (textBox1.Text.Equals("0123"))
                 {
                     t.Enabled = true;
+                    CoilJustReadPanel.b = true;
                     textBox1.Text = "";
                     this.Close();
                 }

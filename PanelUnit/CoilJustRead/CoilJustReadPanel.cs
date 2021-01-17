@@ -26,6 +26,9 @@ namespace PanelUnit
         public int coilJustReadAddress { get; set; }
         public string coilJustReadMXYAddress { get; set; }
 
+        //颜色修改权限标志
+        public static bool b = false;
+
         //初始化INI文件地址
         private string filename = Directory.GetCurrentDirectory() + @"\CoilJustRead.ini";
 
@@ -47,13 +50,17 @@ namespace PanelUnit
             return this.ucSignalLamp1;
         }
 
+        //双击颜色选取控件
         private void ucSignalLamp1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            DialogResult dr = cd.ShowDialog();
-            if (dr == DialogResult.OK)
+            if (b)
             {
-                c[0] = cd.Color;
-                IniFunc.writeString("CoilJustReadColor", "CoilJustReadColor" + ID, ColorTranslator.ToHtml(c[0]), filename);
+                DialogResult dr = cd.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    c[0] = cd.Color;
+                    IniFunc.writeString("CoilJustReadColor", "CoilJustReadColor" + ID, ColorTranslator.ToHtml(c[0]), filename);
+                }
             }
         }
     }

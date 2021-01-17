@@ -53,15 +53,15 @@ namespace PanelUnit.CoilButton
                         if (c)
                         {
                             b = nowValue;
-                            c = false;
                             try
                             {
                                 ModbusFunc.MyWriteSingleCoil(DataTreat.CoilMXYAddressTransform(coilButtonWriteAddress, coilButtonWriteMXYAddress), !(b));
+                                c = false;
+                                d = true;
                             }
                             catch (Exception)
                             {
                             }
-                            d = true;
                         }
                         else
                         {
@@ -85,18 +85,19 @@ namespace PanelUnit.CoilButton
                             try
                             {
                                 ModbusFunc.MyWriteSingleCoil(DataTreat.CoilMXYAddressTransform(coilButtonWriteAddress, coilButtonWriteMXYAddress), b);
+                                timer.Enabled = true;
                             }
                             catch (Exception)
                             {
                                 try
                                 {
                                     ModbusFunc.MyWriteSingleCoil(DataTreat.CoilMXYAddressTransform(coilButtonWriteAddress, coilButtonWriteMXYAddress), b);
+                                    timer.Enabled = true;
                                 }
                                 catch (Exception)
                                 {
                                 }
                             }
-                            timer.Enabled = true;
                         }
                     }
                     else

@@ -1,6 +1,7 @@
 ﻿using Func;
 using PanelCollection;
 using PanelCollection.CoilButton;
+using PanelUnit;
 using ReadThreadSpace;
 using System;
 using System.Collections.Generic;
@@ -251,6 +252,7 @@ namespace FirstWindow
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             设置ToolStripMenuItem.Enabled = false;
+            CoilJustReadPanel.b = false;
         }
     }
 }

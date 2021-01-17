@@ -97,7 +97,7 @@ namespace ReadThreadSpace
                     }
                     catch (Exception)
                     {
-                        Thread.Sleep(200);
+                        Thread.Sleep(500);
                     }
                     Thread.Sleep(200);
                 }
