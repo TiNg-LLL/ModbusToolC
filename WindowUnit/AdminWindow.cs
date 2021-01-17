@@ -14,6 +14,8 @@ namespace WindowUnit
     public partial class AdminWindow : Form
     {
         ToolStripMenuItem t;
+        //辅助对象
+        private bool b = true;
         public AdminWindow(ToolStripMenuItem toolStripMenuItem)
         {
             InitializeComponent();
@@ -40,22 +42,31 @@ namespace WindowUnit
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
+
             if (e.KeyCode == Keys.Enter)
             {
-                if (textBox1.Text.Equals("0123"))
+                if (b)
                 {
-                    t.Enabled = true;
-                    CoilJustReadPanel.b = true;
-                    textBox1.Text = "";
-                    this.Close();
-                }
-                else
-                {
-                    if (MessageBox.Show("密码错误", "密码错误", MessageBoxButtons.OK) == DialogResult.OK)
+                    if (textBox1.Text.Equals("0123"))
                     {
+                        t.Enabled = true;
+                        CoilJustReadPanel.b = true;
                         textBox1.Text = "";
+                        this.Close();
+                    }
+                    else
+                    {
+                        b = false;
+                        if (MessageBox.Show("密码错误", "密码错误", MessageBoxButtons.OK) == DialogResult.OK)
+                        {
+                            textBox1.Text = "";
+                        }
                     }
                 }
+            }
+            else
+            {
+                b = true;
             }
         }
     }

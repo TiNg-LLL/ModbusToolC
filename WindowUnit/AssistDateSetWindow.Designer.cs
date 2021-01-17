@@ -29,6 +29,7 @@ namespace WindowUnit
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssistDateSetWindow));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.startDateLabel = new System.Windows.Forms.Label();
             this.proportionTextBox = new System.Windows.Forms.TextBox();
@@ -115,11 +116,12 @@ namespace WindowUnit
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AssistDateSetWindow";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 55);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ComDateSetWindow";
+            this.Text = "辅助参数设置";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

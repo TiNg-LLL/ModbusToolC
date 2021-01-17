@@ -29,6 +29,7 @@ namespace WindowUnit
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoilButtonAdjustWindow));
             this.panel1 = new System.Windows.Forms.Panel();
             this.RegisterNamelabel = new System.Windows.Forms.Label();
             this.RegisterWritelabel = new System.Windows.Forms.Label();
@@ -93,11 +94,10 @@ namespace WindowUnit
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(60, 220);
+            this.button1.Location = new System.Drawing.Point(100, 220);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 32);
+            this.button1.Size = new System.Drawing.Size(80, 30);
             this.button1.TabIndex = 4;
             this.button1.Text = "应用";
             this.button1.UseVisualStyleBackColor = true;
@@ -108,9 +108,9 @@ namespace WindowUnit
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(190, 220);
+            this.button2.Location = new System.Drawing.Point(155, 220);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 32);
+            this.button2.Size = new System.Drawing.Size(80, 30);
             this.button2.TabIndex = 5;
             this.button2.Text = "取消";
             this.button2.UseVisualStyleBackColor = true;
@@ -128,12 +128,13 @@ namespace WindowUnit
             this.Controls.Add(this.RegisterNamelabel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CoilButtonAdjustWindow";
             this.Padding = new System.Windows.Forms.Padding(5, 30, 5, 50);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form1";
+            this.Text = "按钮设置";
             this.ResumeLayout(false);
             this.PerformLayout();
 

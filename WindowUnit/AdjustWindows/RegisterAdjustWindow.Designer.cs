@@ -29,6 +29,7 @@ namespace WindowUnit
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterAdjustWindow));
             this.panel1 = new System.Windows.Forms.Panel();
             this.RegisterNamelabel = new System.Windows.Forms.Label();
             this.RegisterWritelabel = new System.Windows.Forms.Label();
@@ -93,7 +94,6 @@ namespace WindowUnit
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.Location = new System.Drawing.Point(36, 220);
             this.button1.Name = "button1";
@@ -128,12 +128,13 @@ namespace WindowUnit
             this.Controls.Add(this.RegisterNamelabel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegisterAdjustWindow";
             this.Padding = new System.Windows.Forms.Padding(5, 30, 5, 50);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form1";
+            this.Text = "参数设置";
             this.ResumeLayout(false);
             this.PerformLayout();
 
