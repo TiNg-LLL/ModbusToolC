@@ -107,6 +107,7 @@ namespace WindowUnit
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button2.Location = new System.Drawing.Point(175, 220);
             this.button2.Name = "button2";
@@ -120,6 +121,7 @@ namespace WindowUnit
             // 
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(334, 261);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

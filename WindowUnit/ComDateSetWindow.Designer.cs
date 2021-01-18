@@ -249,6 +249,7 @@ namespace WindowUnit
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button2.Location = new System.Drawing.Point(155, 318);
             this.button2.Name = "button2";
@@ -263,6 +264,7 @@ namespace WindowUnit
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(264, 361);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -270,6 +272,7 @@ namespace WindowUnit
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ComDateSetWindow";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 55);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

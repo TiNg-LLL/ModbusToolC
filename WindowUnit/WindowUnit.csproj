@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutWindow.Designer.cs">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdjustWindows\CoilButtonAdjustWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="SizeAdjustWindow.Designer.cs">
       <DependentUpon>SizeAdjustWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutWindow.resx">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdjustWindows\CoilJustReadAdjustWindow.resx">
       <DependentUpon>CoilJustReadAdjustWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +132,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="AdjustWindows\RegisterAdjustWindow.resx">
       <DependentUpon>RegisterAdjustWindow.cs</DependentUpon>
@@ -152,6 +162,12 @@
       <Project>{08AD728F-EE33-4252-834B-86BC79486D18}</Project>
       <Name>PanelUnit</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

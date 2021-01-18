@@ -45,6 +45,9 @@ namespace FirstWindow
         //辅助信息修改副窗口
         private AssistDateSetWindow assistDateSetWindow = new AssistDateSetWindow();
 
+        //关于副窗口
+        private AboutWindow aboutWindow = new AboutWindow();
+
         //初始化INI文件地址
         private static string filenameSystemDate = Directory.GetCurrentDirectory() + @"\SystemDate.ini";
         private static string filenameRegister = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
@@ -65,7 +68,7 @@ namespace FirstWindow
         {
             InitializeComponent();
             //添加resgisterCollection
-            this.Text = "ModbusToolC ";
+            this.Text = "ModbusToolC v1.0 From:TiNg-LLL";
             this.ClientSize = new System.Drawing.Size(width, height);
             this.groupBox1.Controls.Add(resgisterCollection);
             this.groupBox2.Location = new Point(this.groupBox1.Width + 50, 35);
@@ -265,6 +268,11 @@ namespace FirstWindow
             {
                 resgisterCollection.Flash();
             }
+        }
+
+        private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            aboutWindow.ShowDialog();
         }
     }
 }
