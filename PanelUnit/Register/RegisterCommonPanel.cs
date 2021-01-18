@@ -19,7 +19,7 @@ namespace PanelUnit
         public int ID { get; set; }
         public bool dataTransform { get; set; }
         public bool justLabel { get; set; }
-        public bool hidebool = true;
+        public bool hidebool { get; set; }
 
         //modbus参数成员
         int registerWriteAddress;

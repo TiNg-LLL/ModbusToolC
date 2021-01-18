@@ -13,16 +13,22 @@ namespace WindowUnit
         //初始化INI文件地址
         private string filename = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
 
+        //辅助对象
+        public bool b { get; set; }
+
         public RegisterAdjustWindow()
         {
             InitializeComponent();
             //添加registerNameAdjustCollection
             this.panel1.Controls.Add(registerAdjustCollection);
+            //隐藏右上角关闭按钮
+            this.ControlBox = false;
         }
 
         //寄存器参数设置应用按钮
-        private void button1_Click(object sender, System.EventArgs e)
+        public void button1_Click(object sender, System.EventArgs e)
         {
+            int t = 0;
             //参数刷新
             for (int i = 1; i <= RegisterCollection.registerAmount; i++)
             {
@@ -63,13 +69,38 @@ namespace WindowUnit
                     RegisterCollection.registerList[i - 1].justLabel = false;
                 }
                 IniFunc.writeString("RegisterJustLabel", "RegisterJustLabel" + i, RegisterCollection.registerList[i - 1].justLabel.ToString(), filename);
+                //***
+                //隐藏bool刷新
+                //***
+                if (!(RegisterCollection.registerList[i - 1].hidebool.Equals(RegisterAdjustCollection.resgisterAdjustList[i - 1].hidecheckBox3.Checked)))
+                {
+                    if (RegisterAdjustCollection.resgisterAdjustList[i - 1].hidecheckBox3.Checked)
+                    {
+                        RegisterCollection.registerList[i - 1].hidebool = true;
+                    }
+                    else
+                    {
+                        RegisterCollection.registerList[i - 1].hidebool = false;
+                    }
+                    IniFunc.writeString("RegisterHideBool", "RegisterHideBool" + i, RegisterCollection.registerList[i - 1].hidebool.ToString(), filename);
+                    t++;
+                }
             }
-            //设置窗口关闭
+            if (t > 0)
+            {
+                b = true;
+            }
+            else
+            {
+                b = false;
+            }
+            //窗口关闭
             this.Close();
         }
         //取消按钮
         private void button2_Click(object sender, System.EventArgs e)
         {
+            b = false;
             this.Close();
         }
         //***

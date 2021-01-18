@@ -12,7 +12,7 @@ namespace PanelUnit
         private TextBox RegisterReadAddressText = new TextBox();
         public CheckBox RegisterDataTransform = new CheckBox();
         public CheckBox RegisterJustLabel = new CheckBox();
-        public CheckBox checkBox3 = new CheckBox();
+        public CheckBox hidecheckBox3 = new CheckBox();
         //标识特征
         public int ID { get; set; }
 
@@ -41,7 +41,7 @@ namespace PanelUnit
             this.Controls.Add(this.RegisterReadAddressText, 2, 0);
             this.Controls.Add(this.RegisterDataTransform, 3, 0);
             this.Controls.Add(this.RegisterJustLabel, 4, 0);
-            this.Controls.Add(this.checkBox3, 5, 0);
+            this.Controls.Add(this.hidecheckBox3, 5, 0);
             //***
             // RegisterNameText填写框
             //***
@@ -102,13 +102,13 @@ namespace PanelUnit
             // ***
             // checkBox3是否隐藏
             // ***
-            this.checkBox3.Anchor = AnchorStyles.None;  //设置居中
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Name = "checkBox2";
-            this.checkBox3.Size = new System.Drawing.Size(50, 16);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "隐藏";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.hidecheckBox3.Anchor = AnchorStyles.None;  //设置居中
+            this.hidecheckBox3.AutoSize = true;
+            this.hidecheckBox3.Name = "checkBox2";
+            this.hidecheckBox3.Size = new System.Drawing.Size(50, 16);
+            this.hidecheckBox3.TabIndex = 0;
+            this.hidecheckBox3.Text = "隐藏";
+            this.hidecheckBox3.UseVisualStyleBackColor = true;
         }
         //输入框只能填写数字
         private void RegisterValueText_KeyPress(object sender, KeyPressEventArgs e)

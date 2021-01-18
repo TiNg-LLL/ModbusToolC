@@ -25,6 +25,8 @@ namespace WindowUnit
         {
             InitializeComponent();
             this.panel1.Controls.Add(coilJustReadAdjustCollection);
+            //隐藏右上角关闭按钮
+            this.ControlBox = false;
         }
 
         //寄存器参数设置应用按钮

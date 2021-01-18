@@ -19,6 +19,8 @@ namespace WindowUnit
             InitializeComponent();
             //添加registerNameAdjustCollection
             this.panel1.Controls.Add(coilButtonAdjustCollection);
+            //隐藏右上角关闭按钮
+            this.ControlBox = false;
         }
 
         //寄存器参数设置应用按钮

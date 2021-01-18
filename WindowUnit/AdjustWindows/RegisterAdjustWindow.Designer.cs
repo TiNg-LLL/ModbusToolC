@@ -164,7 +164,7 @@ namespace WindowUnit
             // RegisterAdjustWindow
             // 
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(434, 261);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -194,7 +194,7 @@ namespace WindowUnit
         private System.Windows.Forms.Label RegisterNamelabel;
         private System.Windows.Forms.Label RegisterWritelabel;
         private System.Windows.Forms.Label RegisterReadlabel;
-        private System.Windows.Forms.Button button1;
+        public  System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

@@ -68,6 +68,8 @@ namespace PanelCollection
                 resgisterAdjustList[i - 1].RegisterDataTransform.Checked = bool.Parse(IniFunc.getString("RegisterDataTransform", "RegisterDataTransform" + i, "false", filename));
                 //设置成员JustLabel Boolean
                 resgisterAdjustList[i - 1].RegisterJustLabel.Checked = bool.Parse(IniFunc.getString("RegisterJustLabel", "RegisterJustLabel" + i, "false", filename));
+                //设置成员隐藏 Boolean
+                resgisterAdjustList[i - 1].hidecheckBox3.Checked = bool.Parse(IniFunc.getString("RegisterHideBool", "RegisterHideBool" + i, "false", filename));
             }
 
             this.ColumnCount = 1;  //列数
