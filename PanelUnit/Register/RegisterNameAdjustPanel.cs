@@ -12,6 +12,7 @@ namespace PanelUnit
         private TextBox RegisterReadAddressText = new TextBox();
         public CheckBox RegisterDataTransform = new CheckBox();
         public CheckBox RegisterJustLabel = new CheckBox();
+        public CheckBox checkBox3 = new CheckBox();
         //标识特征
         public int ID { get; set; }
 
@@ -20,8 +21,9 @@ namespace PanelUnit
             //
             //Panel初始化
             //
-            this.ColumnCount = 5;  //列数
+            this.ColumnCount = 6;  //列数
             this.RowCount = 1;  //行数
+            this.ColumnStyles.Add(new ColumnStyle());
             this.ColumnStyles.Add(new ColumnStyle());
             this.ColumnStyles.Add(new ColumnStyle());
             this.ColumnStyles.Add(new ColumnStyle());
@@ -29,7 +31,7 @@ namespace PanelUnit
             this.ColumnStyles.Add(new ColumnStyle());
             //this.AutoSize = true;
             //this.Dock = DockStyle.Fill;  //铺满
-            this.Size = new Size(355, 30);
+            this.Size = new Size(400, 30);
             //this.BackColor = Color.DarkGray;  //背景颜色
             //
             //添加成员
@@ -39,6 +41,7 @@ namespace PanelUnit
             this.Controls.Add(this.RegisterReadAddressText, 2, 0);
             this.Controls.Add(this.RegisterDataTransform, 3, 0);
             this.Controls.Add(this.RegisterJustLabel, 4, 0);
+            this.Controls.Add(this.checkBox3, 5, 0);
             //***
             // RegisterNameText填写框
             //***
@@ -82,7 +85,7 @@ namespace PanelUnit
             this.RegisterDataTransform.Anchor = AnchorStyles.None;  //设置居中
             this.RegisterDataTransform.AutoSize = true;
             this.RegisterDataTransform.Name = "checkBox1";
-            this.RegisterDataTransform.Size = new System.Drawing.Size(78, 16);
+            this.RegisterDataTransform.Size = new System.Drawing.Size(50, 16);
             this.RegisterDataTransform.TabIndex = 0;
             this.RegisterDataTransform.Text = "mm";
             this.RegisterDataTransform.UseVisualStyleBackColor = true;
@@ -92,10 +95,20 @@ namespace PanelUnit
             this.RegisterJustLabel.Anchor = AnchorStyles.None;  //设置居中
             this.RegisterJustLabel.AutoSize = true;
             this.RegisterJustLabel.Name = "checkBox2";
-            this.RegisterJustLabel.Size = new System.Drawing.Size(78, 16);
+            this.RegisterJustLabel.Size = new System.Drawing.Size(50, 16);
             this.RegisterJustLabel.TabIndex = 0;
             this.RegisterJustLabel.Text = "只读";
             this.RegisterJustLabel.UseVisualStyleBackColor = true;
+            // ***
+            // checkBox3是否隐藏
+            // ***
+            this.checkBox3.Anchor = AnchorStyles.None;  //设置居中
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Name = "checkBox2";
+            this.checkBox3.Size = new System.Drawing.Size(50, 16);
+            this.checkBox3.TabIndex = 0;
+            this.checkBox3.Text = "隐藏";
+            this.checkBox3.UseVisualStyleBackColor = true;
         }
         //输入框只能填写数字
         private void RegisterValueText_KeyPress(object sender, KeyPressEventArgs e)

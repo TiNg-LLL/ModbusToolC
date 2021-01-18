@@ -60,7 +60,7 @@ namespace ReadThreadSpace
                             Thread.Sleep(200);
                         }
                     }
-                    Thread.Sleep(150);
+                    Thread.Sleep(50);
                 }
                 else
                 {
