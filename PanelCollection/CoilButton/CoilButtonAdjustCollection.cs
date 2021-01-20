@@ -57,6 +57,8 @@ namespace PanelCollection
                 {
                     coilButtonAdjustList[i - 1].radioButton2.Checked = true;
                 }
+                //设置成员隐藏bool
+                coilButtonAdjustList[i - 1].checkBox1.Checked = bool.Parse(IniFunc.getString("CoilButtonHideBool", "CoilButtonHideBool" + i, "false", filename));
             }
 
             this.ColumnCount = 1;  //列数

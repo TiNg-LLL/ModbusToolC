@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadThread", "ReadThread\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls", "Controls\Controls.csproj", "{6441FD69-2398-4461-B01F-4A2F57708CF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroFunc", "ZeroFunc\ZeroFunc.csproj", "{1D186D3B-E691-4FEF-9C0B-0EAE4E9491A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{6441FD69-2398-4461-B01F-4A2F57708CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6441FD69-2398-4461-B01F-4A2F57708CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6441FD69-2398-4461-B01F-4A2F57708CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D186D3B-E691-4FEF-9C0B-0EAE4E9491A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D186D3B-E691-4FEF-9C0B-0EAE4E9491A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D186D3B-E691-4FEF-9C0B-0EAE4E9491A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D186D3B-E691-4FEF-9C0B-0EAE4E9491A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -77,7 +77,7 @@ namespace ReadThreadSpace
                             CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(220, 220, 220);
                             i = 2;
                         }
-                        Thread.Sleep(500);
+                        //Thread.Sleep(200);
                     }
                     Thread.Sleep(50);
                 }

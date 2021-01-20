@@ -26,11 +26,12 @@ namespace PanelCollection.CoilButton
         //初始化INI文件地址
         private string filename = Directory.GetCurrentDirectory() + @"\CoilButton.ini";
 
+        //辅助对象
+        public static int b;
+
         public CoilButtonCollection()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
-            this.AutoSize = true;
 
             coilButtonAmount = int.Parse(IniFunc.getString("CoilButtonAmount", "CoilButtonAmount", "读取错误", filename));
 
@@ -51,32 +52,42 @@ namespace PanelCollection.CoilButton
                 coilButtonList[i - 1].coilButtonReadMXYAddress = IniFunc.getString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, "M", filename);
                 //设置成员功能点动切换Bool
                 coilButtonList[i - 1].coilButtonTransform = bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename));
+                //设置成员隐藏Bool
+                coilButtonList[i - 1].coilButtonHideBool = bool.Parse(IniFunc.getString("CoilButtonHideBool", "CoilButtonHideBool" + i, "false", filename));
             }
             //***
             //Panel初始化
             //***
-            //列数设置
-            if (coilButtonAmount <= 4)
+            b = 0;
+            for (int i = 0; i < coilButtonAmount; i++)
             {
-                this.tableLayoutPanel1.ColumnCount = coilButtonAmount;  //列数
+                if (!(coilButtonList[i].coilButtonHideBool))
+                {
+                    b++;
+                }
+            }
+            //列数设置
+            if (b <= 4)
+            {
+                this.tableLayoutPanel1.ColumnCount = b;  //列数
             }
             else
             {
                 this.tableLayoutPanel1.ColumnCount = 4;  //列数
             }
             this.tableLayoutPanel1.ColumnStyles.Clear();
-            for (int i = 0; i < this.tableLayoutPanel1.ColumnCount; i++)
+            for (int i = 0; i <= this.tableLayoutPanel1.ColumnCount; i++)
             {
                 this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             }
             //行数设置
-            if ((coilButtonAmount / 4) <= 1)
+            if ((b / 4) <= 1)
             {
                 this.tableLayoutPanel1.RowCount = 1;  //行数
             }
             else
             {
-                this.tableLayoutPanel1.RowCount = (coilButtonAmount / 4);  //行数
+                this.tableLayoutPanel1.RowCount = (b / 4);  //行数
             }
             this.tableLayoutPanel1.RowStyles.Clear();
             for (int i = 0; i <= this.tableLayoutPanel1.RowCount; i++)
@@ -84,29 +95,106 @@ namespace PanelCollection.CoilButton
                 this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             }
             //添加Label对象
+            b = 0;
             for (int i = 0; i < coilButtonAmount; i++)
             {
-                if (i < 4)
+                if (!(coilButtonList[i].coilButtonHideBool))
                 {
-                    this.tableLayoutPanel1.Controls.Add(coilButtonList[i], i, 0);
-                }
-                else if (i < 8)
-                {
-                    this.tableLayoutPanel1.Controls.Add(coilButtonList[i], i - 4, 1);
-                }
-                else if (i < 12)
-                {
-                    this.tableLayoutPanel1.Controls.Add(coilButtonList[i], i - 8, 2);
-                }
-                else
-                {
-                    this.tableLayoutPanel1.Controls.Add(coilButtonList[i], i - 12, 3);
+                    if (b < 4)
+                    {
+                        this.tableLayoutPanel1.Controls.Add(coilButtonList[i], b, 0);
+                    }
+                    else if (b < 8)
+                    {
+                        this.tableLayoutPanel1.Controls.Add(coilButtonList[i], b - 4, 1);
+                    }
+                    else if (b < 12)
+                    {
+                        this.tableLayoutPanel1.Controls.Add(coilButtonList[i], b - 8, 2);
+                    }
+                    else
+                    {
+                        this.tableLayoutPanel1.Controls.Add(coilButtonList[i], b - 12, 3);
+                    }
+                    b++;
                 }
             }
+
             //this.tableLayoutPanel1.AutoSize = true;
             //this.BackColor = Color.DarkRed;  //背景颜色
             this.tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset;   //边框样式
             //this.tableLayoutPanel1.Dock = DockStyle.Fill;  //铺满
+
+            this.Dock = DockStyle.Fill;
+            this.AutoSize = true;
+        }
+
+        public void Flash()
+        {
+            this.tableLayoutPanel1.Controls.Clear();
+
+            b = 0;
+            for (int i = 0; i < coilButtonAmount; i++)
+            {
+                if (!(coilButtonList[i].coilButtonHideBool))
+                {
+                    b++;
+                }
+            }
+            //列数设置
+            if (b <= 4)
+            {
+                this.tableLayoutPanel1.ColumnCount = b;  //列数
+            }
+            else
+            {
+                this.tableLayoutPanel1.ColumnCount = 4;  //列数
+            }
+            this.tableLayoutPanel1.ColumnStyles.Clear();
+            for (int i = 0; i <= this.tableLayoutPanel1.ColumnCount; i++)
+            {
+                this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            }
+            //行数设置
+            if ((b / 4) <= 1)
+            {
+                this.tableLayoutPanel1.RowCount = 1;  //行数
+            }
+            else
+            {
+                this.tableLayoutPanel1.RowCount = (b / 4);  //行数
+            }
+            this.tableLayoutPanel1.RowStyles.Clear();
+            for (int i = 0; i <= this.tableLayoutPanel1.RowCount; i++)
+            {
+                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            }
+            //添加Label对象
+            b = 0;
+            for (int i = 0; i < coilButtonAmount; i++)
+            {
+                if (!(coilButtonList[i].coilButtonHideBool))
+                {
+                    if (b < 4)
+                    {
+                        this.tableLayoutPanel1.Controls.Add(coilButtonList[i], b, 0);
+                    }
+                    else if (b < 8)
+                    {
+                        this.tableLayoutPanel1.Controls.Add(coilButtonList[i], b - 4, 1);
+                    }
+                    else if (b < 12)
+                    {
+                        this.tableLayoutPanel1.Controls.Add(coilButtonList[i], b - 8, 2);
+                    }
+                    else
+                    {
+                        this.tableLayoutPanel1.Controls.Add(coilButtonList[i], b - 12, 3);
+                    }
+                    b++;
+                }
+            }
+            this.Update();
         }
     }
 }

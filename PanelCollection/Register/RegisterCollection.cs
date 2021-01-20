@@ -90,7 +90,7 @@ namespace PanelCollection
                 else
                 {
                     t++;
-                    Console.WriteLine(t);
+                    //Console.WriteLine(t);
                 }
             }
             this.RowCount = registerAmount - t;  //行数

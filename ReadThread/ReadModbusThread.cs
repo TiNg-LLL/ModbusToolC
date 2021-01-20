@@ -50,7 +50,8 @@ namespace ReadThreadSpace
                             }
                             catch (Exception)
                             {
-                                RegisterCollection.registerValueList[i] = "error";
+                                RegisterCollection.registerValueList[i] = "null";
+                                Thread.Sleep(50);
                                 //Thread.Sleep(time);
                             }
                         }
@@ -75,6 +76,7 @@ namespace ReadThreadSpace
                             catch (Exception)
                             {
                                 CoilJustReadCollection.coilJustReadValueList[i] = null;
+                                Thread.Sleep(50);
                                 //Thread.Sleep(time);
                             }
                         }
@@ -94,12 +96,13 @@ namespace ReadThreadSpace
                                 CoilButtonCollection.coilButtonValueList[i] = ModbusFunc.MyReadCoils(
                                     DataTreat.CoilMXYAddressTransform(CoilButtonCollection.coilButtonList[i].coilButtonReadAddress,
                                     CoilButtonCollection.coilButtonList[i].coilButtonReadMXYAddress));
-                                CoilButtonCollection.coilButtonList[i].nowValue = (bool)CoilButtonCollection.coilButtonValueList[i];
+                                //CoilButtonCollection.coilButtonList[i].nowValue = (bool)CoilButtonCollection.coilButtonValueList[i];
                                 //Thread.Sleep(time);
                             }
                             catch (Exception)
                             {
                                 CoilButtonCollection.coilButtonValueList[i] = null;
+                                Thread.Sleep(50);
                                 //Thread.Sleep(time);
                             }
                         }

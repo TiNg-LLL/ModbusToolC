@@ -43,21 +43,32 @@ namespace ReadThreadSpace
                         }
                         catch (Exception)
                         {
-                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
-                            Thread.Sleep(200);
+                            if (!(RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text.Equals("error")))
+                            {
+                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
+                            }
                         }
                     }
                     else  //不转换
                     {
                         try
                         {
-                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
-        RegisterCollection.registerValueList[(int)obj];
+                            if (RegisterCollection.registerValueList[(int)obj].Equals("null"))
+                            {
+                                if (!(RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text.Equals("error")))
+                                {
+                                    RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
+                                }
+                            }
+                            else
+                            {
+                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
+RegisterCollection.registerValueList[(int)obj];
+                            }
                         }
                         catch (Exception)
                         {
-                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
-                            Thread.Sleep(200);
+                            //RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
                         }
                     }
                     Thread.Sleep(50);

@@ -36,9 +36,9 @@ namespace WindowUnit
             this.RegisterReadlabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.mmlabel1 = new System.Windows.Forms.Label();
+            this.只读label2 = new System.Windows.Forms.Label();
+            this.隐藏label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -120,47 +120,53 @@ namespace WindowUnit
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label1
+            // mmlabel1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.mmlabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(265, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 21);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "/mm";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mmlabel1.AutoSize = true;
+            this.mmlabel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mmlabel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.mmlabel1.Location = new System.Drawing.Point(265, 5);
+            this.mmlabel1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.mmlabel1.Name = "mmlabel1";
+            this.mmlabel1.Size = new System.Drawing.Size(47, 21);
+            this.mmlabel1.TabIndex = 6;
+            this.mmlabel1.Text = "/mm";
+            this.mmlabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mmlabel1.Click += new System.EventHandler(this.mmlabel1_Click);
             // 
-            // label2
+            // 只读label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.只读label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(314, 5);
-            this.label2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 21);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "只读";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.只读label2.AutoSize = true;
+            this.只读label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.只读label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.只读label2.Location = new System.Drawing.Point(314, 5);
+            this.只读label2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.只读label2.Name = "只读label2";
+            this.只读label2.Size = new System.Drawing.Size(42, 21);
+            this.只读label2.TabIndex = 7;
+            this.只读label2.Text = "只读";
+            this.只读label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.只读label2.Click += new System.EventHandler(this.只读label2_Click);
             // 
-            // label3
+            // 隐藏label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.隐藏label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(365, 5);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 21);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "隐藏";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.隐藏label3.AutoSize = true;
+            this.隐藏label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.隐藏label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.隐藏label3.Location = new System.Drawing.Point(365, 5);
+            this.隐藏label3.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.隐藏label3.Name = "隐藏label3";
+            this.隐藏label3.Size = new System.Drawing.Size(42, 21);
+            this.隐藏label3.TabIndex = 8;
+            this.隐藏label3.Text = "隐藏";
+            this.隐藏label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.隐藏label3.Click += new System.EventHandler(this.隐藏label3_Click);
             // 
             // RegisterAdjustWindow
             // 
@@ -168,9 +174,9 @@ namespace WindowUnit
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(434, 261);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.隐藏label3);
+            this.Controls.Add(this.只读label2);
+            this.Controls.Add(this.mmlabel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.RegisterReadlabel);
@@ -198,9 +204,9 @@ namespace WindowUnit
         private System.Windows.Forms.Label RegisterReadlabel;
         public  System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label mmlabel1;
+        private System.Windows.Forms.Label 只读label2;
+        private System.Windows.Forms.Label 隐藏label3;
     }
 }
 

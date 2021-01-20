@@ -39,12 +39,13 @@ namespace PanelUnit
             this.coilButtonReadcomboBox = new System.Windows.Forms.ComboBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnCount = 8;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -52,6 +53,7 @@ namespace PanelUnit
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.coilButtonWritecomboBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.coilButtonTextBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.coilButtonWriteTextBox, 2, 0);
@@ -59,12 +61,13 @@ namespace PanelUnit
             this.tableLayoutPanel1.Controls.Add(this.coilButtonReadcomboBox, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.radioButton1, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.radioButton2, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 7, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(445, 30);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(500, 30);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // coilButtonWritecomboBox
@@ -144,12 +147,23 @@ namespace PanelUnit
             this.radioButton2.Text = "切换";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(449, 7);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(48, 16);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "隐藏";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // CoilButtonAdjustPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CoilButtonAdjustPanel";
-            this.Size = new System.Drawing.Size(445, 30);
+            this.Size = new System.Drawing.Size(500, 30);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -167,5 +181,6 @@ namespace PanelUnit
         public System.Windows.Forms.TextBox coilButtonReadtextBox;
         public RadioButton radioButton1;
         public RadioButton radioButton2;
+        public CheckBox checkBox1;
     }
 }

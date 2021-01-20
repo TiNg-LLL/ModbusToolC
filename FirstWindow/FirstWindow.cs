@@ -68,7 +68,7 @@ namespace FirstWindow
         {
             InitializeComponent();
             //添加resgisterCollection
-            this.Text = "ModbusToolC v1.0 From:TiNg-LLL";
+            this.Text = "ModbusToolC v2.0 From:TiNg-LLL";
             this.ClientSize = new System.Drawing.Size(width, height);
             this.groupBox1.Controls.Add(resgisterCollection);
             this.groupBox2.Location = new Point(this.groupBox1.Width + 50, 35);
@@ -76,12 +76,13 @@ namespace FirstWindow
             this.groupBox3.Location = new Point(this.groupBox1.Width + 50, this.groupBox2.Location.Y + this.groupBox2.Height + 20);
             this.groupBox3.Controls.Add(coilButtonCollection);
             this.groupBox3.Width = this.groupBox2.Width;
-            this.groupBox3.Height = ((CoilButtonCollection.coilButtonAmount / 5) + 1) * 62 + 23;
+            this.groupBox3.Height = (((int)(CoilButtonCollection.b / 4.1) + 1) * 62 + 23);
             threadFather = new ThreadFather();
             adminWindow = new AdminWindow(设置ToolStripMenuItem);
             设置ToolStripMenuItem.Enabled = false;
             //registerAdjustWindow窗口添加关闭事件监听
             this.registerAdjustWindow.FormClosing += new FormClosingEventHandler(Form_Closing);
+            this.coilButtonAdjustWindow.FormClosing += new FormClosingEventHandler(Form_Closing1);
         }
         //***
         //参数地址修改显示副窗口按钮
@@ -253,6 +254,7 @@ namespace FirstWindow
             CoilButtonAdjustWindow.coilButtonAdjustCollection.Flash();
             //coilButtonAdjustWindow.Flash();
             coilButtonAdjustWindow.ShowDialog();
+            //Console.WriteLine(coilButtonAdjustWindow.Width);
         }
 
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -267,6 +269,17 @@ namespace FirstWindow
             if (registerAdjustWindow.b)
             {
                 resgisterCollection.Flash();
+            }
+        }
+
+        //coilButtonAdjustWindow窗口关闭事件监听
+        private void Form_Closing1(object sender, FormClosingEventArgs e)
+        {
+            if (coilButtonAdjustWindow.b)
+            {
+                coilButtonCollection.Flash();
+                this.groupBox3.Height = (((int)(CoilButtonCollection.b / 4.1) + 1) * 62 + 23);
+                this.groupBox3.Update();
             }
         }
 

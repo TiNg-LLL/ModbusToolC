@@ -112,5 +112,59 @@ namespace WindowUnit
             InitializeComponent();
             this.panel1.Controls.Add(registerAdjustCollection);
         }
+
+        private void mmlabel1_Click(object sender, System.EventArgs e)
+        {
+            if (RegisterAdjustCollection.resgisterAdjustList[0].RegisterDataTransform.Checked)
+            {
+                for (int i = 0; i < RegisterCollection.registerAmount; i++)
+                {
+                    RegisterAdjustCollection.resgisterAdjustList[i].RegisterDataTransform.Checked = false;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < RegisterCollection.registerAmount; i++)
+                {
+                    RegisterAdjustCollection.resgisterAdjustList[i].RegisterDataTransform.Checked = true;
+                }
+            }
+        }
+
+        private void 只读label2_Click(object sender, System.EventArgs e)
+        {
+            if (RegisterAdjustCollection.resgisterAdjustList[0].RegisterJustLabel.Checked)
+            {
+                for (int i = 0; i < RegisterCollection.registerAmount; i++)
+                {
+                    RegisterAdjustCollection.resgisterAdjustList[i].RegisterJustLabel.Checked = false;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < RegisterCollection.registerAmount; i++)
+                {
+                    RegisterAdjustCollection.resgisterAdjustList[i].RegisterJustLabel.Checked = true;
+                }
+            }
+        }
+
+        private void 隐藏label3_Click(object sender, System.EventArgs e)
+        {
+            if (RegisterAdjustCollection.resgisterAdjustList[0].hidecheckBox3.Checked)
+            {
+                for (int i = 0; i < RegisterCollection.registerAmount; i++)
+                {
+                    RegisterAdjustCollection.resgisterAdjustList[i].hidecheckBox3.Checked = false;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < RegisterCollection.registerAmount; i++)
+                {
+                    RegisterAdjustCollection.resgisterAdjustList[i].hidecheckBox3.Checked = true;
+                }
+            }
+        }
     }
 }

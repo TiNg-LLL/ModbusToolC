@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ZeroFunc;
 
 namespace FirstWindow
 {
@@ -11,6 +12,8 @@ namespace FirstWindow
         [STAThread]
         private static void Main()
         {
+            Dayend z = new Dayend();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FirstWindow());

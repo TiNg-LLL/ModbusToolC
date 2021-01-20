@@ -1,6 +1,7 @@
 ﻿using Func;
 using PanelCollection;
 using PanelCollection.CoilButton;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -14,6 +15,9 @@ namespace WindowUnit
         //初始化INI文件地址
         private string filename = Directory.GetCurrentDirectory() + @"\CoilButton.ini";
 
+        //辅助对象
+        public bool b { get; set; }
+
         public CoilButtonAdjustWindow()
         {
             InitializeComponent();
@@ -26,6 +30,7 @@ namespace WindowUnit
         //寄存器参数设置应用按钮
         private void button1_Click(object sender, System.EventArgs e)
         {
+            int t = 0;
             //参数刷新
             for (int i = 1; i <= CoilButtonCollection.coilButtonAmount; i++)
             {
@@ -69,6 +74,30 @@ namespace WindowUnit
                     IniFunc.writeString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename);
                     CoilButtonCollection.coilButtonList[i - 1].coilButtonTransform = bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename));
                 }
+                //***
+                //隐藏bool刷新
+                //***
+                if (!(CoilButtonCollection.coilButtonList[i - 1].coilButtonHideBool.Equals(CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].checkBox1.Checked)))
+                {
+                    if (CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].checkBox1.Checked)
+                    {
+                        CoilButtonCollection.coilButtonList[i - 1].coilButtonHideBool = true;
+                    }
+                    else
+                    {
+                        CoilButtonCollection.coilButtonList[i - 1].coilButtonHideBool = false;
+                    }
+                    IniFunc.writeString("CoilButtonHideBool", "CoilButtonHideBool" + i, CoilButtonCollection.coilButtonList[i - 1].coilButtonHideBool.ToString(), filename);
+                    t++;
+                }
+                if (t > 0)
+                {
+                    b = true;
+                }
+                else
+                {
+                    b = false;
+                }
             }
             //设置窗口关闭
             this.Close();
@@ -76,6 +105,7 @@ namespace WindowUnit
         //取消按钮
         private void button2_Click(object sender, System.EventArgs e)
         {
+            b = false;
             this.Close();
         }
         //***
@@ -86,6 +116,40 @@ namespace WindowUnit
             this.Controls.Clear();
             InitializeComponent();
             this.panel1.Controls.Add(coilButtonAdjustCollection);
+        }
+
+        private void 点动label1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < CoilButtonCollection.coilButtonAmount; i++)
+            {
+                CoilButtonAdjustCollection.coilButtonAdjustList[i].radioButton1.Checked = true;
+            }
+        }
+
+        private void 切换label2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < CoilButtonCollection.coilButtonAmount; i++)
+            {
+                CoilButtonAdjustCollection.coilButtonAdjustList[i].radioButton2.Checked = true;
+            }
+        }
+
+        private void 隐藏label3_Click(object sender, EventArgs e)
+        {
+            if (CoilButtonAdjustCollection.coilButtonAdjustList[0].checkBox1.Checked)
+            {
+                for (int i = 0; i < CoilButtonCollection.coilButtonAmount; i++)
+                {
+                    CoilButtonAdjustCollection.coilButtonAdjustList[i].checkBox1.Checked = false;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < CoilButtonCollection.coilButtonAmount; i++)
+                {
+                    CoilButtonAdjustCollection.coilButtonAdjustList[i].checkBox1.Checked = true;
+                }
+            }
         }
     }
 }

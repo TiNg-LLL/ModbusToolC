@@ -67,6 +67,9 @@
     <Reference Include="WindowUnit">
       <HintPath>..\WindowUnit\bin\Debug\WindowUnit.dll</HintPath>
     </Reference>
+    <Reference Include="ZeroFunc">
+      <HintPath>..\ZeroFunc\bin\Debug\ZeroFunc.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FirstWindow.cs">
