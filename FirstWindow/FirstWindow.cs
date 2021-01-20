@@ -68,7 +68,7 @@ namespace FirstWindow
         {
             InitializeComponent();
             //添加resgisterCollection
-            this.Text = "ModbusToolC v2.0 From:TiNg-LLL";
+            this.Text = "ModbusToolC v2.1 From:TiNg-LLL";
             this.ClientSize = new System.Drawing.Size(width, height);
             this.groupBox1.Controls.Add(resgisterCollection);
             this.groupBox2.Location = new Point(this.groupBox1.Width + 50, 35);
