@@ -43,16 +43,20 @@ namespace ReadThreadSpace
                         //寄存器读取循环
                         for (int i = 0; i < RegisterCollection.registerAmount; i++)
                         {
-                            try
+                            //判断是否隐藏
+                            if (!RegisterCollection.registerList[i].hidebool)
                             {
-                                RegisterCollection.registerValueList[i] = ModbusFunc.MyReadHoldingRegisters(DataTreat.RegisterAddressTransform(RegisterCollection.registerList[i].GetRegisterReadAddress()));
-                                //Thread.Sleep(time);
-                            }
-                            catch (Exception)
-                            {
-                                RegisterCollection.registerValueList[i] = "null";
-                                Thread.Sleep(50);
-                                //Thread.Sleep(time);
+                                try
+                                {
+                                    RegisterCollection.registerValueList[i] = ModbusFunc.MyReadHoldingRegisters(DataTreat.RegisterAddressTransform(RegisterCollection.registerList[i].GetRegisterReadAddress()));
+                                    //Thread.Sleep(time);
+                                }
+                                catch (Exception)
+                                {
+                                    RegisterCollection.registerValueList[i] = "null";
+                                    Thread.Sleep(50);
+                                    //Thread.Sleep(time);
+                                }
                             }
                         }
                     }
@@ -91,19 +95,22 @@ namespace ReadThreadSpace
                         //线圈读取循环---线圈按钮
                         for (int i = 0; i < CoilButtonCollection.coilButtonAmount; i++)
                         {
-                            try
+                            if (!CoilButtonCollection.coilButtonList[i].coilButtonHideBool)
                             {
-                                CoilButtonCollection.coilButtonValueList[i] = ModbusFunc.MyReadCoils(
-                                    DataTreat.CoilMXYAddressTransform(CoilButtonCollection.coilButtonList[i].coilButtonReadAddress,
-                                    CoilButtonCollection.coilButtonList[i].coilButtonReadMXYAddress));
-                                //CoilButtonCollection.coilButtonList[i].nowValue = (bool)CoilButtonCollection.coilButtonValueList[i];
-                                //Thread.Sleep(time);
-                            }
-                            catch (Exception)
-                            {
-                                CoilButtonCollection.coilButtonValueList[i] = null;
-                                Thread.Sleep(50);
-                                //Thread.Sleep(time);
+                                try
+                                {
+                                    CoilButtonCollection.coilButtonValueList[i] = ModbusFunc.MyReadCoils(
+                                        DataTreat.CoilMXYAddressTransform(CoilButtonCollection.coilButtonList[i].coilButtonReadAddress,
+                                        CoilButtonCollection.coilButtonList[i].coilButtonReadMXYAddress));
+                                    //CoilButtonCollection.coilButtonList[i].nowValue = (bool)CoilButtonCollection.coilButtonValueList[i];
+                                    //Thread.Sleep(time);
+                                }
+                                catch (Exception)
+                                {
+                                    CoilButtonCollection.coilButtonValueList[i] = null;
+                                    Thread.Sleep(50);
+                                    //Thread.Sleep(time);
+                                }
                             }
                         }
                     }

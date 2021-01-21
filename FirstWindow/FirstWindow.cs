@@ -68,7 +68,7 @@ namespace FirstWindow
         {
             InitializeComponent();
             //添加resgisterCollection
-            this.Text = "ModbusToolC v2.1 From:TiNg-LLL";
+            this.Text = "ModbusToolC v2.2 From:TiNg-LLL";
             this.ClientSize = new System.Drawing.Size(width, height);
             this.groupBox1.Controls.Add(resgisterCollection);
             this.groupBox2.Location = new Point(this.groupBox1.Width + 50, 35);
@@ -83,6 +83,7 @@ namespace FirstWindow
             //registerAdjustWindow窗口添加关闭事件监听
             this.registerAdjustWindow.FormClosing += new FormClosingEventHandler(Form_Closing);
             this.coilButtonAdjustWindow.FormClosing += new FormClosingEventHandler(Form_Closing1);
+            //Console.WriteLine(this.groupBox2.Width);
         }
         //***
         //参数地址修改显示副窗口按钮

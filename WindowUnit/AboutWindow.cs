@@ -21,5 +21,30 @@ namespace WindowUnit
         {
             this.Close();
         }
+
+        private void AboutWindow_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label2_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label3_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

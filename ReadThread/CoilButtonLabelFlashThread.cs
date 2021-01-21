@@ -29,77 +29,85 @@ namespace ReadThreadSpace
             while (true)
             {
                 ThreadFather.met.WaitOne();
-                //判断COM端口是否已连接
-                if (COMFunc.serialPort.IsOpen)
+                //判断是否隐藏
+                if (!CoilButtonCollection.coilButtonList[(int)obj].coilButtonHideBool)
                 {
-                    try
+                    //判断COM端口是否已连接
+                    if (COMFunc.serialPort.IsOpen)
                     {
-                        if ((bool)CoilButtonCollection.coilButtonValueList[(int)obj])
+                        try
                         {
-                            if (!(i == 0))
+                            if ((bool)CoilButtonCollection.coilButtonValueList[(int)obj])
                             {
-                                //小绿点
-                                CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor =
-                                    new Color[] { Color.FromArgb(0, 255, 0) };//绿色
-                                //***
-                                //按钮背景
-                                CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(165, 165, 165);
-                                i = 0;
+                                if (!(i == 0))
+                                {
+                                    //小绿点
+                                    CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor =
+                                        new Color[] { Color.FromArgb(0, 255, 0) };//绿色
+                                                                                  //***
+                                                                                  //按钮背景
+                                    CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(165, 165, 165);
+                                    i = 0;
+                                }
+                            }
+                            else if (!(bool)CoilButtonCollection.coilButtonValueList[(int)obj])
+                            {
+                                if (!(i == 1))
+                                {
+                                    //小绿点
+                                    CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor = new Color[] { Color.Transparent };
+                                    //按钮背景
+                                    CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(190, 190, 190);
+                                    i = 1;
+                                }
+                            }
+                            else
+                            {
+                                ////小绿点
+                                //CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor = new Color[] { Color.Transparent };
+                                ////new Color[] { CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor };
+                                ////按钮背景
+                                //CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(220, 220, 220);
                             }
                         }
-                        else if (!(bool)CoilButtonCollection.coilButtonValueList[(int)obj])
+                        catch (Exception)
                         {
-                            if (!(i == 1))
+                            if (!(i == 2))
+                            {
+                                //小绿点
+                                CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor = new Color[] { Color.Red };
+                                //按钮背景
+                                CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(220, 220, 220);
+                                i = 2;
+                            }
+                            //Thread.Sleep(200);
+                        }
+                        Thread.Sleep(50);
+                    }
+                    else
+                    {
+                        try
+                        {
+                            if (!(i == 3))
                             {
                                 //小绿点
                                 CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor = new Color[] { Color.Transparent };
+                                //new Color[] { CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor };
                                 //按钮背景
-                                CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(190, 190, 190);
-                                i = 1;
+                                CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(211, 211, 211);
+                                i = 3;
                             }
                         }
-                        else
+                        catch (Exception)
                         {
-                            ////小绿点
-                            //CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor = new Color[] { Color.Transparent };
-                            ////new Color[] { CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor };
-                            ////按钮背景
-                            //CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(220, 220, 220);
+                            Thread.Sleep(500);
                         }
+                        Thread.Sleep(200);
                     }
-                    catch (Exception)
-                    {
-                        if (!(i == 2))
-                        {
-                            //小绿点
-                            CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor = new Color[] { Color.Red };
-                            //按钮背景
-                            CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(220, 220, 220);
-                            i = 2;
-                        }
-                        //Thread.Sleep(200);
-                    }
-                    Thread.Sleep(50);
                 }
                 else
                 {
-                    try
-                    {
-                        if (!(i == 3))
-                        {
-                            //小绿点
-                            CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor = new Color[] { Color.Transparent };
-                            //new Color[] { CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor };
-                            //按钮背景
-                            CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(211, 211, 211);
-                            i = 3;
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        Thread.Sleep(500);
-                    }
-                    Thread.Sleep(200);
+                    Thread.Sleep(2000);
                 }
             }
         }

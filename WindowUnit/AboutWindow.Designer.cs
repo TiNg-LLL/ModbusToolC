@@ -47,7 +47,8 @@ namespace WindowUnit
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(247, 84);
             this.label1.TabIndex = 0;
-            this.label1.Text = "本软件基于C#编写；\r\n通过COM串口通讯；\r\n使用Modbus协议发收报文；\r\n地址参数暂仅支持信捷PLC规范；";
+            this.label1.Text = "本软件基于C#编写；\r\n通过COM串口通讯；\r\n使用Modbus协议收发报文；\r\n地址参数暂仅支持信捷PLC规范；";
+            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseClick);
             // 
             // label2
             // 
@@ -59,6 +60,7 @@ namespace WindowUnit
             this.label2.Size = new System.Drawing.Size(296, 42);
             this.label2.TabIndex = 2;
             this.label2.Text = "Github：https://github.com/TiNg-LLL\r\nEmail：bin3370@live.com";
+            this.label2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label2_MouseClick);
             // 
             // label3
             // 
@@ -70,6 +72,7 @@ namespace WindowUnit
             this.label3.Size = new System.Drawing.Size(132, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "© 2020-2021";
+            this.label3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label3_MouseClick);
             // 
             // pictureBox1
             // 
@@ -81,6 +84,7 @@ namespace WindowUnit
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // AboutWindow
             // 
@@ -101,6 +105,7 @@ namespace WindowUnit
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "关于  (2021)";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AboutWindow_KeyDown);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AboutWindow_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

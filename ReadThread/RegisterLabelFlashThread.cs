@@ -30,60 +30,68 @@ namespace ReadThreadSpace
             while (true)
             {
                 ThreadFather.met.WaitOne();
-                //判断COM端口是否已连接
-                if (COMFunc.serialPort.IsOpen)
+                //判断是否隐藏
+                if (!RegisterCollection.registerList[(int)obj].hidebool)
                 {
-                    //判断刷新至Label的值是否需要单位转换
-                    if (RegisterCollection.registerList[(int)obj].dataTransform)
+                    //判断COM端口是否已连接
+                    if (COMFunc.serialPort.IsOpen)
                     {
-                        try
+                        //判断刷新至Label的值是否需要单位转换
+                        if (RegisterCollection.registerList[(int)obj].dataTransform)
                         {
-                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
-                            DataTreat.RegisterDataProportionToMM(int.Parse(RegisterCollection.registerValueList[(int)obj]), RegisterCollection.registerDataProportion) + "mm";
-                        }
-                        catch (Exception)
-                        {
-                            if (!(RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text.Equals("error")))
+                            try
                             {
-                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
+                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
+                                DataTreat.RegisterDataProportionToMM(int.Parse(RegisterCollection.registerValueList[(int)obj]), RegisterCollection.registerDataProportion) + "mm";
                             }
-                        }
-                    }
-                    else  //不转换
-                    {
-                        try
-                        {
-                            if (RegisterCollection.registerValueList[(int)obj].Equals("null"))
+                            catch (Exception)
                             {
                                 if (!(RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text.Equals("error")))
                                 {
                                     RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
                                 }
                             }
-                            else
+                        }
+                        else  //不转换
+                        {
+                            try
                             {
-                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
-RegisterCollection.registerValueList[(int)obj];
+                                if (RegisterCollection.registerValueList[(int)obj].Equals("null"))
+                                {
+                                    if (!(RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text.Equals("error")))
+                                    {
+                                        RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
+                                    }
+                                }
+                                else
+                                {
+                                    RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
+    RegisterCollection.registerValueList[(int)obj];
+                                }
                             }
+                            catch (Exception)
+                            {
+                                //RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
+                            }
+                        }
+                        Thread.Sleep(50);
+                    }
+                    else
+                    {
+                        try
+                        {
+                            RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "000";
                         }
                         catch (Exception)
                         {
-                            //RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
+                            Thread.Sleep(200);
                         }
+                        Thread.Sleep(200);
                     }
-                    Thread.Sleep(50);
                 }
                 else
                 {
-                    try
-                    {
-                        RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "000";
-                    }
-                    catch (Exception)
-                    {
-                        Thread.Sleep(200);
-                    }
-                    Thread.Sleep(200);
+                    Thread.Sleep(2000);
                 }
             }
         }
