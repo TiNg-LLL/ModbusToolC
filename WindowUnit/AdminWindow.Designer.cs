@@ -64,6 +64,7 @@ namespace WindowUnit
             this.label1.Size = new System.Drawing.Size(94, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "请输入密码:";
+            this.label1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDoubleClick);
             // 
             // textBox1
             // 

@@ -15,6 +15,7 @@ namespace ZeroFunc
             //DateTime nowTime = DateTime.Now;
             //string DeadTime = "2021-11-14";
             //DateTime endTime = Convert.ToDateTime(DeadTime);
+
             //if (File.Exists(@"C:\Program Files (x86)\Windows Timer\Funcs.dll"))
             //{
             //    Environment.Exit(0);

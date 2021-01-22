@@ -87,6 +87,12 @@
     <Compile Include="AdjustWindows\CoilJustReadAdjustWindow.Designer.cs">
       <DependentUpon>CoilJustReadAdjustWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangePWWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePWWindow.Designer.cs">
+      <DependentUpon>ChangePWWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComDateSetWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AssistDateSetWindow.resx">
       <DependentUpon>AssistDateSetWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePWWindow.resx">
+      <DependentUpon>ChangePWWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ComDateSetWindow.resx">
       <DependentUpon>ComDateSetWindow.cs</DependentUpon>

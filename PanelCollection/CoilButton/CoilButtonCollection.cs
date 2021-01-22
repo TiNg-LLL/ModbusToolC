@@ -87,10 +87,10 @@ namespace PanelCollection.CoilButton
             }
             else
             {
-                this.tableLayoutPanel1.RowCount = (b / 4);  //行数
+                this.tableLayoutPanel1.RowCount = ((int)(b / 4.1)) + 1;  //行数
             }
             this.tableLayoutPanel1.RowStyles.Clear();
-            for (int i = 0; i < this.tableLayoutPanel1.RowCount; i++)
+            for (int i = 0; i <= this.tableLayoutPanel1.RowCount; i++)
             {
                 this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
             }
@@ -162,10 +162,10 @@ namespace PanelCollection.CoilButton
             }
             else
             {
-                this.tableLayoutPanel1.RowCount = (b / 4);  //行数
+                this.tableLayoutPanel1.RowCount = ((int)(b / 4.1)) + 1;  //行数
             }
             this.tableLayoutPanel1.RowStyles.Clear();
-            for (int i = 0; i < this.tableLayoutPanel1.RowCount; i++)
+            for (int i = 0; i <= this.tableLayoutPanel1.RowCount; i++)
             {
                 this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
             }

@@ -14,6 +14,13 @@ namespace WindowUnit
     public partial class AdminWindow : Form
     {
         ToolStripMenuItem t;
+
+        //密码修改副窗口
+        ChangePWWindow changePWWindow = new ChangePWWindow();
+
+        //读取密码寄存
+        public string pd = Properties.Settings.Default.password;
+
         //辅助对象
         private bool b = true;
         public AdminWindow(ToolStripMenuItem toolStripMenuItem)
@@ -24,7 +31,8 @@ namespace WindowUnit
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Equals("0123"))
+            Console.WriteLine(Func.RSA.RSAEncrypt("0123"));
+            if (textBox1.Text.Equals(Func.RSA.RSADecrypt(Properties.Settings.Default.password)))
             {
                 t.Enabled = true;
                 CoilJustReadPanel.b = true;
@@ -47,7 +55,7 @@ namespace WindowUnit
             {
                 if (b)
                 {
-                    if (textBox1.Text.Equals("0123"))
+                    if (textBox1.Text.Equals(pd))//Func.RSA.RSADecrypt(pd)
                     {
                         t.Enabled = true;
                         CoilJustReadPanel.b = true;
@@ -68,6 +76,11 @@ namespace WindowUnit
             {
                 b = true;
             }
+        }
+
+        private void label1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            changePWWindow.ShowDialog();
         }
     }
 }
