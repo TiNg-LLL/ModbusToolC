@@ -47,7 +47,7 @@ namespace ReadThreadSpace
                                 {
                                     //小绿点
                                     CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor =
-                                        new Color[] { Color.FromArgb(12, 200, 0) };//绿色
+                                        new Color[] { Color.FromArgb(12, 170, 0) };//绿色
                                     //***
                                     //按钮背景
                                     //CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(200, 200, 200);

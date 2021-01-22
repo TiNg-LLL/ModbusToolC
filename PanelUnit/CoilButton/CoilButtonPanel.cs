@@ -71,7 +71,7 @@ namespace PanelUnit.CoilButton
                         {
                         }
                     }
-                    this.ucBtnExt1.FillColor = Color.FromArgb(74, 134, 232);
+                    this.ucBtnExt1.FillColor = Color.FromArgb(173, 200, 237);
                 }
             }
         }
