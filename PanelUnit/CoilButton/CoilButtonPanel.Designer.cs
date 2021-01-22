@@ -36,6 +36,7 @@ namespace PanelUnit.CoilButton
             // 
             // ucBtnExt1
             // 
+            this.ucBtnExt1.AutoSize = true;
             this.ucBtnExt1.BackColor = System.Drawing.Color.Transparent;
             this.ucBtnExt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ucBtnExt1.BtnBackColor = System.Drawing.Color.Transparent;
@@ -46,7 +47,7 @@ namespace PanelUnit.CoilButton
             this.ucBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnExt1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucBtnExt1.EnabledMouseEffect = true;
-            this.ucBtnExt1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.ucBtnExt1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ucBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt1.ForeColor = System.Drawing.Color.Transparent;
             this.ucBtnExt1.IsRadius = true;
@@ -56,22 +57,23 @@ namespace PanelUnit.CoilButton
             this.ucBtnExt1.Name = "ucBtnExt1";
             this.ucBtnExt1.RectColor = System.Drawing.Color.DarkSlateGray;
             this.ucBtnExt1.RectWidth = 2;
-            this.ucBtnExt1.Size = new System.Drawing.Size(100, 50);
+            this.ucBtnExt1.Size = new System.Drawing.Size(1107, 749);
             this.ucBtnExt1.TabIndex = 0;
             this.ucBtnExt1.TabStop = false;
             this.ucBtnExt1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             // 
             // CoilButtonPanel
             // 
+            this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.ucBtnExt1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ForeColor = System.Drawing.Color.Transparent;
-            this.MaximumSize = new System.Drawing.Size(100, 50);
             this.Name = "CoilButtonPanel";
-            this.Size = new System.Drawing.Size(100, 50);
+            this.Size = new System.Drawing.Size(1107, 749);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

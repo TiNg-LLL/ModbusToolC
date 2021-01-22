@@ -62,11 +62,10 @@ namespace Controls
             this.lbl.Location = new System.Drawing.Point(0, 0);
             this.lbl.Margin = new System.Windows.Forms.Padding(0);
             this.lbl.Name = "lbl";
-            this.lbl.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.lbl.Size = new System.Drawing.Size(100, 50);
             this.lbl.TabIndex = 0;
             this.lbl.Text = "自定义按钮";
-            this.lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucSignalLamp1
             // 
@@ -75,7 +74,7 @@ namespace Controls
             this.ucSignalLamp1.IsHighlight = false;
             this.ucSignalLamp1.IsShowBorder = false;
             this.ucSignalLamp1.LampColor = new System.Drawing.Color[] {
-        System.Drawing.Color.LightGray};
+        System.Drawing.Color.Transparent};
             this.ucSignalLamp1.Location = new System.Drawing.Point(88, 1);
             this.ucSignalLamp1.Name = "ucSignalLamp1";
             this.ucSignalLamp1.Size = new System.Drawing.Size(10, 10);
@@ -85,6 +84,7 @@ namespace Controls
             // UCBtnExt
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.ConerRadius = 10;
             this.Controls.Add(this.ucSignalLamp1);

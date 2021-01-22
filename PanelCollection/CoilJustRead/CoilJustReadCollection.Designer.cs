@@ -39,7 +39,7 @@ namespace PanelCollection
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(240, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            //this.flowLayoutPanel1.Size = new System.Drawing.Size(240, 440);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(150, 150);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // CoilJustReadCollection
@@ -48,7 +48,6 @@ namespace PanelCollection
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "CoilJustReadCollection";
-            //this.Size = new System.Drawing.Size(400, 440);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -56,6 +55,6 @@ namespace PanelCollection
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

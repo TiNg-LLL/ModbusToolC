@@ -75,8 +75,10 @@ namespace FirstWindow
             this.groupBox2.Controls.Add(coilJustReadCollection);
             this.groupBox3.Location = new Point(this.groupBox1.Width + 50, this.groupBox2.Location.Y + this.groupBox2.Height + 20);
             this.groupBox3.Controls.Add(coilButtonCollection);
+            //Console.WriteLine(coilJustReadCollection.Width);
+            //coilButtonCollection.Width = coilJustReadCollection.Width;
             this.groupBox3.Width = this.groupBox2.Width;
-            this.groupBox3.Height = (((int)(CoilButtonCollection.b / 4.1) + 1) * 62 + 23);
+            //this.groupBox3.Height = (((int)(CoilButtonCollection.b / 4.1) + 1) * 67 + 25);
             threadFather = new ThreadFather();
             adminWindow = new AdminWindow(设置ToolStripMenuItem);
             设置ToolStripMenuItem.Enabled = false;
@@ -279,8 +281,8 @@ namespace FirstWindow
             if (coilButtonAdjustWindow.b)
             {
                 coilButtonCollection.Flash();
-                this.groupBox3.Height = (((int)(CoilButtonCollection.b / 4.1) + 1) * 62 + 23);
                 this.groupBox3.Update();
+                this.groupBox3.AutoSize = true;
             }
         }
 

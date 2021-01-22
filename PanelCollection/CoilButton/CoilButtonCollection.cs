@@ -78,7 +78,7 @@ namespace PanelCollection.CoilButton
             this.tableLayoutPanel1.ColumnStyles.Clear();
             for (int i = 0; i <= this.tableLayoutPanel1.ColumnCount; i++)
             {
-                this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+                this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 86F));
             }
             //行数设置
             if ((b / 4) <= 1)
@@ -90,9 +90,9 @@ namespace PanelCollection.CoilButton
                 this.tableLayoutPanel1.RowCount = (b / 4);  //行数
             }
             this.tableLayoutPanel1.RowStyles.Clear();
-            for (int i = 0; i <= this.tableLayoutPanel1.RowCount; i++)
+            for (int i = 0; i < this.tableLayoutPanel1.RowCount; i++)
             {
-                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
             }
             //添加Label对象
             b = 0;
@@ -153,7 +153,7 @@ namespace PanelCollection.CoilButton
             this.tableLayoutPanel1.ColumnStyles.Clear();
             for (int i = 0; i <= this.tableLayoutPanel1.ColumnCount; i++)
             {
-                this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+                this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 86F));
             }
             //行数设置
             if ((b / 4) <= 1)
@@ -165,9 +165,9 @@ namespace PanelCollection.CoilButton
                 this.tableLayoutPanel1.RowCount = (b / 4);  //行数
             }
             this.tableLayoutPanel1.RowStyles.Clear();
-            for (int i = 0; i <= this.tableLayoutPanel1.RowCount; i++)
+            for (int i = 0; i < this.tableLayoutPanel1.RowCount; i++)
             {
-                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
             }
             //添加Label对象
             b = 0;

@@ -32,6 +32,7 @@ namespace PanelUnit.CoilButton
         public CoilButtonPanel(int ID)
         {
             InitializeComponent();
+            this.Dock = System.Windows.Forms.DockStyle.Fill;
             //设置ID
             this.ID = ID;
             this.ucBtnExt1.lbl.MouseUp += new MouseEventHandler(this.ucBtnExt1_MouseUp);
@@ -70,6 +71,7 @@ namespace PanelUnit.CoilButton
                         {
                         }
                     }
+                    this.ucBtnExt1.FillColor = Color.FromArgb(74, 134, 232);
                 }
             }
         }
@@ -110,6 +112,7 @@ namespace PanelUnit.CoilButton
                         {
                         }
                     }
+                    this.ucBtnExt1.FillColor = Color.FromArgb(200, 200, 200);
                 }
             }
             else if (e.Button == MouseButtons.Right)
