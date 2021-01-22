@@ -166,18 +166,6 @@
         "Entry"
         {
         "MsmKey" = "8:_C4B006D049355C4E9856FC1168C1FA32"
-        "OwnerKey" = "8:_C4A250B02AE31A63284E77EEC70BE025"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C4B006D049355C4E9856FC1168C1FA32"
-        "OwnerKey" = "8:_A9405124B438785086ABFD840197A836"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C4B006D049355C4E9856FC1168C1FA32"
         "OwnerKey" = "8:_283918C84323C8DC31133B50870CFC2E"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -189,14 +177,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4252AAC94D403F334AB694243C04A64A"
+        "MsmKey" = "8:_C4B006D049355C4E9856FC1168C1FA32"
+        "OwnerKey" = "8:_A9405124B438785086ABFD840197A836"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C4B006D049355C4E9856FC1168C1FA32"
+        "MsmKey" = "8:_C4B006D049355C4E9856FC1168C1FA32"
+        "OwnerKey" = "8:_C4A250B02AE31A63284E77EEC70BE025"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -247,6 +235,18 @@
         "OwnerKey" = "8:_B469676FC66343F1BC42FE390AA0E1C2"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C4B006D049355C4E9856FC1168C1FA32"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4252AAC94D403F334AB694243C04A64A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -265,6 +265,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -281,6 +297,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -744,14 +768,14 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:ModbusToolC v2.2"
+        "ProductName" = "8:ModbusToolC v2.3"
         "ProductCode" = "8:{461283C2-6C49-41CC-ADC8-55FD6FC90033}"
-        "PackageCode" = "8:{5059C21C-60B6-413E-A503-6B20492405AE}"
+        "PackageCode" = "8:{F2DC258E-40FC-46FB-B8C6-F33E6F0BA3E5}"
         "UpgradeCode" = "8:{28623C30-A910-4189-9AE2-7245A74A39D2}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
-        "DetectNewerInstalledVersion" = "11:TRUE"
+        "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8: "
