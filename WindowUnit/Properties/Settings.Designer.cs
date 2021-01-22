@@ -25,7 +25,7 @@ namespace WindowUnit.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("s9KTg9xV3F0=")]
         public string password {
             get {
                 return ((string)(this["password"]));

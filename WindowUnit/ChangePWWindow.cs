@@ -24,13 +24,15 @@ namespace WindowUnit
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == Properties.Settings.Default.password)
+            if (textBox1.Text.Equals(Func.DES.DESDecrypt(Properties.Settings.Default.password)))
             {
-                if (textBox2.Text == textBox3.Text)
+                if (textBox2.Text.Equals(textBox3.Text) && !(textBox2.Text == ""))
                 {
-                    Properties.Settings.Default.password = Func.RSA.RSAEncrypt(textBox2.Text);
+                    Properties.Settings.Default.password = Func.DES.DESEncrypt(textBox2.Text);
                     Properties.Settings.Default.Save();
-                    Console.WriteLine(Func.RSA.RSADecrypt(Func.RSA.RSAEncrypt(textBox2.Text)));
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
                     this.Close();
                 }
             }

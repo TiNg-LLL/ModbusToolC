@@ -19,7 +19,7 @@ namespace WindowUnit
         ChangePWWindow changePWWindow = new ChangePWWindow();
 
         //读取密码寄存
-        public string pd = Properties.Settings.Default.password;
+        //public string pd = Properties.Settings.Default.password;
 
         //辅助对象
         private bool b = true;
@@ -31,8 +31,7 @@ namespace WindowUnit
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(Func.RSA.RSAEncrypt("0123"));
-            if (textBox1.Text.Equals(Func.RSA.RSADecrypt(Properties.Settings.Default.password)))
+            if (textBox1.Text.Equals(Func.DES.DESDecrypt(Properties.Settings.Default.password)))
             {
                 t.Enabled = true;
                 CoilJustReadPanel.b = true;
@@ -55,7 +54,7 @@ namespace WindowUnit
             {
                 if (b)
                 {
-                    if (textBox1.Text.Equals(pd))//Func.RSA.RSADecrypt(pd)
+                    if (textBox1.Text.Equals(Func.DES.DESDecrypt(Properties.Settings.Default.password)))
                     {
                         t.Enabled = true;
                         CoilJustReadPanel.b = true;

@@ -43,7 +43,7 @@
     <Compile Include="DataTreat.cs" />
     <Compile Include="IniFunc.cs" />
     <Compile Include="ModbusFunc.cs" />
-    <Compile Include="RSA.cs" />
+    <Compile Include="DES.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModbusFunc">

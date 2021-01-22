@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0123</Value>
+      <Value Profile="(Default)">s9KTg9xV3F0=</Value>
     </Setting>
   </Settings>
 </SettingsFile>

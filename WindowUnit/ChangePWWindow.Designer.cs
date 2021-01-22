@@ -74,7 +74,7 @@ namespace WindowUnit
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(81, 21);
-            this.textBox3.TabIndex = 7;
+            this.textBox3.TabIndex = 2;
             // 
             // textBox2
             // 
@@ -83,7 +83,7 @@ namespace WindowUnit
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(81, 21);
-            this.textBox2.TabIndex = 6;
+            this.textBox2.TabIndex = 1;
             // 
             // label1
             // 
@@ -93,7 +93,7 @@ namespace WindowUnit
             this.label1.Location = new System.Drawing.Point(27, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 21);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 10;
             this.label1.Text = "原密码";
             // 
             // label2
@@ -104,7 +104,7 @@ namespace WindowUnit
             this.label2.Location = new System.Drawing.Point(27, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 21);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 10;
             this.label2.Text = "新密码";
             // 
             // label3
@@ -115,7 +115,7 @@ namespace WindowUnit
             this.label3.Location = new System.Drawing.Point(11, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 21);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 10;
             this.label3.Text = "再次确认";
             // 
             // textBox1
@@ -125,7 +125,7 @@ namespace WindowUnit
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(81, 21);
-            this.textBox1.TabIndex = 3;
+            this.textBox1.TabIndex = 0;
             // 
             // button1
             // 
@@ -133,7 +133,7 @@ namespace WindowUnit
             this.button1.Location = new System.Drawing.Point(12, 125);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(65, 26);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 3;
             this.button1.Text = "修改";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -145,7 +145,7 @@ namespace WindowUnit
             this.button2.Location = new System.Drawing.Point(101, 125);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(65, 26);
-            this.button2.TabIndex = 5;
+            this.button2.TabIndex = 4;
             this.button2.Text = "取消";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
