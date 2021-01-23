@@ -30,7 +30,7 @@ namespace PanelCollection
             this.Dock = DockStyle.Fill;
             this.AutoSize = true;
 
-            coilJustReadAmount = int.Parse(IniFunc.getString("CoilJustReadAmount", "CoilJustReadAmount", "读取错误", filename));
+            coilJustReadAmount = int.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadAmount", "CoilJustReadAmount", "ba0s2hMe/Pg=", filename)));
 
             //在集合中创建对应数量的对象
             for (int i = 1; i <= coilJustReadAmount; i++)
@@ -38,13 +38,13 @@ namespace PanelCollection
                 coilJustReadList.Add(new CoilJustReadPanel(i));
                 coilJustReadValueList.Add(null);
                 //设置成员名称
-                coilJustReadList[i - 1].label1.Text = IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "读取错误", filename);
+                coilJustReadList[i - 1].label1.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename));
                 //设置成员读取地址
-                coilJustReadList[i - 1].coilJustReadAddress = int.Parse(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "0", filename));
+                coilJustReadList[i - 1].coilJustReadAddress = int.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "ba0s2hMe/Pg=", filename)));
                 //设置成员Color
-                coilJustReadList[i - 1].c[0] = ColorTranslator.FromHtml(IniFunc.getString("CoilJustReadColor", "CoilJustReadColor" + i, "#D3D3D3", filename));
+                coilJustReadList[i - 1].c[0] = ColorTranslator.FromHtml(Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadColor", "CoilJustReadColor" + i, "UxDrTFlFQDI=", filename)));
                 //设置成员读取地址MXY
-                coilJustReadList[i - 1].coilJustReadMXYAddress = IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "M", filename);
+                coilJustReadList[i - 1].coilJustReadMXYAddress = Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "/uz5sjJ8Zt4=", filename));
             }
             //***
             //Panel初始化
@@ -56,34 +56,34 @@ namespace PanelCollection
             //this.BackColor = Color.DarkRed;  //背景颜色
         }
 
-        public void Flash()
-        {
-            coilJustReadList.Clear();
-            coilJustReadValueList.Clear();
-            this.flowLayoutPanel1.Controls.Clear();
-            coilJustReadAmount = int.Parse(IniFunc.getString("CoilJustReadAmount", "CoilJustReadAmount", "读取错误", filename));
+        //public void Flash()
+        //{
+        //    coilJustReadList.Clear();
+        //    coilJustReadValueList.Clear();
+        //    this.flowLayoutPanel1.Controls.Clear();
+        //    coilJustReadAmount = int.Parse(IniFunc.getString("CoilJustReadAmount", "CoilJustReadAmount", "读取错误", filename));
 
-            //在集合中创建对应数量的对象
-            for (int i = 1; i <= coilJustReadAmount; i++)
-            {
-                coilJustReadList.Add(new CoilJustReadPanel(i));
-                coilJustReadValueList.Add(false);
-                //设置成员名称
-                coilJustReadList[i - 1].label1.Text = IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "读取错误", filename);
-                //设置成员读取地址
-                coilJustReadList[i - 1].coilJustReadAddress = int.Parse(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "0", filename));
-                //设置成员Color
-                coilJustReadList[i - 1].c[0] = ColorTranslator.FromHtml(IniFunc.getString("CoilJustReadColor", "CoilJustReadColor" + i, "#D3D3D3", filename));
-                //设置成员读取地址MXY
-                coilJustReadList[i - 1].coilJustReadMXYAddress = IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "M", filename);
-            }
-            //***
-            //Panel初始化
-            //***
-            for (int i = 0; i < coilJustReadAmount; i++)
-            {
-                this.flowLayoutPanel1.Controls.Add(coilJustReadList[i]);
-            }
-        }
+        //    //在集合中创建对应数量的对象
+        //    for (int i = 1; i <= coilJustReadAmount; i++)
+        //    {
+        //        coilJustReadList.Add(new CoilJustReadPanel(i));
+        //        coilJustReadValueList.Add(false);
+        //        //设置成员名称
+        //        coilJustReadList[i - 1].label1.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "读取错误", filename));
+        //        //设置成员读取地址
+        //        coilJustReadList[i - 1].coilJustReadAddress = int.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "0", filename)));
+        //        //设置成员Color
+        //        coilJustReadList[i - 1].c[0] = ColorTranslator.FromHtml(IniFunc.getString("CoilJustReadColor", "CoilJustReadColor" + i, "#D3D3D3", filename));
+        //        //设置成员读取地址MXY
+        //        coilJustReadList[i - 1].coilJustReadMXYAddress = Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "M", filename));
+        //    }
+        //    //***
+        //    //Panel初始化
+        //    //***
+        //    for (int i = 0; i < coilJustReadAmount; i++)
+        //    {
+        //        this.flowLayoutPanel1.Controls.Add(coilJustReadList[i]);
+        //    }
+        //}
     }
 }

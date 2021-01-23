@@ -39,26 +39,26 @@ namespace PanelCollection
                 //设置成员ID
                 coilButtonAdjustList[i - 1].ID = i;
                 //设置成员名称
-                coilButtonAdjustList[i - 1].coilButtonTextBox1.Text = IniFunc.getString("CoilButtonName", "CoilButtonName" + i, "读取错误", filename);
+                coilButtonAdjustList[i - 1].coilButtonTextBox1.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonName", "CoilButtonName" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename));
                 //设置成员读取地址
-                coilButtonAdjustList[i - 1].coilButtonReadtextBox.Text = IniFunc.getString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, "读取错误", filename);
+                coilButtonAdjustList[i - 1].coilButtonReadtextBox.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename));
                 //设置成员读取地址MXY
-                coilButtonAdjustList[i - 1].coilButtonReadcomboBox.Text = IniFunc.getString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, "读取错误", filename);
+                coilButtonAdjustList[i - 1].coilButtonReadcomboBox.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename));
                 //设置成员写入地址
-                coilButtonAdjustList[i - 1].coilButtonWriteTextBox.Text = IniFunc.getString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, "读取错误", filename);
+                coilButtonAdjustList[i - 1].coilButtonWriteTextBox.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename));
                 //设置成员写入地址MXY
-                coilButtonAdjustList[i - 1].coilButtonWritecomboBox.Text = IniFunc.getString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, "读取错误", filename);
+                coilButtonAdjustList[i - 1].coilButtonWritecomboBox.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename));
                 //设置成员点动切换选择
-                if (bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "读取错误", filename)))
+                if (bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename))))
                 {
                     coilButtonAdjustList[i - 1].radioButton1.Checked = true;
                 }
-                else if (!bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "读取错误", filename)))
+                else if (!bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename))))
                 {
                     coilButtonAdjustList[i - 1].radioButton2.Checked = true;
                 }
                 //设置成员隐藏bool
-                coilButtonAdjustList[i - 1].checkBox1.Checked = bool.Parse(IniFunc.getString("CoilButtonHideBool", "CoilButtonHideBool" + i, "false", filename));
+                coilButtonAdjustList[i - 1].checkBox1.Checked = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonHideBool", "CoilButtonHideBool" + i, "rQKVA3srM0c=", filename)));
             }
 
             this.ColumnCount = 1;  //列数

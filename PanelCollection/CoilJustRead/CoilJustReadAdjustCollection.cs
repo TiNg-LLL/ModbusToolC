@@ -38,11 +38,11 @@ namespace PanelCollection
                 //设置成员ID
                 coilJustReadAdjustList[i - 1].ID = i;
                 //设置成员名称
-                coilJustReadAdjustList[i - 1].coilJustReadTextBox1.Text = IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "读取错误", filename);
+                coilJustReadAdjustList[i - 1].coilJustReadTextBox1.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "读取错误", filename));
                 //设置成员读取地址
-                coilJustReadAdjustList[i - 1].coilJustReadTextBox2.Text = IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "读取错误", filename);
+                coilJustReadAdjustList[i - 1].coilJustReadTextBox2.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "读取错误", filename));
                 //设置成员读取地址MXY
-                coilJustReadAdjustList[i - 1].comboBox1.Text = IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "读取错误", filename);
+                coilJustReadAdjustList[i - 1].comboBox1.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "读取错误", filename));
             }
 
             this.ColumnCount = 1;  //列数

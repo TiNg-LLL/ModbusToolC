@@ -59,7 +59,7 @@ namespace PanelUnit
                 if (dr == DialogResult.OK)
                 {
                     c[0] = cd.Color;
-                    IniFunc.writeString("CoilJustReadColor", "CoilJustReadColor" + ID, ColorTranslator.ToHtml(c[0]), filename);
+                    IniFunc.writeString("CoilJustReadColor", "CoilJustReadColor" + ID, Func.DES.DESEncrypt(ColorTranslator.ToHtml(c[0])), filename);
                 }
             }
         }

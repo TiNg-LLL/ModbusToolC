@@ -68,8 +68,10 @@ namespace FirstWindow
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -165,7 +167,6 @@ namespace FirstWindow
             // 
             // 参数数量TextBox
             // 
-            this.参数数量TextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.参数数量TextBox.Name = "参数数量TextBox";
             this.参数数量TextBox.Size = new System.Drawing.Size(25, 23);
             this.参数数量TextBox.Text = "0";
@@ -194,7 +195,6 @@ namespace FirstWindow
             // 
             // 状态数量TextBox
             // 
-            this.状态数量TextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.状态数量TextBox.Name = "状态数量TextBox";
             this.状态数量TextBox.Size = new System.Drawing.Size(25, 23);
             this.状态数量TextBox.Text = "0";
@@ -223,7 +223,6 @@ namespace FirstWindow
             // 
             // 按钮数量TextBox1
             // 
-            this.按钮数量TextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.按钮数量TextBox1.Name = "按钮数量TextBox1";
             this.按钮数量TextBox1.Size = new System.Drawing.Size(25, 23);
             this.按钮数量TextBox1.Text = "0";
@@ -329,12 +328,23 @@ namespace FirstWindow
             // groupBox3
             // 
             this.groupBox3.AutoSize = true;
+            this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox3.Controls.Add(this.panel1);
             this.groupBox3.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox3.Location = new System.Drawing.Point(500, 180);
             this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(226, 106);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "按钮";
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(54, 34);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(166, 46);
+            this.panel1.TabIndex = 0;
+            this.panel1.Visible = false;
             // 
             // FirstWindow
             // 
@@ -357,6 +367,7 @@ namespace FirstWindow
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,6 +407,7 @@ namespace FirstWindow
         private System.Windows.Forms.ToolStripTextBox 按钮数量TextBox1;
         private System.Windows.Forms.ToolStripMenuItem 按钮地址修改ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

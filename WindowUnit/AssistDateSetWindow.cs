@@ -16,7 +16,7 @@ namespace WindowUnit
         {
             InitializeComponent();
             //读取寄存器单位转换比率并设置
-            this.proportionTextBox.Text = IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename);
+            this.proportionTextBox.Text = Func.DES.DESDecrypt(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename));
         }
         //
         //应用按钮
@@ -24,8 +24,8 @@ namespace WindowUnit
         private void button1_Click(object sender, EventArgs e)
         {
             //寄存器单位转换比率写入
-            IniFunc.writeString("RegisterDataProportion", "RegisterDataProportion1", this.proportionTextBox.Text, filename);
-            RegisterCollection.registerDataProportion = float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename));
+            IniFunc.writeString("RegisterDataProportion", "RegisterDataProportion1", Func.DES.DESEncrypt(this.proportionTextBox.Text), filename);
+            RegisterCollection.registerDataProportion = float.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "Eln6MAJktr8=", filename)));
             this.Close();
         }
         //

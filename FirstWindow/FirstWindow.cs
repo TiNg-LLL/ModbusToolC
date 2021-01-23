@@ -68,7 +68,7 @@ namespace FirstWindow
         {
             InitializeComponent();
             //添加resgisterCollection
-            this.Text = "ModbusToolC v2.3 From:TiNg-LLL";
+            this.Text = "ModbusToolC v3.0 From:TiNg-LLL";
             this.ClientSize = new System.Drawing.Size(width, height);
             this.groupBox1.Controls.Add(resgisterCollection);
             this.groupBox2.Location = new Point(this.groupBox1.Width + 50, 35);
@@ -105,7 +105,7 @@ namespace FirstWindow
         {
             if (e.KeyCode == Keys.Enter)
             {
-                IniFunc.writeString("RegisterAmount", "RegisterAmount", this.参数数量TextBox.Text, filenameRegister);
+                IniFunc.writeString("RegisterAmount", "RegisterAmount", Func.DES.DESEncrypt(this.参数数量TextBox.Text), filenameRegister);
                 if (MessageBox.Show("需要重启软件才能生效，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Application.Restart();
@@ -131,7 +131,7 @@ namespace FirstWindow
         {
             if (e.KeyCode == Keys.Enter)
             {
-                IniFunc.writeString("CoilJustReadAmount", "CoilJustReadAmount", this.状态数量TextBox.Text, filenameCoilJustRead);
+                IniFunc.writeString("CoilJustReadAmount", "CoilJustReadAmount", Func.DES.DESEncrypt(this.状态数量TextBox.Text), filenameCoilJustRead);
                 if (MessageBox.Show("需要重启软件才能生效，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Application.Restart();
@@ -156,7 +156,7 @@ namespace FirstWindow
         {
             if (e.KeyCode == Keys.Enter)
             {
-                IniFunc.writeString("CoilButtonAmount", "CoilButtonAmount", this.按钮数量TextBox1.Text, filenameButtonRead);
+                IniFunc.writeString("CoilButtonAmount", "CoilButtonAmount", Func.DES.DESEncrypt(this.按钮数量TextBox1.Text), filenameButtonRead);
                 if (MessageBox.Show("需要重启软件才能生效，是否现在重启", "修改成功", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Application.Restart();
@@ -271,7 +271,9 @@ namespace FirstWindow
         {
             if (registerAdjustWindow.b)
             {
+                this.groupBox1.Visible = false;
                 resgisterCollection.Flash();
+                this.groupBox1.Visible = true;
             }
         }
 
@@ -280,9 +282,10 @@ namespace FirstWindow
         {
             if (coilButtonAdjustWindow.b)
             {
+                this.groupBox3.Visible = false;
                 coilButtonCollection.Flash();
-                this.groupBox3.Update();
-                this.groupBox3.AutoSize = true;
+                //this.groupBox3.Update();
+                this.groupBox3.Visible = true;
             }
         }
 

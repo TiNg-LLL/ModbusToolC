@@ -36,43 +36,43 @@ namespace WindowUnit
             {
                 //***
                 //名称ini文件刷新
-                IniFunc.writeString("CoilButtonName", "CoilButtonName" + i, CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonTextBox1.Text, filename);
+                IniFunc.writeString("CoilButtonName", "CoilButtonName" + i, Func.DES.DESEncrypt(CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonTextBox1.Text), filename);
                 //名称对象刷新
-                CoilButtonCollection.coilButtonList[i - 1].ucBtnExt1.lbl.Text = IniFunc.getString("CoilButtonName", "CoilButtonName" + i, "读取错误", filename);
+                CoilButtonCollection.coilButtonList[i - 1].ucBtnExt1.lbl.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonName", "CoilButtonName" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename));
                 //***
                 //读取地址
                 //***
                 //读取地址ini文件刷新
-                IniFunc.writeString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonReadtextBox.Text, filename);
+                IniFunc.writeString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, Func.DES.DESEncrypt(CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonReadtextBox.Text), filename);
                 //读取地址对象刷新
-                CoilButtonCollection.coilButtonList[i - 1].coilButtonReadAddress = int.Parse(IniFunc.getString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, "0", filename));
+                CoilButtonCollection.coilButtonList[i - 1].coilButtonReadAddress = int.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, "ba0s2hMe/Pg=", filename)));  //默认0
                 //读取MXY地址ini文件刷新
-                IniFunc.writeString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonReadcomboBox.Text, filename);
+                IniFunc.writeString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, Func.DES.DESEncrypt(CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonReadcomboBox.Text), filename);
                 //读取MXY地址对象刷新
-                CoilButtonCollection.coilButtonList[i - 1].coilButtonReadMXYAddress = IniFunc.getString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, "M", filename);
+                CoilButtonCollection.coilButtonList[i - 1].coilButtonReadMXYAddress = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, "/uz5sjJ8Zt4=", filename));  //默认M
                 //***
                 //写入地址
                 //***
                 //写入地址ini文件刷新
-                IniFunc.writeString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonWriteTextBox.Text, filename);
+                IniFunc.writeString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, Func.DES.DESEncrypt(CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonWriteTextBox.Text), filename);
                 //写入地址对象刷新
-                CoilButtonCollection.coilButtonList[i - 1].coilButtonWriteAddress = int.Parse(IniFunc.getString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, "0", filename));
+                CoilButtonCollection.coilButtonList[i - 1].coilButtonWriteAddress = int.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, "ba0s2hMe/Pg=", filename)));  //默认0
                 //写入MXY地址ini文件刷新
-                IniFunc.writeString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonWritecomboBox.Text, filename);
+                IniFunc.writeString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, Func.DES.DESEncrypt(CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].coilButtonWritecomboBox.Text), filename);
                 //写入MXY地址对象刷新
-                CoilButtonCollection.coilButtonList[i - 1].coilButtonWriteMXYAddress = IniFunc.getString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, "M", filename);
+                CoilButtonCollection.coilButtonList[i - 1].coilButtonWriteMXYAddress = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, "/uz5sjJ8Zt4=", filename));  //默认M
                 //***
                 //点动切换
                 //***
                 if (CoilButtonAdjustCollection.coilButtonAdjustList[i - 1].radioButton1.Checked)
                 {
-                    IniFunc.writeString("CoilButtonTransform", "CoilButtonTransform" + i, "true", filename);
-                    CoilButtonCollection.coilButtonList[i - 1].coilButtonTransform = bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename));
+                    IniFunc.writeString("CoilButtonTransform", "CoilButtonTransform" + i, "IY61r8XnUzA=", filename);
+                    CoilButtonCollection.coilButtonList[i - 1].coilButtonTransform = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "rQKVA3srM0c=", filename)));
                 }
                 else
                 {
-                    IniFunc.writeString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename);
-                    CoilButtonCollection.coilButtonList[i - 1].coilButtonTransform = bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename));
+                    IniFunc.writeString("CoilButtonTransform", "CoilButtonTransform" + i, "rQKVA3srM0c=", filename);
+                    CoilButtonCollection.coilButtonList[i - 1].coilButtonTransform = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "rQKVA3srM0c=", filename)));
                 }
                 //***
                 //隐藏bool刷新
@@ -87,7 +87,7 @@ namespace WindowUnit
                     {
                         CoilButtonCollection.coilButtonList[i - 1].coilButtonHideBool = false;
                     }
-                    IniFunc.writeString("CoilButtonHideBool", "CoilButtonHideBool" + i, CoilButtonCollection.coilButtonList[i - 1].coilButtonHideBool.ToString(), filename);
+                    IniFunc.writeString("CoilButtonHideBool", "CoilButtonHideBool" + i, Func.DES.DESEncrypt(CoilButtonCollection.coilButtonList[i - 1].coilButtonHideBool.ToString()), filename);
                     t++;
                 }
                 if (t > 0)

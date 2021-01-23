@@ -44,7 +44,7 @@ namespace WindowUnit
             this.startDateTextBox = new System.Windows.Forms.TextBox();
             this.slaveIDTextBox = new System.Windows.Forms.TextBox();
             this.readTimeoutTextBox = new System.Windows.Forms.TextBox();
-            this.readTimeOutcomboBox = new System.Windows.Forms.ComboBox();
+            this.stopDatecomboBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -70,7 +70,7 @@ namespace WindowUnit
             this.tableLayoutPanel1.Controls.Add(this.startDateTextBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.slaveIDTextBox, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.readTimeoutTextBox, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.readTimeOutcomboBox, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.stopDatecomboBox, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -225,16 +225,16 @@ namespace WindowUnit
             this.readTimeoutTextBox.Size = new System.Drawing.Size(60, 26);
             this.readTimeoutTextBox.TabIndex = 13;
             // 
-            // readTimeOutcomboBox
+            // stopDatecomboBox
             // 
-            this.readTimeOutcomboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.readTimeOutcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.readTimeOutcomboBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.readTimeOutcomboBox.FormattingEnabled = true;
-            this.readTimeOutcomboBox.Location = new System.Drawing.Point(147, 141);
-            this.readTimeOutcomboBox.Name = "readTimeOutcomboBox";
-            this.readTimeOutcomboBox.Size = new System.Drawing.Size(60, 24);
-            this.readTimeOutcomboBox.TabIndex = 14;
+            this.stopDatecomboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.stopDatecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.stopDatecomboBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.stopDatecomboBox.FormattingEnabled = true;
+            this.stopDatecomboBox.Location = new System.Drawing.Point(147, 141);
+            this.stopDatecomboBox.Name = "stopDatecomboBox";
+            this.stopDatecomboBox.Size = new System.Drawing.Size(60, 24);
+            this.stopDatecomboBox.TabIndex = 14;
             // 
             // button1
             // 
@@ -300,7 +300,7 @@ namespace WindowUnit
         private System.Windows.Forms.ComboBox parityComboBox;
         private System.Windows.Forms.Label readTimeoutLabel;
         private System.Windows.Forms.TextBox readTimeoutTextBox;
-        private System.Windows.Forms.ComboBox readTimeOutcomboBox;
+        private System.Windows.Forms.ComboBox stopDatecomboBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

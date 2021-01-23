@@ -26,7 +26,7 @@ namespace PanelCollection
 
         public RegisterCollection()
         {
-            registerAmount = int.Parse(IniFunc.getString("RegisterAmount", "RegisterAmount", "读取错误", filename));
+            registerAmount = int.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterAmount", "RegisterAmount", "ba0s2hMe/Pg=", filename)));
 
             //在集合中创建对应数量的对象
             for (int i = 1; i <= registerAmount; i++)
@@ -34,17 +34,17 @@ namespace PanelCollection
                 registerList.Add(new RegisterCommonPanel(i));
                 registerValueList.Add("");
                 //设置成员名称
-                registerList[i - 1].SetRegisterName(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
+                registerList[i - 1].SetRegisterName(Func.DES.DESDecrypt(IniFunc.getString("RegisterName", "RegisterName" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename)));  //读取错误为“读取错误”
                 //设置成员写入地址
-                registerList[i - 1].SetRegisterWriteAddress(int.Parse(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "0", filename)));
+                registerList[i - 1].SetRegisterWriteAddress(int.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "ba0s2hMe/Pg=", filename))));  //读取错误为0
                 //设置成员读取地址
-                registerList[i - 1].SetRegisterReadAddress(int.Parse(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "0", filename)));
+                registerList[i - 1].SetRegisterReadAddress(int.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "ba0s2hMe/Pg=", filename))));  //读取错误为0
                 //设置成员数据转换Boolean
-                registerList[i - 1].dataTransform = bool.Parse(IniFunc.getString("RegisterDataTransform", "RegisterDataTransform" + i, "false", filename));
+                registerList[i - 1].dataTransform = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterDataTransform", "RegisterDataTransform" + i, "rQKVA3srM0c=", filename)));  //读取错误为false
                 //设置成员隐藏Boolean
-                registerList[i - 1].hidebool = bool.Parse(IniFunc.getString("RegisterHideBool", "RegisterHideBool" + i, "false", filename));
+                registerList[i - 1].hidebool = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterHideBool", "RegisterHideBool" + i, "rQKVA3srM0c=", filename)));  //读取错误为false
                 //设置寄存器单位转换比率
-                registerDataProportion = float.Parse(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "1", filename));
+                registerDataProportion = float.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterDataProportion", "RegisterDataProportion1", "Eln6MAJktr8=", filename)));  //读取错误为1
             }
             //
             //Panel初始化

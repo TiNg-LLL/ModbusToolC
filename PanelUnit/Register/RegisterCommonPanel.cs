@@ -34,7 +34,7 @@ namespace PanelUnit
             //设置ID
             this.ID = ID;
             //设置成员JustLabel Boolean
-            justLabel = bool.Parse(IniFunc.getString("RegisterJustLabel", "RegisterJustLabel" + ID, "false", filename));
+            justLabel = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterJustLabel", "RegisterJustLabel" + ID, "rQKVA3srM0c=", filename)));
             //***
             //Panel初始化
             //***

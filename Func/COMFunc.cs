@@ -24,12 +24,19 @@ namespace Func
                 if (!(serialPort.IsOpen))
                 {
                     //读取连接参数值
-                    COM = IniFunc.getString("COMDate", "COM", "", filenameSystemDate);
-                    Baudrate = int.Parse(IniFunc.getString("COMDate", "Baudrate", "", filenameSystemDate));
-                    Parity = IniFunc.getString("COMDate", "Parity", "", filenameSystemDate);
-                    StartDate = int.Parse(IniFunc.getString("COMDate", "StartDate", "", filenameSystemDate));
-                    StopDate = IniFunc.getString("COMDate", "StopDate", "", filenameSystemDate);
-                    SlaveID = byte.Parse(IniFunc.getString("COMDate", "SlaveID", "", filenameSystemDate));
+                    //COM = IniFunc.getString("COMDate", "COM", "", filenameSystemDate);
+                    //Baudrate = int.Parse(IniFunc.getString("COMDate", "Baudrate", "", filenameSystemDate));
+                    //Parity = IniFunc.getString("COMDate", "Parity", "", filenameSystemDate);
+                    //StartDate = int.Parse(IniFunc.getString("COMDate", "StartDate", "", filenameSystemDate));
+                    //StopDate = IniFunc.getString("COMDate", "StopDate", "", filenameSystemDate);
+                    //SlaveID = byte.Parse(IniFunc.getString("COMDate", "SlaveID", "", filenameSystemDate));
+
+                    COM = Properties.Settings.Default.COM;
+                    Baudrate = int.Parse(Properties.Settings.Default.Baudrate);
+                    Parity = Properties.Settings.Default.Parity;
+                    StartDate = int.Parse(Properties.Settings.Default.StartDate);
+                    StopDate = Properties.Settings.Default.StopDate;
+                    SlaveID = byte.Parse(Properties.Settings.Default.SlaveID);
 
                     serialPort.PortName = COM;
                     serialPort.BaudRate = Baudrate;
@@ -81,6 +88,84 @@ namespace Func
             {
                 throw;
             }
+        }
+        //***Set***
+        public static void SetCOM(string s)
+        {
+            Properties.Settings.Default.COM = s;
+            Properties.Settings.Default.Save();
+        }
+
+        public static void SetBaudrate(string s)
+        {
+            Properties.Settings.Default.Baudrate = s;
+            Properties.Settings.Default.Save();
+        }
+
+        public static void SetStartDate(string s)
+        {
+            Properties.Settings.Default.StartDate = s;
+            Properties.Settings.Default.Save();
+        }
+
+        public static void SetStopDate(string s)
+        {
+            Properties.Settings.Default.StopDate = s;
+            Properties.Settings.Default.Save();
+        }
+
+        public static void SetParity(string s)
+        {
+            Properties.Settings.Default.Parity = s;
+            Properties.Settings.Default.Save();
+        }
+
+        public static void SetSlaveID(string s)
+        {
+            Properties.Settings.Default.SlaveID = s;
+            Properties.Settings.Default.Save();
+        }
+
+        public static void SetReadTimeout(string s)
+        {
+            Properties.Settings.Default.ReadTimeout = s;
+            Properties.Settings.Default.Save();
+        }
+
+        //***Get***
+        public static string GetCOM()
+        {
+            return Properties.Settings.Default.COM;
+        }
+
+        public static string GetBaudrate()
+        {
+            return Properties.Settings.Default.Baudrate;
+        }
+
+        public static string GetStartDate()
+        {
+            return Properties.Settings.Default.StartDate;
+        }
+
+        public static string GetStopDate()
+        {
+            return Properties.Settings.Default.StopDate;
+        }
+
+        public static string GetParity()
+        {
+            return Properties.Settings.Default.Parity;
+        }
+
+        public static string GetSlaveID()
+        {
+            return Properties.Settings.Default.SlaveID;
+        }
+
+        public static string GetReadTimeout()
+        {
+            return Properties.Settings.Default.ReadTimeout;
         }
     }
 }

@@ -41,5 +41,10 @@
   <ItemGroup>
     <Compile Include="Dayend.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Func">
+      <HintPath>..\Func\bin\Debug\Func.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

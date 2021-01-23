@@ -69,10 +69,10 @@
     <Compile Include="AdjustWindows\CoilButtonAdjustWindow.Designer.cs">
       <DependentUpon>CoilButtonAdjustWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminWindow.cs">
+    <Compile Include="PasswordWindows\AdminWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminWindow.Designer.cs">
+    <Compile Include="PasswordWindows\AdminWindow.Designer.cs">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="AssistDateSetWindow.cs">
@@ -87,10 +87,10 @@
     <Compile Include="AdjustWindows\CoilJustReadAdjustWindow.Designer.cs">
       <DependentUpon>CoilJustReadAdjustWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChangePWWindow.cs">
+    <Compile Include="PasswordWindows\ChangePWWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangePWWindow.Designer.cs">
+    <Compile Include="PasswordWindows\ChangePWWindow.Designer.cs">
       <DependentUpon>ChangePWWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="ComDateSetWindow.cs">
@@ -121,13 +121,13 @@
     <EmbeddedResource Include="AdjustWindows\CoilButtonAdjustWindow.resx">
       <DependentUpon>CoilButtonAdjustWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminWindow.resx">
+    <EmbeddedResource Include="PasswordWindows\AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AssistDateSetWindow.resx">
       <DependentUpon>AssistDateSetWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangePWWindow.resx">
+    <EmbeddedResource Include="PasswordWindows\ChangePWWindow.resx">
       <DependentUpon>ChangePWWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ComDateSetWindow.resx">

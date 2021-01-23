@@ -10,9 +10,14 @@ namespace Func
 {
     public class DES
     {
+        //初始化INI文件地址
+        private static string filename = Directory.GetCurrentDirectory() + @"\Resgiter.ini";
+        //初始化INI文件地址
+        private static string filename1 = Directory.GetCurrentDirectory() + @"\CoilButton.ini";
+
         //static byte[] keyvi = new byte[] { 0x01, 0x02, 0x03, 0x04, 0x05, 0x05, 0x07 };  //向量
-        static String keyvi = "12208184";
-        static String EncryptKey = "12208184";
+        static String keyvi = IniFunc.getString("1", "user", "11111111", filename);
+        static String EncryptKey = IniFunc.getString("1", "user", "11111111", filename1);
 
         public static string DESEncrypt(string originalValue)
         {

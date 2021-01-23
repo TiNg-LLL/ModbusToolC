@@ -59,17 +59,17 @@ namespace PanelCollection
                 //设置成员ID
                 resgisterAdjustList[i - 1].ID = i;
                 //设置成员名称
-                resgisterAdjustList[i - 1].SetRegisterNameText(IniFunc.getString("RegisterName", "RegisterName" + i, "读取错误", filename));
+                resgisterAdjustList[i - 1].SetRegisterNameText(Func.DES.DESDecrypt(IniFunc.getString("RegisterName", "RegisterName" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename)));
                 //设置成员写入地址
-                resgisterAdjustList[i - 1].SetRegisterWriteAddressText(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "读取错误", filename));
+                resgisterAdjustList[i - 1].SetRegisterWriteAddressText(Func.DES.DESDecrypt(IniFunc.getString("RegisterWriteAddress", "RegisterWriteAddress" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename)));
                 //设置成员读取地址
-                resgisterAdjustList[i - 1].SetRegisterReadAddressText(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "读取错误", filename));
+                resgisterAdjustList[i - 1].SetRegisterReadAddressText(Func.DES.DESDecrypt(IniFunc.getString("RegisterReadAddress", "RegisterReadAddress" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename)));
                 //设置成员数据转换Boolean
-                resgisterAdjustList[i - 1].RegisterDataTransform.Checked = bool.Parse(IniFunc.getString("RegisterDataTransform", "RegisterDataTransform" + i, "false", filename));
+                resgisterAdjustList[i - 1].RegisterDataTransform.Checked = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterDataTransform", "RegisterDataTransform" + i, "rQKVA3srM0c=", filename)));
                 //设置成员JustLabel Boolean
-                resgisterAdjustList[i - 1].RegisterJustLabel.Checked = bool.Parse(IniFunc.getString("RegisterJustLabel", "RegisterJustLabel" + i, "false", filename));
+                resgisterAdjustList[i - 1].RegisterJustLabel.Checked = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterJustLabel", "RegisterJustLabel" + i, "rQKVA3srM0c=", filename)));
                 //设置成员隐藏 Boolean
-                resgisterAdjustList[i - 1].hidecheckBox3.Checked = bool.Parse(IniFunc.getString("RegisterHideBool", "RegisterHideBool" + i, "false", filename));
+                resgisterAdjustList[i - 1].hidecheckBox3.Checked = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("RegisterHideBool", "RegisterHideBool" + i, "rQKVA3srM0c=", filename)));
             }
 
             this.ColumnCount = 1;  //列数

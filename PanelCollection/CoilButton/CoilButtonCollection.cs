@@ -33,7 +33,7 @@ namespace PanelCollection.CoilButton
         {
             InitializeComponent();
 
-            coilButtonAmount = int.Parse(IniFunc.getString("CoilButtonAmount", "CoilButtonAmount", "读取错误", filename));
+            coilButtonAmount = int.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonAmount", "CoilButtonAmount", "bFMrIPLjXzYXCFBj9dj8cQ==", filename)));
 
             //在集合中创建对应数量的对象
             for (int i = 1; i <= coilButtonAmount; i++)
@@ -41,19 +41,19 @@ namespace PanelCollection.CoilButton
                 coilButtonList.Add(new CoilButtonPanel(i));
                 coilButtonValueList.Add(null);
                 //设置成员名称
-                coilButtonList[i - 1].ucBtnExt1.lbl.Text = IniFunc.getString("CoilButtonName", "CoilButtonName" + i, "读取错误", filename);
+                coilButtonList[i - 1].ucBtnExt1.lbl.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonName", "CoilButtonName" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename));
                 //设置成员写入地址
-                coilButtonList[i - 1].coilButtonWriteAddress = int.Parse(IniFunc.getString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, "0", filename));
+                coilButtonList[i - 1].coilButtonWriteAddress = int.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonWriteAddress", "CoilButtonWriteAddress" + i, "ba0s2hMe/Pg=", filename)));
                 //设置成员写入地址MXY
-                coilButtonList[i - 1].coilButtonWriteMXYAddress = IniFunc.getString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, "M", filename);
+                coilButtonList[i - 1].coilButtonWriteMXYAddress = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonWriteMXYAddress", "CoilButtonWriteMXYAddress" + i, "/uz5sjJ8Zt4=", filename));
                 //设置成员读取地址
-                coilButtonList[i - 1].coilButtonReadAddress = int.Parse(IniFunc.getString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, "0", filename));
+                coilButtonList[i - 1].coilButtonReadAddress = int.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonReadAddress", "CoilButtonReadAddress" + i, "ba0s2hMe/Pg=", filename)));
                 //设置成员读取地址MXY
-                coilButtonList[i - 1].coilButtonReadMXYAddress = IniFunc.getString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, "M", filename);
+                coilButtonList[i - 1].coilButtonReadMXYAddress = Func.DES.DESDecrypt(IniFunc.getString("CoilButtonReadMXYAddress", "CoilButtonReadMXYAddress" + i, "/uz5sjJ8Zt4=", filename));
                 //设置成员功能点动切换Bool
-                coilButtonList[i - 1].coilButtonTransform = bool.Parse(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "false", filename));
+                coilButtonList[i - 1].coilButtonTransform = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonTransform", "CoilButtonTransform" + i, "rQKVA3srM0c=", filename)));
                 //设置成员隐藏Bool
-                coilButtonList[i - 1].coilButtonHideBool = bool.Parse(IniFunc.getString("CoilButtonHideBool", "CoilButtonHideBool" + i, "false", filename));
+                coilButtonList[i - 1].coilButtonHideBool = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilButtonHideBool", "CoilButtonHideBool" + i, "rQKVA3srM0c=", filename)));
             }
             //***
             //Panel初始化
@@ -194,7 +194,6 @@ namespace PanelCollection.CoilButton
                     b++;
                 }
             }
-            this.Update();
         }
     }
 }

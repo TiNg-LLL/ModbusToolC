@@ -37,22 +37,22 @@ namespace WindowUnit
             {
                 //***
                 //名称ini文件刷新
-                IniFunc.writeString("CoilJustReadName", "CoilJustReadName" + i, CoilJustReadAdjustCollection.coilJustReadAdjustList[i - 1].coilJustReadTextBox1.Text, filename);
+                IniFunc.writeString("CoilJustReadName", "CoilJustReadName" + i, Func.DES.DESEncrypt(CoilJustReadAdjustCollection.coilJustReadAdjustList[i - 1].coilJustReadTextBox1.Text), filename);
                 //***
                 //名称对象刷新
-                CoilJustReadCollection.coilJustReadList[i - 1].label1.Text = (IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "读取错误", filename));
+                CoilJustReadCollection.coilJustReadList[i - 1].label1.Text = (Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadName", "CoilJustReadName" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename)));
                 //***
                 //地址ini文件刷新
-                IniFunc.writeString("CoilJustReadAddress", "CoilJustReadAddress" + i, CoilJustReadAdjustCollection.coilJustReadAdjustList[i - 1].coilJustReadTextBox2.Text, filename);
+                IniFunc.writeString("CoilJustReadAddress", "CoilJustReadAddress" + i, Func.DES.DESEncrypt(CoilJustReadAdjustCollection.coilJustReadAdjustList[i - 1].coilJustReadTextBox2.Text), filename);
                 //***
                 //读取地址对象刷新
-                CoilJustReadCollection.coilJustReadList[i - 1].coilJustReadAddress = int.Parse(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "0", filename));
+                CoilJustReadCollection.coilJustReadList[i - 1].coilJustReadAddress = int.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "0", filename)));
                 //***
                 //MXY地址ini文件刷新
-                IniFunc.writeString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, CoilJustReadAdjustCollection.coilJustReadAdjustList[i - 1].comboBox1.Text, filename);
+                IniFunc.writeString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, Func.DES.DESEncrypt(CoilJustReadAdjustCollection.coilJustReadAdjustList[i - 1].comboBox1.Text), filename);
                 //***
                 //MXY读取地址对象刷新
-                CoilJustReadCollection.coilJustReadList[i - 1].coilJustReadMXYAddress = IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "M", filename);
+                CoilJustReadCollection.coilJustReadList[i - 1].coilJustReadMXYAddress = (Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "M", filename)));
             }
             //设置窗口关闭
             this.Close();
