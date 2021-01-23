@@ -36,42 +36,45 @@ namespace ReadThreadSpace
                     //判断COM端口是否已连接
                     if (COMFunc.serialPort.IsOpen)
                     {
-                        //判断刷新至Label的值是否需要单位转换
-                        if (RegisterCollection.registerList[(int)obj].dataTransform)
+                        if (RegisterCollection.registerValueList[(int)obj].Equals("null"))
                         {
-                            try
+                            if (!(RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text.Equals("error")))
                             {
-                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
-                                DataTreat.RegisterDataProportionToMM(int.Parse(RegisterCollection.registerValueList[(int)obj]), RegisterCollection.registerDataProportion) + "mm";
+                                RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
                             }
-                            catch (Exception)
-                            {
-                                if (!(RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text.Equals("error")))
-                                {
-                                    RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
-                                }
-                            }
+                            //Thread.Sleep(500);
                         }
-                        else  //不转换
+                        else
                         {
-                            try
+                            //判断刷新至Label的值是否需要单位转换
+                            if (RegisterCollection.registerList[(int)obj].dataTransform)
                             {
-                                if (RegisterCollection.registerValueList[(int)obj].Equals("null"))
-                                {
-                                    if (!(RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text.Equals("error")))
-                                    {
-                                        RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
-                                    }
-                                }
-                                else
+
+                                try
                                 {
                                     RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
-    RegisterCollection.registerValueList[(int)obj];
+                                    DataTreat.RegisterDataProportionToMM(int.Parse(RegisterCollection.registerValueList[(int)obj]), RegisterCollection.registerDataProportion) + "mm";
+                                }
+                                catch (Exception)
+                                {
+                                    //if (!(RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text.Equals("error")))
+                                    //{
+                                    //    RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
+                                    //}
+                                    //Thread.Sleep(500);
                                 }
                             }
-                            catch (Exception)
+                            else  //不转换
                             {
-                                //RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
+                                try
+                                {
+                                    RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text =
+                                    RegisterCollection.registerValueList[(int)obj];
+                                }
+                                catch (Exception)
+                                {
+                                    //RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
+                                }
                             }
                         }
                         Thread.Sleep(50);

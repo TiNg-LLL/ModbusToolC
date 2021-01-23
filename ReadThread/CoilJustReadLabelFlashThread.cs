@@ -36,42 +36,55 @@ namespace ReadThreadSpace
                 //判断COM端口是否已连接
                 if (COMFunc.serialPort.IsOpen)
                 {
-                    try
-                    {
-                        if ((bool)CoilJustReadCollection.coilJustReadValueList[(int)obj])
-                        {
-                            if (!(i == 0))
-                            {
-                                CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = CoilJustReadCollection.coilJustReadList[(int)obj].c;
-                                CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Black;
-                                i = 0;
-                            }
-                        }
-                        else if (!(bool)CoilJustReadCollection.coilJustReadValueList[(int)obj])
-                        {
-                            if (!(i == 1))
-                            {
-                                CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(165, 165, 165), Color.Transparent };
-                                CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Black;
-                                i = 1;
-                            }
-                        }
-                        else
-                        {
-                            //if (CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.TwinkleSpeed == 0)
-                            //{
-                            //    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(220, 220, 220), Color.FromArgb(50, 50, 50) };
-                            //    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.TwinkleSpeed = 1000;
-                            //}
-                        }
-                    }
-                    catch (Exception)
+                    if (CoilJustReadCollection.coilJustReadValueList[(int)obj].Equals(null))
                     {
                         if (!(i == 2))
                         {
                             CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(220, 220, 220), Color.Transparent };
                             CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Red;
                             i = 2;
+                        }
+                        //Thread.Sleep(500);
+                    }
+                    else
+                    {
+                        try
+                        {
+                            if ((bool)CoilJustReadCollection.coilJustReadValueList[(int)obj])
+                            {
+                                if (!(i == 0))
+                                {
+                                    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = CoilJustReadCollection.coilJustReadList[(int)obj].c;
+                                    CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Black;
+                                    i = 0;
+                                }
+                            }
+                            else if (!(bool)CoilJustReadCollection.coilJustReadValueList[(int)obj])
+                            {
+                                if (!(i == 1))
+                                {
+                                    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(165, 165, 165), Color.Transparent };
+                                    CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Black;
+                                    i = 1;
+                                }
+                            }
+                            else
+                            {
+                                //if (CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.TwinkleSpeed == 0)
+                                //{
+                                //    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(220, 220, 220), Color.FromArgb(50, 50, 50) };
+                                //    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.TwinkleSpeed = 1000;
+                                //}
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            //if (!(i == 2))
+                            //{
+                            //    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(220, 220, 220), Color.Transparent };
+                            //    CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Red;
+                            //    i = 2;
+                            //}
                         }
                     }
                     Thread.Sleep(50);
