@@ -304,6 +304,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -768,7 +776,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:ModbusToolC v2.3"
+        "ProductName" = "8:ModbusToolC v3.0"
         "ProductCode" = "8:{461283C2-6C49-41CC-ADC8-55FD6FC90033}"
         "PackageCode" = "8:{F2DC258E-40FC-46FB-B8C6-F33E6F0BA3E5}"
         "UpgradeCode" = "8:{28623C30-A910-4189-9AE2-7245A74A39D2}"
