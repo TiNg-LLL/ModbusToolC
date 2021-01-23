@@ -54,7 +54,7 @@ namespace ReadThreadSpace
                                 catch (Exception)
                                 {
                                     RegisterCollection.registerValueList[i] = "null";
-                                    Thread.Sleep(50);
+                                    //Thread.Sleep(10);
                                     //Thread.Sleep(time);
                                 }
                             }
@@ -80,7 +80,7 @@ namespace ReadThreadSpace
                             catch (Exception)
                             {
                                 CoilJustReadCollection.coilJustReadValueList[i] = null;
-                                Thread.Sleep(50);
+                                //Thread.Sleep(10);
                                 //Thread.Sleep(time);
                             }
                         }
@@ -108,7 +108,7 @@ namespace ReadThreadSpace
                                 catch (Exception)
                                 {
                                     CoilButtonCollection.coilButtonValueList[i] = null;
-                                    Thread.Sleep(50);
+                                    //Thread.Sleep(10);
                                     //Thread.Sleep(time);
                                 }
                             }
@@ -117,11 +117,11 @@ namespace ReadThreadSpace
                     catch (Exception)
                     {
                     }
-                    //Console.WriteLine("----------------------------------------------------一次循环结果----------------------------------------------------");
+                    Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------一次循环结果--------------------------------------------------------------------------------------------------------------------");
                 }
                 else
                 {
-                    Thread.Sleep(200);
+                    Thread.Sleep(50);
                 }
             }
         }

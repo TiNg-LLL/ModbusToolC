@@ -42,7 +42,7 @@ namespace ReadThreadSpace
                             {
                                 RegisterCollection.registerList[(int)obj].GetRegisterNowValue().Text = "error";
                             }
-                            //Thread.Sleep(500);
+                            Thread.Sleep(500);
                         }
                         else
                         {
@@ -89,7 +89,7 @@ namespace ReadThreadSpace
                         {
                             Thread.Sleep(200);
                         }
-                        Thread.Sleep(200);
+                        Thread.Sleep(50);
                     }
                 }
                 else

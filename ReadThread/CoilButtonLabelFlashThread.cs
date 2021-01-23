@@ -45,7 +45,7 @@ namespace ReadThreadSpace
                                 CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(220, 220, 220);
                                 i = 2;
                             }
-                            //Thread.Sleep(500);
+                            Thread.Sleep(500);
                         }
                         else
                         {
@@ -62,9 +62,9 @@ namespace ReadThreadSpace
                                         //小绿点
                                         CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.ucSignalLamp1.LampColor =
                                             new Color[] { Color.FromArgb(12, 170, 0) };//绿色
-                                                                                       //***
-                                                                                       //按钮背景
-                                                                                       //CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(200, 200, 200);
+                                        //***
+                                        //按钮背景
+                                        //CoilButtonCollection.coilButtonList[(int)obj].ucBtnExt1.FillColor = Color.FromArgb(200, 200, 200);
                                         i = 0;
                                     }
                                 }
@@ -121,7 +121,7 @@ namespace ReadThreadSpace
                         {
                             Thread.Sleep(500);
                         }
-                        Thread.Sleep(200);
+                        Thread.Sleep(50);
                     }
                 }
                 else

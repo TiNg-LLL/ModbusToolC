@@ -44,7 +44,7 @@ namespace ReadThreadSpace
                             CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Red;
                             i = 2;
                         }
-                        //Thread.Sleep(500);
+                        Thread.Sleep(500);
                     }
                     else
                     {
@@ -104,7 +104,7 @@ namespace ReadThreadSpace
                     {
                         Thread.Sleep(200);
                     }
-                    Thread.Sleep(200);
+                    Thread.Sleep(50);
                 }
             }
         }

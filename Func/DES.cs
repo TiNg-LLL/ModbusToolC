@@ -16,8 +16,8 @@ namespace Func
         private static string filename1 = Directory.GetCurrentDirectory() + @"\CoilButton.ini";
 
         //static byte[] keyvi = new byte[] { 0x01, 0x02, 0x03, 0x04, 0x05, 0x05, 0x07 };  //向量
-        static String keyvi = IniFunc.getString("1", "user", "11111111", filename);
-        static String EncryptKey = IniFunc.getString("1", "user", "11111111", filename1);
+        static String keyvi = DESDecrypt111(IniFunc.getString("1", "user", "11111111", filename));
+        static String EncryptKey = DESDecrypt111(IniFunc.getString("1", "user", "11111111", filename1));
 
         public static string DESEncrypt(string originalValue)
         {
@@ -48,6 +48,36 @@ namespace Func
                 using (DESCryptoServiceProvider sa =
                 new DESCryptoServiceProvider
                 { Key = Encoding.UTF8.GetBytes(EncryptKey), IV = Encoding.UTF8.GetBytes(keyvi) })
+                {
+                    using (ICryptoTransform ct = sa.CreateDecryptor())
+                    {
+                        byte[] byt = Convert.FromBase64String(encryptedValue);
+
+                        using (var ms = new MemoryStream())
+                        {
+                            using (var cs = new CryptoStream(ms, ct, CryptoStreamMode.Write))
+                            {
+                                cs.Write(byt, 0, byt.Length);
+                                cs.FlushFinalBlock();
+                            }
+                            return Encoding.UTF8.GetString(ms.ToArray());
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return "致命错误";
+            }
+        }
+
+        public static string DESDecrypt111(string encryptedValue)
+        {
+            try
+            {
+                using (DESCryptoServiceProvider sa =
+                new DESCryptoServiceProvider
+                { Key = Encoding.UTF8.GetBytes("12208184"), IV = Encoding.UTF8.GetBytes("12208184") })
                 {
                     using (ICryptoTransform ct = sa.CreateDecryptor())
                     {

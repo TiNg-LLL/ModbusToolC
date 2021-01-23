@@ -32,7 +32,7 @@ namespace PanelCollection
             for (int i = 1; i <= registerAmount; i++)
             {
                 registerList.Add(new RegisterCommonPanel(i));
-                registerValueList.Add("");
+                registerValueList.Add("null");
                 //设置成员名称
                 registerList[i - 1].SetRegisterName(Func.DES.DESDecrypt(IniFunc.getString("RegisterName", "RegisterName" + i, "bFMrIPLjXzYXCFBj9dj8cQ==", filename)));  //读取错误为“读取错误”
                 //设置成员写入地址
