@@ -55,6 +55,7 @@ namespace PanelUnit
         {
             if (b)
             {
+                cd.Color = c[0];
                 DialogResult dr = cd.ShowDialog();
                 if (dr == DialogResult.OK)
                 {
