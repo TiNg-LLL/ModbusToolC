@@ -54,7 +54,7 @@ namespace Controls
         /// <summary>
         /// The lamp color
         /// </summary>
-        private Color[] lampColor = new Color[] { Color.FromArgb(255, 255, 255) };
+        private Color[] lampColor = new Color[] { Color.FromArgb(255, 255, 255), Color.Transparent };
 
         /// <summary>
         /// Gets or sets the color of the lamp.
@@ -109,10 +109,13 @@ namespace Controls
             set
             {
                 if (value < 0)
+                {
                     return;
+                }
                 twinkleSpeed = value;
                 if (value == 0 || lampColor.Length <= 1)
                 {
+                    intColorIndex = 0;
                     timer.Enabled = false;
                 }
                 else
@@ -127,7 +130,7 @@ namespace Controls
         /// <summary>
         /// The timer
         /// </summary>
-        public Timer timer;
+        public Timer timer { get; set; }
         /// <summary>
         /// The int color index
         /// </summary>
@@ -149,6 +152,7 @@ namespace Controls
             timer = new Timer();
             timer.Interval = 200;
             timer.Tick += timer_Tick;
+
             //从非 UI 线程更新 UI 线程  线程不安全
             CheckForIllegalCrossThreadCalls = false;
         }

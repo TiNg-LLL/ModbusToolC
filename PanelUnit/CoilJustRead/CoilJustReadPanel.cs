@@ -26,6 +26,9 @@ namespace PanelUnit
         public int coilJustReadAddress { get; set; }
         public string coilJustReadMXYAddress { get; set; }
 
+        //是否闪烁标志
+        public bool flashbool { get; set; }
+
         //颜色修改权限标志
         public static bool b = false;
 
@@ -38,7 +41,7 @@ namespace PanelUnit
             this.Width = this.ucSignalLamp1.Width;
             this.Height = this.Width + 10;
             this.ID = i;
-            c = new Color[] { new Color() ,Color.Transparent};
+            c = new Color[] { new Color(), Color.Transparent };
             //this.BackColor = Color.DarkRed;  //背景颜色
 
             //从非 UI 线程更新 UI 线程  线程不安全
