@@ -55,7 +55,7 @@ namespace ReadThreadSpace
                             {
                                 if (!(i == 0))
                                 {
-
+                                    CoilJustReadCollection.coilJustReadList[(int)obj].c[1] = Color.FromArgb(180, 180, 180);
                                     CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = CoilJustReadCollection.coilJustReadList[(int)obj].c;
                                     CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Black;
                                     if (CoilJustReadCollection.coilJustReadList[(int)obj].flashbool)
@@ -69,7 +69,7 @@ namespace ReadThreadSpace
                             {
                                 if (!(i == 1))
                                 {
-                                    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(165, 165, 165), Color.Transparent };
+                                    CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.LampColor = new Color[] { Color.FromArgb(180, 180, 180), Color.Transparent };
                                     CoilJustReadCollection.coilJustReadList[(int)obj].label1.ForeColor = Color.Black;
                                     CoilJustReadCollection.coilJustReadList[(int)obj].ucSignalLamp1.TwinkleSpeed = 0;
                                     i = 1;
