@@ -33,24 +33,27 @@ namespace PanelUnit
             this.coilJustReadTextBox1 = new System.Windows.Forms.TextBox();
             this.coilJustReadTextBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.coilJustReadTextBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.coilJustReadTextBox2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(230, 30);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 30);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // coilJustReadTextBox1
@@ -81,12 +84,23 @@ namespace PanelUnit
             this.comboBox1.Size = new System.Drawing.Size(40, 21);
             this.comboBox1.TabIndex = 3;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(231, 7);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(48, 16);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "闪烁";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // CoilJustReadAdjustPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CoilJustReadAdjustPanel";
-            this.Size = new System.Drawing.Size(230, 30);
+            this.Size = new System.Drawing.Size(285, 30);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -98,5 +112,7 @@ namespace PanelUnit
         public System.Windows.Forms.ComboBox comboBox1;
 
         #endregion
+
+        public System.Windows.Forms.CheckBox checkBox1;
     }
 }

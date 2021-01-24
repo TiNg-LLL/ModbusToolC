@@ -47,8 +47,6 @@ namespace PanelCollection
                 coilJustReadList[i - 1].coilJustReadMXYAddress = Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "/uz5sjJ8Zt4=", filename));
                 //设置成员是否闪烁bool
                 coilJustReadList[i - 1].flashbool = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadFlash", "CoilJustReadFlash" + i, "w7/+Kua8/sE=", filename)));
-
-                //coilJustReadList[i - 1].ucSignalLamp1.TwinkleSpeed = 500;
             }
 
             //***

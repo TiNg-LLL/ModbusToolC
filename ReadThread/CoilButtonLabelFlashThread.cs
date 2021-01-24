@@ -101,7 +101,7 @@ namespace ReadThreadSpace
                                 //Thread.Sleep(200);
                             }
                         }
-                        Thread.Sleep(50);
+                        Thread.Sleep(5);
                     }
                     else
                     {

@@ -53,6 +53,13 @@ namespace WindowUnit
                 //***
                 //MXY读取地址对象刷新
                 CoilJustReadCollection.coilJustReadList[i - 1].coilJustReadMXYAddress = (Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "M", filename)));
+                //***
+                //是否闪烁boolini文件刷新
+                IniFunc.writeString("CoilJustReadFlash", "CoilJustReadFlash" + i, Func.DES.DESEncrypt(CoilJustReadAdjustCollection.coilJustReadAdjustList[i - 1].checkBox1.Checked.ToString()), filename);
+                //***
+                //是否闪烁bool对象刷新
+                CoilJustReadCollection.coilJustReadList[i - 1].flashbool = bool.Parse((Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadFlash", "CoilJustReadFlash" + i, "w7/+Kua8/sE=", filename))));
+
             }
             //设置窗口关闭
             this.Close();
@@ -72,6 +79,24 @@ namespace WindowUnit
             this.Controls.Clear();
             InitializeComponent();
             this.panel1.Controls.Add(coilJustReadAdjustCollection);
+        }
+
+        private void label1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (CoilJustReadAdjustCollection.coilJustReadAdjustList[0].checkBox1.Checked)
+            {
+                for (int i = 0; i < CoilJustReadCollection.coilJustReadAmount; i++)
+                {
+                    CoilJustReadAdjustCollection.coilJustReadAdjustList[i].checkBox1.Checked = false;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < CoilJustReadCollection.coilJustReadAmount; i++)
+                {
+                    CoilJustReadAdjustCollection.coilJustReadAdjustList[i].checkBox1.Checked = true;
+                }
+            }
         }
     }
 }

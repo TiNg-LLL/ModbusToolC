@@ -43,6 +43,8 @@ namespace PanelCollection
                 coilJustReadAdjustList[i - 1].coilJustReadTextBox2.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadAddress", "CoilJustReadAddress" + i, "读取错误", filename));
                 //设置成员读取地址MXY
                 coilJustReadAdjustList[i - 1].comboBox1.Text = Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadMXYAddress", "CoilJustReadMXYAddress" + i, "读取错误", filename));
+                //设置成员是否闪烁bool
+                coilJustReadAdjustList[i - 1].checkBox1.Checked = bool.Parse(Func.DES.DESDecrypt(IniFunc.getString("CoilJustReadFlash", "CoilJustReadFlash" + i, "w7/+Kua8/sE=", filename)));
             }
 
             this.ColumnCount = 1;  //列数

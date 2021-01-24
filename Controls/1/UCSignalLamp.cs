@@ -36,6 +36,8 @@ namespace Controls
         /// </summary>
         private bool isShowBorder = false;
 
+        private bool b = false;
+
         /// <summary>
         /// Gets or sets a value indicating whether this instance is show border.
         /// </summary>
@@ -108,21 +110,19 @@ namespace Controls
             get { return twinkleSpeed; }
             set
             {
-                if (value < 0)
-                {
-                    return;
-                }
                 twinkleSpeed = value;
                 if (value == 0 || lampColor.Length <= 1)
                 {
                     intColorIndex = 0;
-                    timer.Enabled = false;
+                    b = false;
+                    //timer.Enabled = false;
                 }
                 else
                 {
                     intColorIndex = 0;
+                    b = true;
                     timer.Interval = value;
-                    timer.Enabled = true;
+                    //timer.Enabled = true;
                 }
                 Refresh();
             }
@@ -150,8 +150,9 @@ namespace Controls
             this.Size = new Size(50, 50);
             this.SizeChanged += UCSignalLamp_SizeChanged;
             timer = new Timer();
-            timer.Interval = 200;
+            timer.Interval = 500;
             timer.Tick += timer_Tick;
+            timer.Enabled = true;
 
             //从非 UI 线程更新 UI 线程  线程不安全
             CheckForIllegalCrossThreadCalls = false;
@@ -164,10 +165,13 @@ namespace Controls
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void timer_Tick(object sender, EventArgs e)
         {
-            intColorIndex++;
-            if (intColorIndex >= lampColor.Length)
-                intColorIndex = 0;
-            Refresh();
+            if (b)
+            {
+                intColorIndex++;
+                if (intColorIndex >= lampColor.Length)
+                    intColorIndex = 0;
+                Refresh();
+            }
         }
         /// <summary>
         /// Handles the SizeChanged event of the UCSignalLamp control.

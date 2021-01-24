@@ -35,6 +35,7 @@ namespace WindowUnit
             this.RegisterWritelabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -44,7 +45,7 @@ namespace WindowUnit
             this.panel1.Location = new System.Drawing.Point(5, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(234, 181);
+            this.panel1.Size = new System.Drawing.Size(274, 181);
             this.panel1.TabIndex = 0;
             // 
             // RegisterNamelabel
@@ -94,7 +95,7 @@ namespace WindowUnit
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(140, 220);
+            this.button2.Location = new System.Drawing.Point(180, 220);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 32);
             this.button2.TabIndex = 5;
@@ -102,12 +103,29 @@ namespace WindowUnit
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(240, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 22);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "闪烁";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseClick);
+            // 
             // CoilJustReadAdjustWindow
             // 
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(244, 261);
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.RegisterWritelabel);
@@ -133,5 +151,6 @@ namespace WindowUnit
         private System.Windows.Forms.Label RegisterWritelabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -77,7 +77,7 @@ namespace ReadThreadSpace
                                 }
                             }
                         }
-                        Thread.Sleep(50);
+                        Thread.Sleep(5);
                     }
                     else
                     {
