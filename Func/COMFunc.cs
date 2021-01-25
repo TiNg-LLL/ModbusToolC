@@ -68,7 +68,7 @@ namespace Func
                     serialPort.ReadTimeout = int.Parse(IniFunc.getString("COMDate", "ReadTimeout", "", filenameSystemDate));
                     serialPort.WriteTimeout = serialPort.ReadTimeout;
                     serialPort.Open();
-                    Console.WriteLine("端口已连接");
+                    Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "：" + "端口已连接" + "("+  COM + "/" + Baudrate + "/" + Parity + "/" + StartDate + "/" + StopDate + "/" + SlaveID + ")");
                 }
             }
             catch (Exception e)
@@ -82,7 +82,7 @@ namespace Func
             try
             {
                 serialPort.Close();
-                Console.WriteLine("端口已断开");
+                Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "：" + "端口已断开");
             }
             catch (Exception)
             {

@@ -16,6 +16,7 @@ namespace ReadThreadSpace
         private ThreadStart childref;
         private Thread childThread;
         int time;
+
         //private ModbusFunc modbusFunc = RegisterCommonPanel.modbusFunc;
 
         public ReadModbusThread()
@@ -117,7 +118,7 @@ namespace ReadThreadSpace
                     catch (Exception)
                     {
                     }
-                    //Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------一次循环结果--------------------------------------------------------------------------------------------------------------------");
+                    //Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "：" + "一次循环结果");
                 }
                 else
                 {

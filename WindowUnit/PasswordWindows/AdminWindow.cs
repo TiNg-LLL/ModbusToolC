@@ -36,12 +36,14 @@ namespace WindowUnit
                 t.Enabled = true;
                 CoilJustReadPanel.b = true;
                 textBox1.Text = "";
+                Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "：" + "登入成功");
                 this.Close();
             }
             else
             {
                 if (MessageBox.Show("密码错误", "密码错误", MessageBoxButtons.OK) == DialogResult.OK)
                 {
+                    Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "：" + "密码错误");
                     textBox1.Text = "";
                 }
             }
@@ -59,6 +61,7 @@ namespace WindowUnit
                         t.Enabled = true;
                         CoilJustReadPanel.b = true;
                         textBox1.Text = "";
+                        Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "：" + "登入成功");
                         this.Close();
                     }
                     else
@@ -66,6 +69,7 @@ namespace WindowUnit
                         b = false;
                         if (MessageBox.Show("密码错误", "密码错误", MessageBoxButtons.OK) == DialogResult.OK)
                         {
+                            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "：" + "密码错误");
                             textBox1.Text = "";
                         }
                     }

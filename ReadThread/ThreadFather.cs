@@ -66,7 +66,7 @@ namespace ReadThreadSpace
                         Thread.Sleep(1000);
                         met.Reset();
                         c = false;
-                        Console.WriteLine("线程已暂停");
+                        Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "：" + "线程已暂停");
                     }
                 }
                 else
@@ -75,7 +75,7 @@ namespace ReadThreadSpace
                     {
                         met.Set();
                         c = false;
-                        Console.WriteLine("线程已继续");
+                        Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff") + "：" + "线程已继续");
                     }
                 }
             }
