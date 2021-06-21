@@ -81,6 +81,14 @@ namespace FirstWindow
             //Console.WriteLine(coilJustReadCollection.Width);
             //coilButtonCollection.Width = coilJustReadCollection.Width;
             this.groupBox3.Width = this.groupBox2.Width;
+            if (this.groupBox1.Location.Y + this.groupBox1.Size.Height > this.groupBox3.Location.Y + this.groupBox3.Size.Height)
+            {
+                this.ClientSize = new Size(width, this.groupBox1.Location.Y + this.groupBox1.Size.Height + 40);
+            }
+            else
+            {
+                this.ClientSize = new Size(width, this.groupBox3.Location.Y + this.groupBox3.Size.Height + 40);
+            }
             //this.groupBox3.Height = (((int)(CoilButtonCollection.b / 4.1) + 1) * 67 + 25);
             threadFather = new ThreadFather();
             adminWindow = new AdminWindow(设置ToolStripMenuItem);
